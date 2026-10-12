@@ -61,7 +61,10 @@ def keep_rule(nug):
 
 
 def rank(db, limit=20, area_quota=None):
-    """Shortlist: hotness-ranked, trajectory-aware, vertical-diverse."""
+    """Shortlist: hotness-ranked, trajectory-aware, vertical-diverse.
+
+    Burned titles (render-QC failures reported by the consumer app) never
+    appear — active_nuggets already excludes non-active statuses."""
     report = json.loads((DATA / "intel_report.json").read_text()) \
         if (DATA / "intel_report.json").exists() else {"areas": {}}
 

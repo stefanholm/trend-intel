@@ -9,6 +9,7 @@ Usage from your app:
     api.reject(title, reason)   # intake gate reject
 """
 import json
+import json
 import time
 from pathlib import Path
 
@@ -36,6 +37,26 @@ class IntelAPI:
 
     def mark_used(self, title):
         self.db.set_nugget_status(title, "used")
+
+    def ingest_burned(self, path=None):
+        """Intake burned.json from the render app (titles that failed QC).
+
+        Your render app writes a simple JSON file:
+            {"burned": ["gold hoop earrings", "snow linen flat lay"], "reason": "clip<28"}
+        Call this after each render run; burned titles never re-enter
+        the shortlist."""
+        path = Path(path or Path(self.db.path).parent / "burned.json")
+        if not path.exists():
+            return 0
+        try:
+            data = json.loads(path.read_text())
+        except (ValueError, OSError):
+            return 0
+        titles = data.get("burned", [])
+        n = self.db.mark_burned(titles, data.get("reason", "render_qc_failed"))
+        if n:
+            path.unlink()  # consumed — avoid reprocessing
+        return n
 
     def reject(self, title, reason):
         self.db.set_nugget_status(title, "rejected", reason)

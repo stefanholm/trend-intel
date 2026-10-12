@@ -224,6 +224,14 @@ def looks_like_junk(title, extra=None):
         return "headline_fragment"
     if JUNK_TOKENS.search(t):
         return "junk_token"
+    try:
+        from . import autolearn
+        hit = autolearn.is_banned(t)
+        if hit:
+            autolearn.note_reject_hit(hit)
+            return "learned_ban"
+    except Exception:  # noqa: BLE001
+        pass
     if NAME_RE.match(t) and not VISUAL_HINTS.search(t) and not _area_vocab_hit(t):
         return "person_name"
     words = t.lower().split()

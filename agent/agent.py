@@ -92,16 +92,27 @@ def re_gate_nuggets():
     from trend_intel import scoring
     db = DB(BASE / "data" / "intel.db")
     rejected = 0
+    learned = 0
+    from trend_intel import autolearn
     for n in db.active_nuggets(limit=5000):
         reason = scoring.looks_like_junk(n["title"])
         if reason:
             db.set_nugget_status(n["title"], "rejected", reason)
             rejected += 1
+            tok = autolearn.record_reject(n["title"], reason)
+            if tok:
+                learned += 1
+    autolearn.save()
+    pruned = autolearn.prune_never_fired()
+    if pruned:
+        log.info("autolearn: pruned %d never-fired bans", len(pruned))
     if rejected:
-        log.info("re-gate: rejected %d stale nuggets", rejected)
+        log.info("re-gate: rejected %d stale nuggets, learned %d new bans",
+                 rejected, learned)
 
 
 def run_cycle():
+    _ingest_burned()
     re_gate_nuggets()
     write_status("collecting")
     result = subprocess.run(
@@ -117,6 +128,17 @@ def run_cycle():
     _search_toplists_low_yield()
     _write_report()
     return True
+
+
+def _ingest_burned():
+    """Consume data/burned.json from the render app — QC-failed titles
+    are marked burned and never re-enter the shortlist."""
+    sys.path.insert(0, str(BASE))
+    from trend_intel.api import IntelAPI
+    api = IntelAPI(BASE / "data" / "intel.db")
+    n = api.ingest_burned()
+    if n:
+        log.info("burned intake: %d titles marked (render QC failures)", n)
 
 
 def _verify_findings():

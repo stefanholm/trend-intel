@@ -185,6 +185,20 @@ class DB:
             out.append(d)
         return out
 
+    def mark_burned(self, titles, reason="render_qc_failed"):
+        """Bulk-mark titles as burned (from the render app's QC failures).
+        Burned nuggets never re-enter the shortlist."""
+        burned = 0
+        with self._lock():
+            for t in titles:
+                cur = self._conn().execute(
+                    "UPDATE nuggets SET status='burned', reject_reason=? "
+                    "WHERE title=? AND status IN ('active','used')",
+                    (reason, t))
+                burned += cur.rowcount
+            self._conn().commit()
+        return burned
+
     def set_nugget_status(self, title, status, reason=None):
         with self._lock():
             self._conn().execute(
