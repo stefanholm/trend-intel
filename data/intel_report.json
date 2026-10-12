@@ -1,5 +1,5 @@
 {
-  "updated_at": 1791815142,
+  "updated_at": 1791815482,
   "legend": {
     "hotness": "0-1 composite: base score x trajectory weight (rising 1.0, steady 0.4, peaked 0.1, falling 0.0) x momentum x stickiness. USE THIS for ranking.",
     "score": "0-1 intake score: 0.6*demand + 0.3*freshness + 0.1*multi-source corroboration. Demand-dominated.",
@@ -22,7 +22,7 @@
     "autumn_fashion": {
       "label": "Autumn / transitional fashion",
       "why": "Seasonal wardrobe refresh is the #1 recurring stock-apparel demand; buyers license outfit + knitwear shots Aug-Nov.",
-      "nugget_count": 51,
+      "nugget_count": 50,
       "useful": true,
       "trends": [
         {
@@ -476,30 +476,31 @@
     "matcha_drinks": {
       "label": "Matcha & specialty drinks",
       "why": "Matcha is a multi-year breakout; cafe/beverage is the highest-turnover food stock niche.",
-      "nugget_count": 24,
+      "nugget_count": 14,
       "useful": true,
       "trends": [
         {
-          "title": "iced latte",
-          "hotness": 0.187,
-          "score": 0.933,
-          "demand": 1.0,
+          "title": "iced matcha latte zu sp\u00e4t beim pilates",
+          "hotness": 0.175,
+          "score": 0.873,
+          "demand": 0.9,
           "approx_traffic": null,
           "state": "unknown",
           "slope": 0.0,
           "sources": [
-            "pytrends_top"
+            "pytrends_rising"
           ],
           "source_count": 1,
           "verified_by_google_trends": true,
           "seen_count": 1,
-          "first_seen": 1791733643,
-          "variant_count": 5,
+          "first_seen": 1791727408,
+          "variant_count": 11,
           "variants": [
             "dunkin donuts iced matcha latte",
+            "iced matcha",
+            "iced matcha calories",
             "iced matcha latte calories",
-            "iced matcha latte zu sp\u00e4t beim pilates",
-            "latte"
+            "iced strawberry matcha"
           ]
         },
         {
@@ -517,79 +518,8 @@
           "verified_by_google_trends": true,
           "seen_count": 1,
           "first_seen": 1791727408,
-          "variant_count": 5,
-          "variants": [
-            "iced matcha",
-            "iced matcha calories",
-            "iced strawberry matcha",
-            "strawberry iced matcha"
-          ]
-        },
-        {
-          "title": "specialty coffee drink recipes",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791731326,
-          "variant_count": 2,
-          "variants": [
-            "specialty coffee drink ideas"
-          ]
-        },
-        {
-          "title": "matcha latte calories",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791731326,
-          "variant_count": 4,
-          "variants": [
-            "matcha latte caffeine",
-            "matcha latte powder",
-            "matcha latte ratio"
-          ]
-        },
-        {
-          "title": "latte makeup fair skin",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791733552,
-          "variant_count": 6,
-          "variants": [
-            "latte makeup",
-            "latte makeup look",
-            "latte makeup on brown skin",
-            "latte makeup products",
-            "latte makeup trend"
-          ]
+          "variant_count": 1,
+          "variants": []
         },
         {
           "title": "strawberry matcha",
@@ -686,7 +616,7 @@
     "warm_kitchen": {
       "label": "Warm-metal kitchens & home decor",
       "why": "Copper/brass kitchen and sage/terracotta decor dominate current interior licensing.",
-      "nugget_count": 49,
+      "nugget_count": 39,
       "useful": true,
       "trends": [
         {
@@ -711,50 +641,6 @@
             "copper kitchen accessories",
             "copper kitchen aid",
             "copper kitchen aid mixer"
-          ]
-        },
-        {
-          "title": "sage green decor for bedroom",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791731326,
-          "variant_count": 8,
-          "variants": [
-            "bedroom decor",
-            "bedroom decor for men",
-            "bedroom decor ideas",
-            "bedroom decor ideas for couples",
-            "bedroom decor ideas for women"
-          ]
-        },
-        {
-          "title": "sage green decor for living room",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791731326,
-          "variant_count": 2,
-          "variants": [
-            "living room ideas decor"
           ]
         },
         {
@@ -850,7 +736,7 @@
       "useful": true,
       "trends": [
         {
-          "title": "coquette style bedroom",
+          "title": "sage green decor for bedroom",
           "hotness": 0.097,
           "score": 0.483,
           "demand": 0.25,
@@ -864,11 +750,17 @@
           "verified_by_google_trends": false,
           "seen_count": 1,
           "first_seen": 1791731326,
-          "variant_count": 1,
-          "variants": []
+          "variant_count": 8,
+          "variants": [
+            "bedroom decor",
+            "bedroom decor for men",
+            "bedroom decor ideas",
+            "bedroom decor ideas for couples",
+            "bedroom decor ideas for women"
+          ]
         },
         {
-          "title": "living room ideas for apartments",
+          "title": "sage green decor for living room",
           "hotness": 0.097,
           "score": 0.483,
           "demand": 0.25,
@@ -882,57 +774,13 @@
           "verified_by_google_trends": false,
           "seen_count": 1,
           "first_seen": 1791731326,
-          "variant_count": 5,
+          "variant_count": 7,
           "variants": [
             "living room ideas",
+            "living room ideas decor",
+            "living room ideas for apartments",
             "living room ideas for small spaces",
-            "living room ideas with fireplace",
-            "living room ideas with grey couch"
-          ]
-        },
-        {
-          "title": "italian bob with curtain bangs",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791732211,
-          "variant_count": 5,
-          "variants": [
-            "curtain bangs",
-            "curtain bangs haircut",
-            "curtain bangs men",
-            "curtain bangs with layers"
-          ]
-        },
-        {
-          "title": "curtain bangs long hair",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791732211,
-          "variant_count": 4,
-          "variants": [
-            "curtain bangs curly hair",
-            "curtain bangs short hair",
-            "curtain bangs wavy hair"
+            "living room ideas with fireplace"
           ]
         }
       ]
@@ -940,7 +788,7 @@
     "crochet_craft": {
       "label": "Crochet & handmade craft",
       "why": "Crochet bags exploded since 2023 and are still pre-peak; craft licensing is strong and under-supplied.",
-      "nugget_count": 32,
+      "nugget_count": 29,
       "useful": true,
       "trends": [
         {
@@ -1012,26 +860,6 @@
           ]
         },
         {
-          "title": "clean girl aesthetic makeup bag",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791733552,
-          "variant_count": 2,
-          "variants": [
-            "espresso makeup bag"
-          ]
-        },
-        {
           "title": "handmade crafts",
           "hotness": 0.097,
           "score": 0.483,
@@ -1084,24 +912,6 @@
           "verified_by_google_trends": true,
           "seen_count": 1,
           "first_seen": 1791733643,
-          "variant_count": 1,
-          "variants": []
-        },
-        {
-          "title": "butter yellow bag",
-          "hotness": 0.083,
-          "score": 0.417,
-          "demand": 0.14,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "pytrends_top"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": true,
-          "seen_count": 1,
-          "first_seen": 1791726919,
           "variant_count": 1,
           "variants": []
         },
@@ -1860,11 +1670,11 @@
     "hairstyles": {
       "label": "Hairstyles & hair care",
       "why": "Hair trend stock licenses to salons, product campaigns, and editorial; bob/layer/cut trends spike with seasons.",
-      "nugget_count": 52,
+      "nugget_count": 60,
       "useful": true,
       "trends": [
         {
-          "title": "mocha mousse hair color",
+          "title": "brunette balayage short hair",
           "hotness": 0.097,
           "score": 0.483,
           "demand": 0.25,
@@ -1877,12 +1687,14 @@
           "source_count": 1,
           "verified_by_google_trends": false,
           "seen_count": 1,
-          "first_seen": 1791731326,
-          "variant_count": 4,
+          "first_seen": 1791733643,
+          "variant_count": 8,
           "variants": [
             "best hair color fall 2026",
-            "hair color fall 2026 brunette",
-            "popular hair color fall 2026"
+            "brunette balayage hair",
+            "brunette balayage straight hair",
+            "cherry cola hair color",
+            "cherry cola hair color formula"
           ]
         },
         {
@@ -1924,11 +1736,12 @@
           "verified_by_google_trends": false,
           "seen_count": 1,
           "first_seen": 1791732211,
-          "variant_count": 4,
+          "variant_count": 5,
           "variants": [
             "bottleneck bangs",
             "bottleneck bangs curly hair",
-            "bottleneck bangs fine hair"
+            "bottleneck bangs fine hair",
+            "curtain bangs long hair"
           ]
         },
         {
@@ -1946,11 +1759,8 @@
           "verified_by_google_trends": false,
           "seen_count": 1,
           "first_seen": 1791732211,
-          "variant_count": 3,
-          "variants": [
-            "cherry cola hair color",
-            "cherry cola hair color formula"
-          ]
+          "variant_count": 1,
+          "variants": []
         },
         {
           "title": "italian bob fine hair",
@@ -1973,6 +1783,30 @@
             "italian bob haircut",
             "italian bob hairstyle",
             "italian bob images"
+          ]
+        },
+        {
+          "title": "italian bob with curtain bangs",
+          "hotness": 0.097,
+          "score": 0.483,
+          "demand": 0.25,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791732211,
+          "variant_count": 6,
+          "variants": [
+            "curtain bangs",
+            "curtain bangs haircut",
+            "curtain bangs men",
+            "curtain bangs with layers",
+            "italian bob with bangs"
           ]
         },
         {
@@ -2017,6 +1851,27 @@
           "variants": [
             "wolf cut curly hair",
             "wolf cut hair"
+          ]
+        },
+        {
+          "title": "curtain bangs short hair",
+          "hotness": 0.097,
+          "score": 0.483,
+          "demand": 0.25,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791732211,
+          "variant_count": 3,
+          "variants": [
+            "curtain bangs curly hair",
+            "curtain bangs wavy hair"
           ]
         },
         {
@@ -2080,7 +1935,7 @@
           "variants": []
         },
         {
-          "title": "brunette balayage short hair",
+          "title": "brunette balayage with blonde",
           "hotness": 0.097,
           "score": 0.483,
           "demand": 0.25,
@@ -2094,32 +1949,12 @@
           "verified_by_google_trends": false,
           "seen_count": 1,
           "first_seen": 1791733643,
-          "variant_count": 7,
+          "variant_count": 4,
           "variants": [
             "brunette balayage",
             "brunette balayage 2026",
-            "brunette balayage caramel",
-            "brunette balayage hair",
-            "brunette balayage straight hair"
+            "brunette balayage caramel"
           ]
-        },
-        {
-          "title": "italian bob with bangs",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791733643,
-          "variant_count": 1,
-          "variants": []
         },
         {
           "title": "butterfly haircut with bangs",
@@ -2158,12 +1993,157 @@
           "first_seen": 1791733643,
           "variant_count": 1,
           "variants": []
+        }
+      ]
+    },
+    "beauty_makeup": {
+      "label": "Beauty & makeup trends",
+      "why": "Beauty editorial has constant demand: seasonal lip looks, glazed/dewy skin, bold liner all license heavily for cosmetics campaigns.",
+      "nugget_count": 112,
+      "useful": true,
+      "trends": [
+        {
+          "title": "latte makeup fair skin",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791733552,
+          "variant_count": 8,
+          "variants": [
+            "dewy skin look",
+            "dewy skin look like",
+            "dewy skin look makeup",
+            "dewy skin look products",
+            "latte makeup on brown skin"
+          ]
         },
         {
-          "title": "hairstyle trending women",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
+          "title": "beauty glazed lipstick shades",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791733552,
+          "variant_count": 4,
+          "variants": [
+            "beauty glazed lipstick",
+            "glazed lipstick",
+            "lipstick glazed donut"
+          ]
+        },
+        {
+          "title": "soap brows product",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791733552,
+          "variant_count": 3,
+          "variants": [
+            "soap brows",
+            "soap brows trend"
+          ]
+        },
+        {
+          "title": "espresso makeup vanity with lights",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791733552,
+          "variant_count": 7,
+          "variants": [
+            "espresso makeup",
+            "espresso makeup bag",
+            "espresso makeup brand",
+            "espresso makeup by mario",
+            "espresso makeup look"
+          ]
+        },
+        {
+          "title": "strawberry makeup look",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791733552,
+          "variant_count": 12,
+          "variants": [
+            "strawberry makeup",
+            "strawberry makeup bag",
+            "strawberry makeup brushes",
+            "strawberry makeup ideas",
+            "strawberry makeup look for kids"
+          ]
+        },
+        {
+          "title": "latte makeup products",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791733552,
+          "variant_count": 4,
+          "variants": [
+            "latte makeup",
+            "latte makeup look",
+            "latte makeup trend"
+          ]
+        },
+        {
+          "title": "glazed lips",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
           "approx_traffic": null,
           "state": "unknown",
           "slope": 0.0,
@@ -2174,98 +2154,6 @@
           "verified_by_google_trends": false,
           "seen_count": 1,
           "first_seen": 1791733643,
-          "variant_count": 1,
-          "variants": []
-        }
-      ]
-    },
-    "beauty_makeup": {
-      "label": "Beauty & makeup trends",
-      "why": "Beauty editorial has constant demand: seasonal lip looks, glazed/dewy skin, bold liner all license heavily for cosmetics campaigns.",
-      "nugget_count": 73,
-      "useful": true,
-      "trends": [
-        {
-          "title": "nail designs simple",
-          "hotness": 0.115,
-          "score": 0.573,
-          "demand": 0.4,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791731326,
-          "variant_count": 6,
-          "variants": [
-            "nail designs",
-            "nail designs 2026",
-            "nail designs for fall",
-            "nail designs for short nails",
-            "nail designs for summer"
-          ]
-        },
-        {
-          "title": "nail trends right now",
-          "hotness": 0.115,
-          "score": 0.573,
-          "demand": 0.4,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791731326,
-          "variant_count": 1,
-          "variants": []
-        },
-        {
-          "title": "dewy skin look makeup",
-          "hotness": 0.115,
-          "score": 0.573,
-          "demand": 0.4,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791731326,
-          "variant_count": 6,
-          "variants": [
-            "dewy skin look",
-            "dewy skin look like",
-            "dewy skin look products",
-            "peach skin makeup",
-            "peach skin makeup brushes"
-          ]
-        },
-        {
-          "title": "butter yellow nail polish",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791731326,
           "variant_count": 1,
           "variants": []
         },
@@ -2284,13 +2172,13 @@
           "verified_by_google_trends": false,
           "seen_count": 1,
           "first_seen": 1791733643,
-          "variant_count": 8,
+          "variant_count": 7,
           "variants": [
-            "lip oil cosmetics",
             "lip oil makeup",
             "lip oil makeup by mario",
             "lip oil makeup city",
-            "lip oil makeup forever"
+            "lip oil makeup forever",
+            "lip oil makeup revolution"
           ]
         },
         {
@@ -2310,46 +2198,6 @@
           "first_seen": 1791732211,
           "variant_count": 1,
           "variants": []
-        },
-        {
-          "title": "cherry cola hair gloss",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791732211,
-          "variant_count": 1,
-          "variants": []
-        },
-        {
-          "title": "beauty glazed lipstick shades",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791733552,
-          "variant_count": 4,
-          "variants": [
-            "beauty glazed lipstick",
-            "glazed lipstick",
-            "lipstick glazed donut"
-          ]
         },
         {
           "title": "peach fuzz ruining makeup",
@@ -2389,16 +2237,17 @@
           "verified_by_google_trends": false,
           "seen_count": 1,
           "first_seen": 1791733552,
-          "variant_count": 5,
+          "variant_count": 7,
           "variants": [
             "clean girl aesthetic makeup",
+            "clean girl aesthetic makeup bag",
             "clean girl aesthetic makeup brands",
             "clean girl aesthetic makeup look",
             "clean girl aesthetic makeup products"
           ]
         },
         {
-          "title": "espresso makeup vanity with lights",
+          "title": "glass skin snail cream",
           "hotness": 0.097,
           "score": 0.483,
           "demand": 0.25,
@@ -2412,56 +2261,14 @@
           "verified_by_google_trends": false,
           "seen_count": 1,
           "first_seen": 1791733552,
-          "variant_count": 6,
+          "variant_count": 8,
           "variants": [
-            "espresso makeup",
-            "espresso makeup brand",
-            "espresso makeup by mario",
-            "espresso makeup look",
-            "espresso makeup vanity"
+            "glass skin",
+            "glass skin facial",
+            "glass skin mask",
+            "glass skin products",
+            "glass skin routine"
           ]
-        },
-        {
-          "title": "strawberry makeup look korean",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791733552,
-          "variant_count": 6,
-          "variants": [
-            "strawberry makeup ideas",
-            "strawberry makeup look",
-            "strawberry makeup look for kids",
-            "strawberry makeup look halloween",
-            "strawberry makeup look step by step"
-          ]
-        },
-        {
-          "title": "glass skin serum",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791733552,
-          "variant_count": 1,
-          "variants": []
         },
         {
           "title": "matte blush cream trend it up 210",
@@ -2486,7 +2293,7 @@
           ]
         },
         {
-          "title": "glazed lips",
+          "title": "brown lip liner looks red on me",
           "hotness": 0.097,
           "score": 0.483,
           "demand": 0.25,
@@ -2500,19 +2307,199 @@
           "verified_by_google_trends": false,
           "seen_count": 1,
           "first_seen": 1791733643,
-          "variant_count": 1,
-          "variants": []
+          "variant_count": 6,
+          "variants": [
+            "brown lip liner combo",
+            "brown lip liner look 90s",
+            "brown lip liner nyx",
+            "brown lip liner stain",
+            "brown lip liner with gloss"
+          ]
+        },
+        {
+          "title": "glazed nails hailey bieber",
+          "hotness": 0.097,
+          "score": 0.483,
+          "demand": 0.25,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791733643,
+          "variant_count": 13,
+          "variants": [
+            "glazed donut nails",
+            "glazed donut nails brown",
+            "glazed donut nails chrome",
+            "glazed donut nails hailey bieber",
+            "glazed donut nails pink"
+          ]
         }
       ]
     },
     "nails_detail": {
       "label": "Nail trends",
       "why": "Nail art is a high-volume search vertical; seasonal designs (chrome, aura, milky) trend quarterly and macro detail sells.",
-      "nugget_count": 1,
+      "nugget_count": 27,
       "useful": true,
       "trends": [
         {
-          "title": "chrome nails french tip",
+          "title": "dark cherry red nails",
+          "hotness": 0.187,
+          "score": 0.933,
+          "demand": 1.0,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "pytrends_top"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": true,
+          "seen_count": 1,
+          "first_seen": 1791733643,
+          "variant_count": 3,
+          "variants": [
+            "black cherry nails",
+            "cherry mocha nails"
+          ]
+        },
+        {
+          "title": "burgundy nails",
+          "hotness": 0.133,
+          "score": 0.667,
+          "demand": 0.5,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "pytrends_rising",
+            "pytrends_top"
+          ],
+          "source_count": 2,
+          "verified_by_google_trends": true,
+          "seen_count": 1,
+          "first_seen": 1791733643,
+          "variant_count": 1,
+          "variants": []
+        },
+        {
+          "title": "gel nails at home",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791731326,
+          "variant_count": 6,
+          "variants": [
+            "gel nails",
+            "gel nails designs",
+            "gel nails ideas",
+            "gel nails kit",
+            "milky nails gel"
+          ]
+        },
+        {
+          "title": "nail designs for short nails",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791731326,
+          "variant_count": 2,
+          "variants": [
+            "chrome nails for summer"
+          ]
+        },
+        {
+          "title": "gel nails and spa",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791733643,
+          "variant_count": 1,
+          "variants": []
+        },
+        {
+          "title": "milky nails with chrome",
+          "hotness": 0.097,
+          "score": 0.483,
+          "demand": 0.25,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791733643,
+          "variant_count": 7,
+          "variants": [
+            "milky nails",
+            "milky nails 2026",
+            "milky nails color",
+            "milky nails encino",
+            "milky nails trend"
+          ]
+        },
+        {
+          "title": "chrome nails pink",
+          "hotness": 0.097,
+          "score": 0.483,
+          "demand": 0.25,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791733643,
+          "variant_count": 6,
+          "variants": [
+            "chrome nails",
+            "chrome nails 2026",
+            "chrome nails design",
+            "chrome nails french tip",
+            "chrome nails ideas"
+          ]
+        },
+        {
+          "title": "glazed donut nails french tip",
           "hotness": 0.097,
           "score": 0.483,
           "demand": 0.25,
@@ -2534,7 +2521,7 @@
     "drinks": {
       "label": "Drinks & cocktails",
       "why": "Beverage stock is a steady commercial vertical for bars/brands; craft mocktail + low-alb trends are rising.",
-      "nugget_count": 5,
+      "nugget_count": 7,
       "useful": true,
       "trends": [
         {
@@ -2554,6 +2541,26 @@
           "first_seen": 1791731326,
           "variant_count": 1,
           "variants": []
+        },
+        {
+          "title": "specialty coffee drink recipes",
+          "hotness": 0.097,
+          "score": 0.483,
+          "demand": 0.25,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791731326,
+          "variant_count": 2,
+          "variants": [
+            "specialty coffee drink ideas"
+          ]
         },
         {
           "title": "mocktail recipes",
@@ -2632,27 +2639,9 @@
     "colors": {
       "label": "Color trends",
       "why": "Color-of-the-year moments (butter yellow, mocha mousse) create instant demand for color-forward lifestyle stock.",
-      "nugget_count": 21,
+      "nugget_count": 31,
       "useful": true,
       "trends": [
-        {
-          "title": "dark cherry red nails",
-          "hotness": 0.187,
-          "score": 0.933,
-          "demand": 1.0,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "pytrends_top"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": true,
-          "seen_count": 1,
-          "first_seen": 1791733643,
-          "variant_count": 1,
-          "variants": []
-        },
         {
           "title": "butter yellow",
           "hotness": 0.175,
@@ -2669,13 +2658,60 @@
           "verified_by_google_trends": true,
           "seen_count": 1,
           "first_seen": 1791733643,
-          "variant_count": 15,
+          "variant_count": 18,
           "variants": [
+            "butter yellow bag",
             "butter yellow bridesmaid dresses",
             "butter yellow cake",
             "butter yellow color",
-            "butter yellow colour",
-            "butter yellow dress"
+            "butter yellow colour"
+          ]
+        },
+        {
+          "title": "mocha mousse hair color",
+          "hotness": 0.097,
+          "score": 0.483,
+          "demand": 0.25,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791731326,
+          "variant_count": 5,
+          "variants": [
+            "mocha mousse",
+            "mocha mousse cake",
+            "mocha mousse color",
+            "mocha mousse paint color"
+          ]
+        },
+        {
+          "title": "color of the year 2010",
+          "hotness": 0.097,
+          "score": 0.483,
+          "demand": 0.25,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791731326,
+          "variant_count": 7,
+          "variants": [
+            "color of the year",
+            "color of the year 2006",
+            "color of the year 2007",
+            "color of the year 2009",
+            "color of the year 2026"
           ]
         },
         {
@@ -2693,20 +2729,15 @@
           "verified_by_google_trends": false,
           "seen_count": 1,
           "first_seen": 1791733643,
-          "variant_count": 5,
-          "variants": [
-            "mocha mousse",
-            "mocha mousse cake",
-            "mocha mousse color",
-            "mocha mousse paint color"
-          ]
+          "variant_count": 1,
+          "variants": []
         }
       ]
     },
     "adult_lingerie": {
       "label": "Lingerie & intimate apparel (SFW commercial)",
       "why": "Lingerie sells steadily as SFW campaign stock (product, detail, fabric shots); body-positive and bridal-adjacent niches growing.",
-      "nugget_count": 16,
+      "nugget_count": 40,
       "useful": true,
       "trends": [
         {
@@ -2730,10 +2761,10 @@
           ]
         },
         {
-          "title": "silk lingerie dress",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
+          "title": "lace trim camisole crop top",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
           "approx_traffic": null,
           "state": "unknown",
           "slope": 0.0,
@@ -2743,9 +2774,108 @@
           "source_count": 1,
           "verified_by_google_trends": false,
           "seen_count": 1,
-          "first_seen": 1791731326,
-          "variant_count": 1,
-          "variants": []
+          "first_seen": 1791815467,
+          "variant_count": 7,
+          "variants": [
+            "lace trim camisole",
+            "lace trim camisole black",
+            "lace trim camisole dress",
+            "lace trim camisole top",
+            "lace trim camisole white"
+          ]
+        },
+        {
+          "title": "corset top outfit",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791732211,
+          "variant_count": 3,
+          "variants": [
+            "corset top outfit ideas",
+            "corset top outfit women"
+          ]
+        },
+        {
+          "title": "satin pyjama sets nightwear",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791815467,
+          "variant_count": 6,
+          "variants": [
+            "satin pyjama set",
+            "satin pyjama set long",
+            "satin pyjama set men",
+            "satin pyjama set pink",
+            "satin pyjama sets women"
+          ]
+        },
+        {
+          "title": "lace bodysuit plus size",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791732211,
+          "variant_count": 7,
+          "variants": [
+            "lace bodysuit",
+            "lace bodysuit full body",
+            "lace bodysuit long sleeve",
+            "lace bodysuit outfit",
+            "lace bodysuit white"
+          ]
+        },
+        {
+          "title": "silk slip dress white",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791732211,
+          "variant_count": 7,
+          "variants": [
+            "silk lingerie dress",
+            "silk slip dress",
+            "silk slip dress maxi",
+            "silk slip dress midi",
+            "silk slip dress mini"
+          ]
         },
         {
           "title": "lingerie sets for women",
@@ -2766,30 +2896,7 @@
           "variants": []
         },
         {
-          "title": "corset top outfit aesthetic",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "seen_count": 1,
-          "first_seen": 1791732211,
-          "variant_count": 5,
-          "variants": [
-            "corset top outfit",
-            "corset top outfit ideas",
-            "corset top outfit ideas black girl",
-            "corset top outfit women"
-          ]
-        },
-        {
-          "title": "lace bodysuit plus size",
+          "title": "silk robe set white",
           "hotness": 0.097,
           "score": 0.483,
           "demand": 0.25,
@@ -2805,11 +2912,11 @@
           "first_seen": 1791732211,
           "variant_count": 7,
           "variants": [
-            "lace bodysuit",
-            "lace bodysuit full body",
-            "lace bodysuit long sleeve",
-            "lace bodysuit outfit",
-            "lace bodysuit white"
+            "silk pajama set",
+            "silk pajama set women",
+            "silk robe set",
+            "silk robe set for men",
+            "silk robe set long"
           ]
         }
       ]
@@ -2912,9 +3019,27 @@
     "styles": {
       "label": "Aesthetic styles & subcultures",
       "why": "Named aesthetics (coquette, gorpcore, balletcore) drive search demand before filtering into mainstream fashion.",
-      "nugget_count": 12,
+      "nugget_count": 14,
       "useful": true,
       "trends": [
+        {
+          "title": "corset top outfit aesthetic",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "seen_count": 1,
+          "first_seen": 1791732211,
+          "variant_count": 1,
+          "variants": []
+        },
         {
           "title": "coquette style cake",
           "hotness": 0.097,
@@ -2930,13 +3055,13 @@
           "verified_by_google_trends": false,
           "seen_count": 1,
           "first_seen": 1791731326,
-          "variant_count": 6,
+          "variant_count": 7,
           "variants": [
             "coquette style",
+            "coquette style bedroom",
             "coquette style clothes",
             "coquette style dress",
-            "coquette style outfits",
-            "coquette style room"
+            "coquette style outfits"
           ]
         },
         {
@@ -3223,24 +3348,6 @@
           "variants": []
         },
         {
-          "title": "butter yellow sweater",
-          "hotness": 0.08,
-          "score": 0.399,
-          "demand": 0.11,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "pytrends_top"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": true,
-          "seen_count": 1,
-          "first_seen": 1791726919,
-          "variant_count": 1,
-          "variants": []
-        },
-        {
           "title": "corduroy hat",
           "hotness": 0.08,
           "score": 0.399,
@@ -3293,6 +3400,24 @@
           "first_seen": 1791726919,
           "variant_count": 1,
           "variants": []
+        },
+        {
+          "title": "corduroy fabric",
+          "hotness": 0.079,
+          "score": 0.393,
+          "demand": 0.1,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "pytrends_top"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": true,
+          "seen_count": 1,
+          "first_seen": 1791733643,
+          "variant_count": 1,
+          "variants": []
         }
       ],
       "provisional": [
@@ -3335,7 +3460,7 @@
           "state": "unknown"
         },
         {
-          "title": "anime cosplay",
+          "title": "lace trim camisole dress",
           "hotness": 0.115,
           "score": 0.573,
           "demand": 0.4,
@@ -3349,12 +3474,12 @@
           "verification_state": "unknown",
           "slope": 0.0,
           "seen_count": 1,
-          "first_seen": 1791733643,
-          "area": "costume_cosplay",
+          "first_seen": 1791732211,
+          "area": "adult_lingerie",
           "state": "unknown"
         },
         {
-          "title": "anime cosplay costumes",
+          "title": "corset top outfit",
           "hotness": 0.115,
           "score": 0.573,
           "demand": 0.4,
@@ -3368,12 +3493,12 @@
           "verification_state": "unknown",
           "slope": 0.0,
           "seen_count": 1,
-          "first_seen": 1791733643,
-          "area": "costume_cosplay",
+          "first_seen": 1791732211,
+          "area": "adult_lingerie",
           "state": "unknown"
         },
         {
-          "title": "anime cosplay ideas",
+          "title": "corset top outfit ideas",
           "hotness": 0.115,
           "score": 0.573,
           "demand": 0.4,
@@ -3387,12 +3512,12 @@
           "verification_state": "unknown",
           "slope": 0.0,
           "seen_count": 1,
-          "first_seen": 1791733643,
-          "area": "costume_cosplay",
+          "first_seen": 1791732211,
+          "area": "adult_lingerie",
           "state": "unknown"
         },
         {
-          "title": "anime cosplay female",
+          "title": "corset top outfit women",
           "hotness": 0.115,
           "score": 0.573,
           "demand": 0.4,
@@ -3406,12 +3531,12 @@
           "verification_state": "unknown",
           "slope": 0.0,
           "seen_count": 1,
-          "first_seen": 1791733643,
-          "area": "costume_cosplay",
+          "first_seen": 1791732211,
+          "area": "adult_lingerie",
           "state": "unknown"
         },
         {
-          "title": "anime cosplay men",
+          "title": "corset top outfit aesthetic",
           "hotness": 0.115,
           "score": 0.573,
           "demand": 0.4,
@@ -3425,12 +3550,12 @@
           "verification_state": "unknown",
           "slope": 0.0,
           "seen_count": 1,
-          "first_seen": 1791733643,
-          "area": "costume_cosplay",
+          "first_seen": 1791732211,
+          "area": "styles",
           "state": "unknown"
         },
         {
-          "title": "anime cosplay store",
+          "title": "satin pyjama set",
           "hotness": 0.115,
           "score": 0.573,
           "demand": 0.4,
@@ -3444,12 +3569,12 @@
           "verification_state": "unknown",
           "slope": 0.0,
           "seen_count": 1,
-          "first_seen": 1791733643,
-          "area": "costume_cosplay",
+          "first_seen": 1791732211,
+          "area": "adult_lingerie",
           "state": "unknown"
         },
         {
-          "title": "anime cosplay girl",
+          "title": "satin pyjama set men",
           "hotness": 0.115,
           "score": 0.573,
           "demand": 0.4,
@@ -3463,12 +3588,12 @@
           "verification_state": "unknown",
           "slope": 0.0,
           "seen_count": 1,
-          "first_seen": 1791733643,
-          "area": "costume_cosplay",
+          "first_seen": 1791732211,
+          "area": "adult_lingerie",
           "state": "unknown"
         },
         {
-          "title": "halloween costume trends 2026",
+          "title": "satin pyjama set long",
           "hotness": 0.115,
           "score": 0.573,
           "demand": 0.4,
@@ -3482,26 +3607,67 @@
           "verification_state": "unknown",
           "slope": 0.0,
           "seen_count": 1,
-          "first_seen": 1791733643,
-          "area": "costume_cosplay",
+          "first_seen": 1791732211,
+          "area": "adult_lingerie",
           "state": "unknown"
         }
       ],
       "area_yields": {
-        "autumn_fashion": 51,
+        "autumn_fashion": 50,
         "teen_fashion": 14,
         "linen_summer": 14,
-        "styles": 12,
+        "styles": 14,
         "yellow_color": 3,
-        "adult_lingerie": 16,
+        "adult_lingerie": 40,
         "costume_cosplay": 18
       }
     },
     "beauty": {
-      "trends": [],
+      "trends": [
+        {
+          "title": "dark cherry red nails",
+          "hotness": 0.187,
+          "score": 0.933,
+          "demand": 1.0,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "pytrends_top"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": true,
+          "seen_count": 1,
+          "first_seen": 1791733643,
+          "variant_count": 3,
+          "variants": [
+            "black cherry nails",
+            "cherry mocha nails"
+          ]
+        },
+        {
+          "title": "burgundy nails",
+          "hotness": 0.133,
+          "score": 0.667,
+          "demand": 0.5,
+          "approx_traffic": null,
+          "state": "unknown",
+          "slope": 0.0,
+          "sources": [
+            "pytrends_rising",
+            "pytrends_top"
+          ],
+          "source_count": 2,
+          "verified_by_google_trends": true,
+          "seen_count": 1,
+          "first_seen": 1791733643,
+          "variant_count": 1,
+          "variants": []
+        }
+      ],
       "provisional": [
         {
-          "title": "nail designs",
+          "title": "gel nails at home",
           "hotness": 0.115,
           "score": 0.573,
           "demand": 0.4,
@@ -3516,11 +3682,11 @@
           "slope": 0.0,
           "seen_count": 1,
           "first_seen": 1791731326,
-          "area": "beauty_makeup",
+          "area": "nails_detail",
           "state": "unknown"
         },
         {
-          "title": "nail designs 2026",
+          "title": "gel nails kit",
           "hotness": 0.115,
           "score": 0.573,
           "demand": 0.4,
@@ -3535,26 +3701,7 @@
           "slope": 0.0,
           "seen_count": 1,
           "first_seen": 1791731326,
-          "area": "beauty_makeup",
-          "state": "unknown"
-        },
-        {
-          "title": "nail designs for summer",
-          "hotness": 0.115,
-          "score": 0.573,
-          "demand": 0.4,
-          "freshness": 1.0,
-          "approx_traffic": null,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "verification_state": "unknown",
-          "slope": 0.0,
-          "seen_count": 1,
-          "first_seen": 1791731326,
-          "area": "beauty_makeup",
+          "area": "nails_detail",
           "state": "unknown"
         },
         {
@@ -3573,64 +3720,7 @@
           "slope": 0.0,
           "seen_count": 1,
           "first_seen": 1791731326,
-          "area": "beauty_makeup",
-          "state": "unknown"
-        },
-        {
-          "title": "nail designs for fall",
-          "hotness": 0.115,
-          "score": 0.573,
-          "demand": 0.4,
-          "freshness": 1.0,
-          "approx_traffic": null,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "verification_state": "unknown",
-          "slope": 0.0,
-          "seen_count": 1,
-          "first_seen": 1791731326,
-          "area": "beauty_makeup",
-          "state": "unknown"
-        },
-        {
-          "title": "nail designs simple",
-          "hotness": 0.115,
-          "score": 0.573,
-          "demand": 0.4,
-          "freshness": 1.0,
-          "approx_traffic": null,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "verification_state": "unknown",
-          "slope": 0.0,
-          "seen_count": 1,
-          "first_seen": 1791731326,
-          "area": "beauty_makeup",
-          "state": "unknown"
-        },
-        {
-          "title": "nail trends right now",
-          "hotness": 0.115,
-          "score": 0.573,
-          "demand": 0.4,
-          "freshness": 1.0,
-          "approx_traffic": null,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "verification_state": "unknown",
-          "slope": 0.0,
-          "seen_count": 1,
-          "first_seen": 1791731326,
-          "area": "beauty_makeup",
+          "area": "nails_detail",
           "state": "unknown"
         },
         {
@@ -3653,7 +3743,7 @@
           "state": "unknown"
         },
         {
-          "title": "dewy skin look",
+          "title": "glazed lipstick",
           "hotness": 0.115,
           "score": 0.573,
           "demand": 0.4,
@@ -3667,12 +3757,12 @@
           "verification_state": "unknown",
           "slope": 0.0,
           "seen_count": 1,
-          "first_seen": 1791733643,
+          "first_seen": 1791733552,
           "area": "beauty_makeup",
           "state": "unknown"
         },
         {
-          "title": "dewy skin look products",
+          "title": "lipstick glazed donut",
           "hotness": 0.115,
           "score": 0.573,
           "demand": 0.4,
@@ -3686,15 +3776,91 @@
           "verification_state": "unknown",
           "slope": 0.0,
           "seen_count": 1,
-          "first_seen": 1791733643,
+          "first_seen": 1791733552,
+          "area": "beauty_makeup",
+          "state": "unknown"
+        },
+        {
+          "title": "beauty glazed lipstick",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "freshness": 1.0,
+          "approx_traffic": null,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "verification_state": "unknown",
+          "slope": 0.0,
+          "seen_count": 1,
+          "first_seen": 1791733552,
+          "area": "beauty_makeup",
+          "state": "unknown"
+        },
+        {
+          "title": "beauty glazed lipstick shades",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "freshness": 1.0,
+          "approx_traffic": null,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "verification_state": "unknown",
+          "slope": 0.0,
+          "seen_count": 1,
+          "first_seen": 1791733552,
+          "area": "beauty_makeup",
+          "state": "unknown"
+        },
+        {
+          "title": "soap brows",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "freshness": 1.0,
+          "approx_traffic": null,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "verification_state": "unknown",
+          "slope": 0.0,
+          "seen_count": 1,
+          "first_seen": 1791733552,
+          "area": "beauty_makeup",
+          "state": "unknown"
+        },
+        {
+          "title": "soap brows trend",
+          "hotness": 0.115,
+          "score": 0.573,
+          "demand": 0.4,
+          "freshness": 1.0,
+          "approx_traffic": null,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "verification_state": "unknown",
+          "slope": 0.0,
+          "seen_count": 1,
+          "first_seen": 1791733552,
           "area": "beauty_makeup",
           "state": "unknown"
         }
       ],
       "area_yields": {
-        "beauty_makeup": 73,
-        "nails_detail": 1,
-        "hairstyles": 52
+        "beauty_makeup": 112,
+        "nails_detail": 27,
+        "hairstyles": 60
       }
     },
     "interiors": {
@@ -3726,7 +3892,7 @@
       ],
       "provisional": [
         {
-          "title": "coquette style bedroom",
+          "title": "bedroom decor ideas",
           "hotness": 0.097,
           "score": 0.483,
           "demand": 0.25,
@@ -3745,25 +3911,6 @@
           "state": "unknown"
         },
         {
-          "title": "bedroom decor ideas",
-          "hotness": 0.097,
-          "score": 0.483,
-          "demand": 0.25,
-          "freshness": 1.0,
-          "approx_traffic": null,
-          "sources": [
-            "google_autocomplete"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": false,
-          "verification_state": "unknown",
-          "slope": 0.0,
-          "seen_count": 1,
-          "first_seen": 1791731326,
-          "area": "warm_kitchen",
-          "state": "unknown"
-        },
-        {
           "title": "bedroom decor",
           "hotness": 0.097,
           "score": 0.483,
@@ -3779,7 +3926,7 @@
           "slope": 0.0,
           "seen_count": 1,
           "first_seen": 1791731326,
-          "area": "warm_kitchen",
+          "area": "interiors",
           "state": "unknown"
         },
         {
@@ -3798,7 +3945,7 @@
           "slope": 0.0,
           "seen_count": 1,
           "first_seen": 1791731326,
-          "area": "warm_kitchen",
+          "area": "interiors",
           "state": "unknown"
         },
         {
@@ -3817,7 +3964,7 @@
           "slope": 0.0,
           "seen_count": 1,
           "first_seen": 1791731326,
-          "area": "warm_kitchen",
+          "area": "interiors",
           "state": "unknown"
         },
         {
@@ -3836,7 +3983,7 @@
           "slope": 0.0,
           "seen_count": 1,
           "first_seen": 1791731326,
-          "area": "warm_kitchen",
+          "area": "interiors",
           "state": "unknown"
         },
         {
@@ -3855,7 +4002,7 @@
           "slope": 0.0,
           "seen_count": 1,
           "first_seen": 1791731326,
-          "area": "warm_kitchen",
+          "area": "interiors",
           "state": "unknown"
         },
         {
@@ -3874,7 +4021,7 @@
           "slope": 0.0,
           "seen_count": 1,
           "first_seen": 1791731326,
-          "area": "warm_kitchen",
+          "area": "interiors",
           "state": "unknown"
         },
         {
@@ -3914,36 +4061,56 @@
           "first_seen": 1791731326,
           "area": "interiors",
           "state": "unknown"
+        },
+        {
+          "title": "living room ideas decor",
+          "hotness": 0.097,
+          "score": 0.483,
+          "demand": 0.25,
+          "freshness": 1.0,
+          "approx_traffic": null,
+          "sources": [
+            "google_autocomplete"
+          ],
+          "source_count": 1,
+          "verified_by_google_trends": false,
+          "verification_state": "unknown",
+          "slope": 0.0,
+          "seen_count": 1,
+          "first_seen": 1791731326,
+          "area": "interiors",
+          "state": "unknown"
         }
       ],
       "area_yields": {
-        "warm_kitchen": 49,
+        "warm_kitchen": 39,
         "interiors": 15
       }
     },
     "food_drinks": {
       "trends": [
         {
-          "title": "iced latte",
-          "hotness": 0.187,
-          "score": 0.933,
-          "demand": 1.0,
+          "title": "iced matcha latte zu sp\u00e4t beim pilates",
+          "hotness": 0.175,
+          "score": 0.873,
+          "demand": 0.9,
           "approx_traffic": null,
           "state": "unknown",
           "slope": 0.0,
           "sources": [
-            "pytrends_top"
+            "pytrends_rising"
           ],
           "source_count": 1,
           "verified_by_google_trends": true,
           "seen_count": 1,
-          "first_seen": 1791733643,
-          "variant_count": 5,
+          "first_seen": 1791727408,
+          "variant_count": 6,
           "variants": [
             "dunkin donuts iced matcha latte",
+            "iced matcha calories",
             "iced matcha latte calories",
-            "iced matcha latte zu sp\u00e4t beim pilates",
-            "latte"
+            "iced strawberry matcha",
+            "strawberry iced matcha"
           ]
         },
         {
@@ -3961,12 +4128,8 @@
           "verified_by_google_trends": true,
           "seen_count": 1,
           "first_seen": 1791727408,
-          "variant_count": 4,
-          "variants": [
-            "iced matcha calories",
-            "iced strawberry matcha",
-            "strawberry iced matcha"
-          ]
+          "variant_count": 1,
+          "variants": []
         },
         {
           "title": "strawberry matcha",
@@ -4198,9 +4361,9 @@
         }
       ],
       "area_yields": {
-        "matcha_drinks": 24,
+        "matcha_drinks": 14,
         "street_food": 10,
-        "drinks": 5
+        "drinks": 7
       }
     },
     "lifestyle": {
@@ -4230,24 +4393,6 @@
           ]
         },
         {
-          "title": "dark cherry red nails",
-          "hotness": 0.187,
-          "score": 0.933,
-          "demand": 1.0,
-          "approx_traffic": null,
-          "state": "unknown",
-          "slope": 0.0,
-          "sources": [
-            "pytrends_top"
-          ],
-          "source_count": 1,
-          "verified_by_google_trends": true,
-          "seen_count": 1,
-          "first_seen": 1791733643,
-          "variant_count": 1,
-          "variants": []
-        },
-        {
           "title": "butter yellow",
           "hotness": 0.175,
           "score": 0.877,
@@ -4263,7 +4408,7 @@
           "verified_by_google_trends": true,
           "seen_count": 1,
           "first_seen": 1791733643,
-          "variant_count": 14,
+          "variant_count": 15,
           "variants": [
             "butter yellow bag",
             "butter yellow cake",
@@ -4524,8 +4669,8 @@
         "travel": 110,
         "gadgets": 77,
         "accessories": 2,
-        "crochet_craft": 32,
-        "colors": 21
+        "crochet_craft": 29,
+        "colors": 31
       }
     }
   },
@@ -4547,6 +4692,166 @@
       "volume": null
     },
     {
+      "title": "lace trim camisole top zara",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "corset top outfit ideas black girl",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "corset top outfit inspo",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "corset top outfits pinterest",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "corset top outfit ideas pinterest",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "bridal lingerie near me",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "satin pyjama set woolworths",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "satin pyjama set woolworths price",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "strapless bra trending",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "strapless bra trendyol",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "trendy strapless bra",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "strapless bra that stays up",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "strapless bra uses",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "strapless bra ideas",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "lace bodysuit near me",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "silk slip dresses for women",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "silk slip dress near me",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "cold girl makeup tutorial",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "cold girl makeup pinterest",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
+      "title": "cold girl makeup tiktok",
+      "signals": [
+        "autocomplete_new"
+      ],
+      "growth": null,
+      "volume": null
+    },
+    {
       "title": "glaze lipstick maybelline",
       "signals": [
         "autocomplete_new"
@@ -4555,7 +4860,7 @@
       "volume": null
     },
     {
-      "title": "brown lip liner look",
+      "title": "glaze lipstick club monaco",
       "signals": [
         "autocomplete_new"
       ],
@@ -4563,7 +4868,7 @@
       "volume": null
     },
     {
-      "title": "brown lip liner looks bad",
+      "title": "brown lip liner",
       "signals": [
         "autocomplete_new"
       ],
@@ -4571,7 +4876,7 @@
       "volume": null
     },
     {
-      "title": "brown lip liner looks bad on me",
+      "title": "brown lip liner walmart",
       "signals": [
         "autocomplete_new"
       ],
@@ -4579,7 +4884,7 @@
       "volume": null
     },
     {
-      "title": "brown lip liner looks bad reddit",
+      "title": "laminated brows before and after",
       "signals": [
         "autocomplete_new"
       ],
@@ -4587,7 +4892,7 @@
       "volume": null
     },
     {
-      "title": "brown lip liner look black girl",
+      "title": "laminated brows near me",
       "signals": [
         "autocomplete_new"
       ],
@@ -4595,7 +4900,7 @@
       "volume": null
     },
     {
-      "title": "brown lip liner tips",
+      "title": "laminated brows meaning",
       "signals": [
         "autocomplete_new"
       ],
@@ -4627,7 +4932,7 @@
       "volume": null
     },
     {
-      "title": "peach fuzz makeup reddit",
+      "title": "soap brows before and after",
       "signals": [
         "autocomplete_new"
       ],
@@ -4635,7 +4940,7 @@
       "volume": null
     },
     {
-      "title": "clean girl aesthetic makeup tutorial",
+      "title": "soap brows selena gomez",
       "signals": [
         "autocomplete_new"
       ],
@@ -4643,7 +4948,7 @@
       "volume": null
     },
     {
-      "title": "clean girl aesthetic makeup pinterest",
+      "title": "doe eyes makeup tutorial",
       "signals": [
         "autocomplete_new"
       ],
@@ -4651,7 +4956,7 @@
       "volume": null
     },
     {
-      "title": "espresso makeup tutorial",
+      "title": "doe eyes makeup pinterest",
       "signals": [
         "autocomplete_new"
       ],
@@ -4659,7 +4964,7 @@
       "volume": null
     },
     {
-      "title": "chrome nails near me",
+      "title": "doe eyes makeup tiktok",
       "signals": [
         "autocomplete_new"
       ],
@@ -4667,7 +4972,7 @@
       "volume": null
     },
     {
-      "title": "strawberry makeup look pinterest",
+      "title": "doe eyes makeup reddit",
       "signals": [
         "autocomplete_new"
       ],
@@ -4675,7 +4980,7 @@
       "volume": null
     },
     {
-      "title": "strawberry makeup tutorial",
+      "title": "siren eyes vs doe eyes",
       "signals": [
         "autocomplete_new"
       ],
@@ -4683,167 +4988,7 @@
       "volume": null
     },
     {
-      "title": "cream.blush trend",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "cream blush trend it up",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "dewy cream blush trend it up",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "pastel cream blush trendyol",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "dewy skin looks oily",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "dewy skin look reddit",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "dewy skin looks gross",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "dewy skin looks oily reddit",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "latte makeup tutorial",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "latte makeup pinterest",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "smart home sensors list",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "smart home sensors for the elderly",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "smart home sensoren",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "smart home sensors insurance",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "smart home sensors honey insurance",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "action camera rocklin",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "action camera near me",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "e-reader pokemon cards",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "e-readers not kindle",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "e-reader cards",
-      "signals": [
-        "autocomplete_new"
-      ],
-      "growth": null,
-      "volume": null
-    },
-    {
-      "title": "e-readers amazon kindle",
+      "title": "siren eyes meaning",
       "signals": [
         "autocomplete_new"
       ],
@@ -5039,45 +5184,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": "colors",
-      "state": "unknown"
-    },
-    {
-      "title": "iced latte",
-      "hotness": 0.187,
-      "score": 0.933,
-      "demand": 1.0,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "pytrends_top"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": true,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": "matcha_drinks",
-      "state": "unknown"
-    },
-    {
-      "title": "latte",
-      "hotness": 0.187,
-      "score": 0.933,
-      "demand": 1.0,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "pytrends_top"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": true,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": "matcha_drinks",
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -5288,7 +5395,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -5383,7 +5490,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -5862,7 +5969,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -6223,7 +6330,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791726919,
-      "area": "crochet_craft",
+      "area": "colors",
       "state": "unknown"
     },
     {
@@ -6413,7 +6520,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791726919,
-      "area": "autumn_fashion",
+      "area": "colors",
       "state": "unknown"
     },
     {
@@ -6871,7 +6978,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -6890,7 +6997,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -6909,7 +7016,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "beauty_makeup",
+      "area": null,
       "state": "unknown"
     },
     {
@@ -6928,7 +7035,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "beauty_makeup",
+      "area": null,
       "state": "unknown"
     },
     {
@@ -6947,7 +7054,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "beauty_makeup",
+      "area": null,
       "state": "unknown"
     },
     {
@@ -6966,7 +7073,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "beauty_makeup",
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -6985,7 +7092,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "beauty_makeup",
+      "area": null,
       "state": "unknown"
     },
     {
@@ -7004,7 +7111,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "beauty_makeup",
+      "area": null,
       "state": "unknown"
     },
     {
@@ -7023,7 +7130,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "beauty_makeup",
+      "area": null,
       "state": "unknown"
     },
     {
@@ -7042,6 +7149,861 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "lace trim camisole dress",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "corset top outfit",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "corset top outfit ideas",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "corset top outfit women",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "corset top outfit aesthetic",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "styles",
+      "state": "unknown"
+    },
+    {
+      "title": "satin pyjama set",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "satin pyjama set men",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "satin pyjama set long",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "satin pyjama set pink",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "lace bodysuit",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "lace bodysuit long sleeve",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "lace bodysuit women",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "lace bodysuit full body",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "lace bodysuit outfit",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "lace bodysuit white",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "lace bodysuit plus size",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "silk slip dress",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "silk slip dress mini",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "silk slip dress maxi",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "silk slip dress midi",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "silk slip dress with lace",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "silk slip dress white",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791732211,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "glazed lipstick",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "glaze lipstick mac",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": null,
+      "state": "unknown"
+    },
+    {
+      "title": "lipstick glazed donut",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "beauty glazed lipstick",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "beauty glazed lipstick shades",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "soap brows",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "soap brows trend",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "soap brows product",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "espresso makeup",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "espresso makeup vanity",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "espresso makeup look",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "espresso makeup brand",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "espresso makeup by mario",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "espresso makeup bag",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "espresso makeup vanity with lights",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "strawberry makeup look",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "latte makeup",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "latte makeup look",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "latte makeup trend",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "latte makeup products",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "latte makeup on brown skin",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "latte makeup fair skin",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733552,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "glazed lips",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791733643,
       "area": "beauty_makeup",
       "state": "unknown"
     },
@@ -7479,7 +8441,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -7498,7 +8460,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -7517,7 +8479,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -7536,7 +8498,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -7749,25 +8711,6 @@
       "state": "unknown"
     },
     {
-      "title": "viral foods",
-      "hotness": 0.115,
-      "score": 0.573,
-      "demand": 0.4,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
-      "state": "unknown"
-    },
-    {
       "title": "viral food trends",
       "hotness": 0.115,
       "score": 0.573,
@@ -7860,44 +8803,6 @@
       "seen_count": 1,
       "first_seen": 1791733643,
       "area": "street_food",
-      "state": "unknown"
-    },
-    {
-      "title": "food trends catering & events",
-      "hotness": 0.115,
-      "score": 0.573,
-      "demand": 0.4,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "food trends right now",
-      "hotness": 0.115,
-      "score": 0.573,
-      "demand": 0.4,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
       "state": "unknown"
     },
     {
@@ -7996,6 +8901,158 @@
       "state": "unknown"
     },
     {
+      "title": "lace trim camisole",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "lace trim camisole top",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "lace trim camisole white",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "lace trim camisole black",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "lace trim camisole witchery",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "lace trim camisole crop top",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "satin pyjama sets women",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
+      "title": "satin pyjama sets nightwear",
+      "hotness": 0.115,
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "adult_lingerie",
+      "state": "unknown"
+    },
+    {
       "title": "yellow outfit for baby boy",
       "hotness": 0.097,
       "score": 0.483,
@@ -8068,7 +9125,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "beauty_makeup",
+      "area": "colors",
       "state": "unknown"
     },
     {
@@ -8201,7 +9258,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "interiors",
+      "area": "styles",
       "state": "unknown"
     },
     {
@@ -8296,7 +9353,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "hairstyles",
+      "area": "colors",
       "state": "unknown"
     },
     {
@@ -8372,7 +9429,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": null,
+      "area": "colors",
       "state": "unknown"
     },
     {
@@ -8391,7 +9448,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": null,
+      "area": "colors",
       "state": "unknown"
     },
     {
@@ -8410,7 +9467,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": null,
+      "area": "colors",
       "state": "unknown"
     },
     {
@@ -8429,7 +9486,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": null,
+      "area": "colors",
       "state": "unknown"
     },
     {
@@ -8448,7 +9505,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": null,
+      "area": "colors",
       "state": "unknown"
     },
     {
@@ -8467,7 +9524,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": null,
+      "area": "colors",
       "state": "unknown"
     },
     {
@@ -8486,7 +9543,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": null,
+      "area": "colors",
       "state": "unknown"
     },
     {
@@ -8885,7 +9942,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "warm_kitchen",
+      "area": "interiors",
       "state": "unknown"
     },
     {
@@ -8904,7 +9961,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "warm_kitchen",
+      "area": "interiors",
       "state": "unknown"
     },
     {
@@ -8923,7 +9980,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "warm_kitchen",
+      "area": "interiors",
       "state": "unknown"
     },
     {
@@ -8942,7 +9999,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "warm_kitchen",
+      "area": "interiors",
       "state": "unknown"
     },
     {
@@ -8961,7 +10018,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "warm_kitchen",
+      "area": "interiors",
       "state": "unknown"
     },
     {
@@ -8980,7 +10037,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "warm_kitchen",
+      "area": "interiors",
       "state": "unknown"
     },
     {
@@ -8999,7 +10056,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "warm_kitchen",
+      "area": "interiors",
       "state": "unknown"
     },
     {
@@ -9056,7 +10113,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "warm_kitchen",
+      "area": "interiors",
       "state": "unknown"
     },
     {
@@ -9189,7 +10246,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "warm_kitchen",
+      "area": "interiors",
       "state": "unknown"
     },
     {
@@ -9227,7 +10284,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "warm_kitchen",
+      "area": "interiors",
       "state": "unknown"
     },
     {
@@ -9284,7 +10341,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "matcha_drinks",
+      "area": "drinks",
       "state": "unknown"
     },
     {
@@ -9360,7 +10417,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791731326,
-      "area": "matcha_drinks",
+      "area": "drinks",
       "state": "unknown"
     },
     {
@@ -10139,7 +11196,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": null,
+      "area": "adult_lingerie",
       "state": "unknown"
     },
     {
@@ -10158,7 +11215,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": null,
+      "area": "adult_lingerie",
       "state": "unknown"
     },
     {
@@ -10177,7 +11234,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": null,
+      "area": "adult_lingerie",
       "state": "unknown"
     },
     {
@@ -10196,7 +11253,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": null,
+      "area": "adult_lingerie",
       "state": "unknown"
     },
     {
@@ -10215,7 +11272,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": null,
+      "area": "adult_lingerie",
       "state": "unknown"
     },
     {
@@ -10234,7 +11291,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": null,
+      "area": "adult_lingerie",
       "state": "unknown"
     },
     {
@@ -10253,444 +11310,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "lace trim camisole dress",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "corset top outfit",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
       "area": "adult_lingerie",
-      "state": "unknown"
-    },
-    {
-      "title": "corset top outfit ideas",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": "adult_lingerie",
-      "state": "unknown"
-    },
-    {
-      "title": "corset top outfit ideas black girl",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": "adult_lingerie",
-      "state": "unknown"
-    },
-    {
-      "title": "corset top outfit women",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": "adult_lingerie",
-      "state": "unknown"
-    },
-    {
-      "title": "corset top outfit aesthetic",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": "adult_lingerie",
-      "state": "unknown"
-    },
-    {
-      "title": "satin pyjama set",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "satin pyjama set men",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "satin pyjama set long",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "satin pyjama set pink",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "lace bodysuit",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": "adult_lingerie",
-      "state": "unknown"
-    },
-    {
-      "title": "lace bodysuit long sleeve",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": "adult_lingerie",
-      "state": "unknown"
-    },
-    {
-      "title": "lace bodysuit women",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": "adult_lingerie",
-      "state": "unknown"
-    },
-    {
-      "title": "lace bodysuit full body",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": "adult_lingerie",
-      "state": "unknown"
-    },
-    {
-      "title": "lace bodysuit outfit",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": "adult_lingerie",
-      "state": "unknown"
-    },
-    {
-      "title": "lace bodysuit white",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": "adult_lingerie",
-      "state": "unknown"
-    },
-    {
-      "title": "lace bodysuit plus size",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": "adult_lingerie",
-      "state": "unknown"
-    },
-    {
-      "title": "silk slip dress",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "silk slip dress mini",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "silk slip dress maxi",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "silk slip dress midi",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "silk slip dress with lace",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "silk slip dress white",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791732211,
-      "area": null,
       "state": "unknown"
     },
     {
@@ -10842,7 +11462,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": "beauty_makeup",
+      "area": null,
       "state": "unknown"
     },
     {
@@ -11260,7 +11880,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": "interiors",
+      "area": "hairstyles",
       "state": "unknown"
     },
     {
@@ -11393,7 +12013,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": "interiors",
+      "area": "hairstyles",
       "state": "unknown"
     },
     {
@@ -11412,7 +12032,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": "interiors",
+      "area": "hairstyles",
       "state": "unknown"
     },
     {
@@ -11431,7 +12051,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": "interiors",
+      "area": "hairstyles",
       "state": "unknown"
     },
     {
@@ -11450,7 +12070,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": "interiors",
+      "area": "hairstyles",
       "state": "unknown"
     },
     {
@@ -11469,7 +12089,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": "interiors",
+      "area": "hairstyles",
       "state": "unknown"
     },
     {
@@ -11488,7 +12108,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": "interiors",
+      "area": "hairstyles",
       "state": "unknown"
     },
     {
@@ -11507,7 +12127,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": "interiors",
+      "area": "hairstyles",
       "state": "unknown"
     },
     {
@@ -11526,7 +12146,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791732211,
-      "area": "interiors",
+      "area": "hairstyles",
       "state": "unknown"
     },
     {
@@ -11603,215 +12223,6 @@
       "seen_count": 1,
       "first_seen": 1791732211,
       "area": "hairstyles",
-      "state": "unknown"
-    },
-    {
-      "title": "glazed lipstick",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
-      "title": "glaze lipstick mac",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "glaze lipstick club monaco",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "lipstick glazed donut",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
-      "title": "beauty glazed lipstick",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
-      "title": "beauty glazed lipstick shades",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
-      "title": "soap brows",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "soap brows trend",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "soap brows product",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "soap brows before and after",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "soap brows selena gomez",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": null,
       "state": "unknown"
     },
     {
@@ -12039,144 +12450,11 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733552,
-      "area": "crochet_craft",
+      "area": "beauty_makeup",
       "state": "unknown"
     },
     {
       "title": "clean girl aesthetic makeup routine",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
-      "title": "espresso makeup",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
-      "title": "espresso makeup vanity",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
-      "title": "espresso makeup look",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
-      "title": "espresso makeup brand",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
-      "title": "espresso makeup by mario",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
-      "title": "espresso makeup bag",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "crochet_craft",
-      "state": "unknown"
-    },
-    {
-      "title": "espresso makeup vanity with lights",
       "hotness": 0.097,
       "score": 0.483,
       "demand": 0.25,
@@ -12210,7 +12488,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733552,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -12229,7 +12507,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733552,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -12248,26 +12526,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733552,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "strawberry makeup look",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "beauty_makeup",
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -12381,7 +12640,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733552,
-      "area": null,
+      "area": "beauty_makeup",
       "state": "unknown"
     },
     {
@@ -12400,7 +12659,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733552,
-      "area": null,
+      "area": "beauty_makeup",
       "state": "unknown"
     },
     {
@@ -12419,7 +12678,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733552,
-      "area": null,
+      "area": "beauty_makeup",
       "state": "unknown"
     },
     {
@@ -12438,7 +12697,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733552,
-      "area": null,
+      "area": "beauty_makeup",
       "state": "unknown"
     },
     {
@@ -12476,7 +12735,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733552,
-      "area": null,
+      "area": "beauty_makeup",
       "state": "unknown"
     },
     {
@@ -12495,7 +12754,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733552,
-      "area": null,
+      "area": "beauty_makeup",
       "state": "unknown"
     },
     {
@@ -12514,7 +12773,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733552,
-      "area": null,
+      "area": "beauty_makeup",
       "state": "unknown"
     },
     {
@@ -12572,120 +12831,6 @@
       "seen_count": 1,
       "first_seen": 1791733552,
       "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
-      "title": "latte makeup",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "matcha_drinks",
-      "state": "unknown"
-    },
-    {
-      "title": "latte makeup look",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "matcha_drinks",
-      "state": "unknown"
-    },
-    {
-      "title": "latte makeup trend",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "matcha_drinks",
-      "state": "unknown"
-    },
-    {
-      "title": "latte makeup products",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "matcha_drinks",
-      "state": "unknown"
-    },
-    {
-      "title": "latte makeup on brown skin",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "matcha_drinks",
-      "state": "unknown"
-    },
-    {
-      "title": "latte makeup fair skin",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733552,
-      "area": "matcha_drinks",
       "state": "unknown"
     },
     {
@@ -13297,25 +13442,6 @@
       "state": "unknown"
     },
     {
-      "title": "glazed lips",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
       "title": "brown lip liner looks red on me",
       "hotness": 0.097,
       "score": 0.483,
@@ -13369,7 +13495,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -13388,7 +13514,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -13407,7 +13533,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -13426,7 +13552,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -13445,7 +13571,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -13464,7 +13590,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -13483,7 +13609,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -13502,7 +13628,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -13521,7 +13647,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -13540,7 +13666,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -13578,7 +13704,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": null,
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -13749,7 +13875,7 @@
       "slope": 0.0,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "area": "beauty_makeup",
+      "area": "nails_detail",
       "state": "unknown"
     },
     {
@@ -13883,25 +14009,6 @@
       "seen_count": 1,
       "first_seen": 1791733643,
       "area": "gadgets",
-      "state": "unknown"
-    },
-    {
-      "title": "e-readers kindle",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
       "state": "unknown"
     },
     {
@@ -16014,44 +16121,6 @@
       "state": "unknown"
     },
     {
-      "title": "albanian riviera",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "albanian riviera beaches",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
-      "state": "unknown"
-    },
-    {
       "title": "albanian riviera albania",
       "hotness": 0.097,
       "score": 0.483,
@@ -16068,44 +16137,6 @@
       "seen_count": 1,
       "first_seen": 1791733643,
       "area": "travel",
-      "state": "unknown"
-    },
-    {
-      "title": "albanian riviera hotels",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "albanian riviera real estate",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
       "state": "unknown"
     },
     {
@@ -16467,44 +16498,6 @@
       "seen_count": 1,
       "first_seen": 1791733643,
       "area": "travel",
-      "state": "unknown"
-    },
-    {
-      "title": "hairstyles fall 2026 women",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "silk slip dresses for women",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
       "state": "unknown"
     },
     {
@@ -17097,63 +17090,6 @@
       "state": "unknown"
     },
     {
-      "title": "yellow outfits women",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "yellow outfits men",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
-      "state": "unknown"
-    },
-    {
-      "title": "yellow dresses for weddings",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
-      "state": "unknown"
-    },
-    {
       "title": "butter yellow bridesmaid dresses",
       "hotness": 0.097,
       "score": 0.483,
@@ -17439,25 +17375,6 @@
       "state": "unknown"
     },
     {
-      "title": "lip oil cosmetics",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
       "title": "is lip oil makeup or skincare",
       "hotness": 0.097,
       "score": 0.483,
@@ -17588,25 +17505,6 @@
       "seen_count": 1,
       "first_seen": 1791733643,
       "area": "beauty_makeup",
-      "state": "unknown"
-    },
-    {
-      "title": "haircuts trending",
-      "hotness": 0.097,
-      "score": 0.483,
-      "demand": 0.25,
-      "freshness": 1.0,
-      "approx_traffic": null,
-      "sources": [
-        "google_autocomplete"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": false,
-      "verification_state": "unknown",
-      "slope": 0.0,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "area": null,
       "state": "unknown"
     },
     {
@@ -18710,6 +18608,614 @@
       "first_seen": 1791733643,
       "area": "teen_fashion",
       "state": "unknown"
+    },
+    {
+      "title": "cold girl makeup",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "cold girl makeup look",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "cold girl makeup trend",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "cold girl makeup blush",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "cold girl makeup aesthetic",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "brown lip liner combo",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "brown lip liner nyx",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "brown lip liner with gloss",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "brown lip liner stain",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "brown lip liner for fair skin",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "brown lip liner with pink lipstick",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "laminated brows",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "laminated brows aftercare",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "laminated brows cost",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "laminated brows at home",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "laminated brows and tint",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "doe eyes makeup",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "doe eyes makeup look",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "doe eyes makeup asian",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "doe eyes makeup tut",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "siren eyes",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "siren eyes makeup",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "siren eyes natural",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "siren eyes men",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "siren eyes no makeup",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "siren eyes and doe eyes",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "strawberry makeup",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "strawberry makeup bag",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "strawberry makeup style",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "strawberry makeup products",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "strawberry makeup trend",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
+    },
+    {
+      "title": "strawberry makeup brushes",
+      "hotness": 0.097,
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "approx_traffic": null,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": false,
+      "verification_state": "unknown",
+      "slope": 0.0,
+      "seen_count": 1,
+      "first_seen": 1791815467,
+      "area": "beauty_makeup",
+      "state": "unknown"
     }
   ],
   "fallen": [
@@ -18798,9 +19304,9 @@
   "sources": {
     "ebay_deals": 169,
     "exploding_topics": 9,
-    "google_autocomplete": 1052,
-    "pytrends_rising": 2,
-    "pytrends_top": 38,
+    "google_autocomplete": 1098,
+    "pytrends_rising": 1,
+    "pytrends_top": 37,
     "shein_home": 1,
     "trends_rss_CA": 16,
     "trends_rss_DE": 14,

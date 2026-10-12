@@ -36,7 +36,7 @@ AREAS = {
         "label": "Matcha & specialty drinks",
         "why": "Matcha is a multi-year breakout; cafe/beverage is the highest-turnover food stock niche.",
         "seeds": ["iced matcha", "matcha latte", "specialty coffee drink"],
-        "match": ["matcha", "latte", "iced tea", "cold brew", "bubble tea", "drink", "cafe"],
+        "match": ["matcha", "iced tea", "cold brew", "bubble tea", "cafe"],
         "toplist_sites": ["https://www.ebay.com/deals"],
     },
     "street_food": {
@@ -112,19 +112,30 @@ AREAS = {
     "beauty_makeup": {
         "label": "Beauty & makeup trends",
         "why": "Beauty editorial has constant demand: seasonal lip looks, glazed/dewy skin, bold liner all license heavily for cosmetics campaigns.",
-        "seeds": ["glazed donut nails", "latte makeup", "dewy skin look",
-                  "cream blush trend", "glass skin", "strawberry makeup look",
-                  "chrome nails", "milky nails", "espresso makeup",
-                  "clean girl aesthetic makeup", "peach fuzz makeup",
-                  "soap brows", "brown lip liner look", "glazed lips"],
-        "match": ["nail", "manicure", "lip", "gloss", "blush", "liner", "mascara", "foundation", "serum", "beauty", "makeup", "perfume", "fragrance", "glazed", "dewy", "skincare"],
+        "seeds": ["latte makeup", "espresso makeup", "strawberry makeup",
+                  "siren eyes", "doe eyes makeup", "soap brows",
+                  "laminated brows", "brown lip liner", "glazed lips",
+                  "cold girl makeup", "cherry cola lips", "sunburn blush",
+                  "peach fuzz makeup", "cream blush draping", "glass skin",
+                  "clean girl makeup", "dewy skin", "latte eyes",
+                  "microblading brows", "flutter lashes", "smoked liner",
+                  "glazed donut skin", "mocha mousse makeup"],
+        "match": ["makeup", "eyes", "brows", "lashes", "lip liner", "lips",
+                  "blush", "liner", "mascara", "foundation", "serum",
+                  "beauty", "perfume", "fragrance", "glazed", "dewy",
+                  "skincare", "latte makeup", "espresso makeup",
+                  "strawberry makeup", "siren eyes", "soap brows",
+                  "laminated brows", "microblading", "sunburn blush",
+                  "cold girl", "glass skin", "clean girl"],
         "toplist_sites": ["https://www.sallybeauty.com/trending-now.html"],
     },
     "nails_detail": {
         "label": "Nail trends",
         "why": "Nail art is a high-volume search vertical; seasonal designs (chrome, aura, milky) trend quarterly and macro detail sells.",
         "seeds": ["nail trend", "nail design", "gel nails"],
-        "match": ["nail", "manicure", "nail art", "gel nail", "nail design", "chrome nail", "french tip"],
+        "match": ["nails", "manicure", "nail art", "gel nail",
+                  "nail design", "chrome nail", "french tip", "nail polish",
+                  "pedicure"],
         "toplist_sites": ["https://www.sallybeauty.com/trending-now.html"],
     },
     "drinks": {
@@ -138,7 +149,8 @@ AREAS = {
         "label": "Color trends",
         "why": "Color-of-the-year moments (butter yellow, mocha mousse) create instant demand for color-forward lifestyle stock.",
         "seeds": ["color of the year", "mocha mousse", "trend color 2026"],
-        "match": ["butter yellow", "mocha mousse", "cherry red", "sage", "cobalt", "plum", "color trend", "pastel", "earth tone"],
+        "match": ["butter yellow", "mocha mousse", "cherry red lips",
+                  "color trend", "pastel", "earth tone", "color of the year"],
         "toplist_sites": ["https://www.pantone.com/color-of-the-year"],
     },
     "adult_lingerie": {
@@ -146,9 +158,14 @@ AREAS = {
         "why": "Lingerie sells steadily as SFW campaign stock (product, detail, fabric shots); body-positive and bridal-adjacent niches growing.",
         "seeds": ["silk slip dress", "lace bodysuit", "sheer lingerie",
                   "strapless bra trend", "satin pyjama set", "bridal lingerie",
-                  "corset top outfit", "fishnet tights", "seamless underwear trend",
-                  "lace trim camisole", "silk robe set", "body positive lingerie"],
-        "match": ["lingerie", "bralette", "bodysuit", "intimates", "silk set", "sleepwear", "loungewear", "stockings", "corset"],
+                  "corset top outfit", "lace trim camisole", "silk robe set",
+                  "body positive lingerie", "seamless bralette", "silk cami set",
+                  "mesh bodysuit", "satin slip skirt", "velvet loungewear set"],
+        "match": ["lingerie", "bralette", "bodysuit", "intimates",
+                  "slip dress", "slip skirt", "silk robe", "silk cami",
+                  "camisole", "sleepwear", "loungewear", "stockings",
+                  "corset", "satin", "mesh bodysuit", "pajama", "pyjama",
+                  "velvet loungewear"],
         "toplist_sites": ["https://www.shein.com/topseller.html"],
     },
     "costume_cosplay": {
@@ -185,17 +202,21 @@ CATEGORY_OF_AREA = {
 
 
 def match_area(title):
-    """Return area key for a title, or None (word-boundary matching)."""
+    """Return area key for a title, or None.
+
+    Word-boundary matching; when several areas hit, the one with the LONGEST
+    matched term wins (most specific: 'latte makeup' -> beauty, not drinks)."""
     import re as _re
     t = " " + _re.sub(r"[^a-z0-9]+", " ", title.lower()).strip() + " "
-    hits = []
+    best = None
+    best_len = 0
     for key, a in AREAS.items():
         for m in a["match"]:
             m = _re.sub(r"[^a-z0-9]+", " ", m.strip().lower()).strip()
-            if m and " " + m + " " in t:
-                hits.append(key)
-                break
-    return hits[0] if hits else None
+            if m and " " + m + " " in t and len(m) > best_len:
+                best = key
+                best_len = len(m)
+    return best
 
 
 def area_seeds():

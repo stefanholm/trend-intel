@@ -67,13 +67,16 @@ NON_VISUAL_TOPIC_RE = re.compile(
             r"decorating ideas|home interior trending|games? offline|games? online|"
     r"tiktok|current makeup|teen outfit ideas|autumn 2026|summer 2026|"
     r"reddit|best buy|insurance|moon rover|lego|opera mens|from uk|"
-    r"map|maps|break from|gifts for dad|gifts for mom)\b", re.I)
+    r"map|maps|break from|gifts for dad|gifts for mom|black girl|black woman|for dark skin|before and after|club monaco|mac plac|maybelline)\b", re.I)
 
 BRAND_RE = re.compile(
     r"\b(kmart|target|walmart|shein|zara|hm|h&m|uniqlo|nike|adidas|puma|"
     r"meshki|aje|forever new|forever 21|asos|revolve|nordstrom|zalando|boohoo|"
     r"showpo|levis|levi|wrangler|carhartt|amazon|temu|tiktok shop|"
-    r"lululemon|aritzia|reformation|free people|urban outfitters|beginning boutique|victoria secret|victorias secret|calvin klein|skims|savage x|fenty|kali uchis|doja cat|sabrina carpenter|taylor swift|billie eilish|olivia rodrigo)\b", re.I)
+        r"lululemon|aritzia|reformation|free people|urban outfitters|beginning boutique|"
+    r"victoria secret|victorias secret|calvin klein|skims|savage x|fenty|"
+    r"kali uchis|doja cat|sabrina carpenter|taylor swift|billie eilish|"
+    r"olivia rodrigo|selena gomez|kim kardashian|kylie jenner|rihanna)\b", re.I)
 
 
 _DICT = None
