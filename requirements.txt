@@ -1,0 +1,3 @@
+# Zero required deps for core (RSS + Pinterest + SQLite via stdlib).
+# Optional: related-query expansion via Google Trends
+pytrends>=4.9.0

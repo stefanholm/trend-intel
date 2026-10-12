@@ -1,0 +1,5070 @@
+{
+  "exported_at": 1791731327,
+  "count": 345,
+  "nuggets": [
+    {
+      "title": "iced matcha latte",
+      "score": 0.967,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "iced",
+        "matcha",
+        "latte"
+      ]
+    },
+    {
+      "title": "women's autumn outfit ideas",
+      "score": 0.967,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising",
+        "pytrends_top"
+      ],
+      "keywords": [
+        "women's",
+        "autumn",
+        "outfit",
+        "ideas"
+      ]
+    },
+    {
+      "title": "autumn outfit ideas",
+      "score": 0.967,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "autumn",
+        "outfit",
+        "ideas"
+      ]
+    },
+    {
+      "title": "copper kitchen sink",
+      "score": 0.967,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "sink"
+      ]
+    },
+    {
+      "title": "yellow dress",
+      "score": 0.961,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "yellow",
+        "dress"
+      ]
+    },
+    {
+      "title": "matcha latte",
+      "score": 0.961,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "matcha",
+        "latte"
+      ]
+    },
+    {
+      "title": "yellow butter dress",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "yellow",
+        "butter",
+        "dress"
+      ]
+    },
+    {
+      "title": "crochet birkin bag",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "crochet",
+        "birkin",
+        "bag"
+      ]
+    },
+    {
+      "title": "donut bag crochet pattern",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "donut",
+        "bag",
+        "crochet",
+        "pattern"
+      ]
+    },
+    {
+      "title": "bag crochet pattern",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "bag",
+        "crochet",
+        "pattern"
+      ]
+    },
+    {
+      "title": "white dress",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "white",
+        "dress"
+      ]
+    },
+    {
+      "title": "linen white dress",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "linen",
+        "white",
+        "dress"
+      ]
+    },
+    {
+      "title": "white linen dress",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "white",
+        "linen",
+        "dress"
+      ]
+    },
+    {
+      "title": "matcha iced latte",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "matcha",
+        "iced",
+        "latte"
+      ]
+    },
+    {
+      "title": "copper kitchen splashback",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "splashback"
+      ]
+    },
+    {
+      "title": "copper kitchen noosa",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "noosa"
+      ]
+    },
+    {
+      "title": "butter yellow dress",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "butter",
+        "yellow",
+        "dress"
+      ]
+    },
+    {
+      "title": "copper kitchen ware",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "ware"
+      ]
+    },
+    {
+      "title": "black dress",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "black",
+        "dress"
+      ]
+    },
+    {
+      "title": "yellow dress women",
+      "score": 0.933,
+      "demand": 1.0,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "yellow",
+        "dress",
+        "women"
+      ]
+    },
+    {
+      "title": "copper kitchen faucet",
+      "score": 0.915,
+      "demand": 0.97,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "faucet"
+      ]
+    },
+    {
+      "title": "copper kitchen set",
+      "score": 0.903,
+      "demand": 0.95,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "set"
+      ]
+    },
+    {
+      "title": "copper kitchen tap",
+      "score": 0.873,
+      "demand": 0.9,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "tap"
+      ]
+    },
+    {
+      "title": "copper kitchen ubud",
+      "score": 0.873,
+      "demand": 0.9,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "ubud"
+      ]
+    },
+    {
+      "title": "blue dress",
+      "score": 0.873,
+      "demand": 0.9,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "blue",
+        "dress"
+      ]
+    },
+    {
+      "title": "yellow mini dress",
+      "score": 0.873,
+      "demand": 0.9,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "yellow",
+        "mini",
+        "dress"
+      ]
+    },
+    {
+      "title": "mini dress",
+      "score": 0.855,
+      "demand": 0.87,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "mini",
+        "dress"
+      ]
+    },
+    {
+      "title": "mini yellow dress",
+      "score": 0.855,
+      "demand": 0.87,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "mini",
+        "yellow",
+        "dress"
+      ]
+    },
+    {
+      "title": "Loop earplugs",
+      "score": 0.833,
+      "demand": 0.833,
+      "freshness": 1.0,
+      "sources": [
+        "exploding_topics"
+      ],
+      "keywords": [
+        "loop",
+        "earplugs"
+      ]
+    },
+    {
+      "title": "maxi dress",
+      "score": 0.819,
+      "demand": 0.81,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "maxi",
+        "dress"
+      ]
+    },
+    {
+      "title": "yellow dress mini",
+      "score": 0.819,
+      "demand": 0.81,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "yellow",
+        "dress",
+        "mini"
+      ]
+    },
+    {
+      "title": "padel racket",
+      "score": 0.803,
+      "demand": 0.783,
+      "freshness": 1.0,
+      "sources": [
+        "exploding_topics"
+      ],
+      "keywords": [
+        "padel",
+        "racket"
+      ]
+    },
+    {
+      "title": "yellow maxi dress",
+      "score": 0.795,
+      "demand": 0.77,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "yellow",
+        "maxi",
+        "dress"
+      ]
+    },
+    {
+      "title": "Lash Clusters",
+      "score": 0.795,
+      "demand": 0.77,
+      "freshness": 1.0,
+      "sources": [
+        "exploding_topics"
+      ],
+      "keywords": [
+        "lash",
+        "clusters"
+      ]
+    },
+    {
+      "title": "black linen dress",
+      "score": 0.789,
+      "demand": 0.76,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "black",
+        "linen",
+        "dress"
+      ]
+    },
+    {
+      "title": "yellow dress for women",
+      "score": 0.783,
+      "demand": 0.75,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "yellow",
+        "dress",
+        "for",
+        "women"
+      ]
+    },
+    {
+      "title": "shirt dress",
+      "score": 0.777,
+      "demand": 0.74,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "shirt",
+        "dress"
+      ]
+    },
+    {
+      "title": "linen shirt dress",
+      "score": 0.775,
+      "demand": 0.69,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "linen",
+        "shirt",
+        "dress"
+      ]
+    },
+    {
+      "title": "yellow long dress",
+      "score": 0.771,
+      "demand": 0.73,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "yellow",
+        "long",
+        "dress"
+      ]
+    },
+    {
+      "title": "midi dress",
+      "score": 0.765,
+      "demand": 0.72,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "midi",
+        "dress"
+      ]
+    },
+    {
+      "title": "Soursop bitters",
+      "score": 0.765,
+      "demand": 0.72,
+      "freshness": 1.0,
+      "sources": [
+        "exploding_topics"
+      ],
+      "keywords": [
+        "soursop",
+        "bitters"
+      ]
+    },
+    {
+      "title": "linen dress shirt",
+      "score": 0.763,
+      "demand": 0.66,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "linen",
+        "dress",
+        "shirt"
+      ]
+    },
+    {
+      "title": "copper kitchen handles",
+      "score": 0.759,
+      "demand": 0.71,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "handles"
+      ]
+    },
+    {
+      "title": "pink dress",
+      "score": 0.759,
+      "demand": 0.71,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "pink",
+        "dress"
+      ]
+    },
+    {
+      "title": "long yellow dress",
+      "score": 0.759,
+      "demand": 0.71,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "long",
+        "yellow",
+        "dress"
+      ]
+    },
+    {
+      "title": "copper kitchen hsr layout",
+      "score": 0.753,
+      "demand": 0.7,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "hsr",
+        "layout"
+      ]
+    },
+    {
+      "title": "linen maxi dress",
+      "score": 0.753,
+      "demand": 0.7,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "linen",
+        "maxi",
+        "dress"
+      ]
+    },
+    {
+      "title": "GLP 1 supplement",
+      "score": 0.751,
+      "demand": 0.696,
+      "freshness": 1.0,
+      "sources": [
+        "exploding_topics"
+      ],
+      "keywords": [
+        "glp",
+        "supplement"
+      ]
+    },
+    {
+      "title": "linen midi dress",
+      "score": 0.747,
+      "demand": 0.69,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "linen",
+        "midi",
+        "dress"
+      ]
+    },
+    {
+      "title": "linen dress women",
+      "score": 0.741,
+      "demand": 0.68,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "linen",
+        "dress",
+        "women"
+      ]
+    },
+    {
+      "title": "midi linen dress",
+      "score": 0.741,
+      "demand": 0.68,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "midi",
+        "linen",
+        "dress"
+      ]
+    },
+    {
+      "title": "green dress",
+      "score": 0.735,
+      "demand": 0.67,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "green",
+        "dress"
+      ]
+    },
+    {
+      "title": "black and copper kitchen",
+      "score": 0.723,
+      "demand": 0.65,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "black",
+        "and",
+        "copper",
+        "kitchen"
+      ]
+    },
+    {
+      "title": "maxi linen dress",
+      "score": 0.723,
+      "demand": 0.65,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "maxi",
+        "linen",
+        "dress"
+      ]
+    },
+    {
+      "title": "mini linen dress",
+      "score": 0.717,
+      "demand": 0.64,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "mini",
+        "linen",
+        "dress"
+      ]
+    },
+    {
+      "title": "Remineralizing gum",
+      "score": 0.713,
+      "demand": 0.633,
+      "freshness": 1.0,
+      "sources": [
+        "exploding_topics"
+      ],
+      "keywords": [
+        "remineralizing",
+        "gum"
+      ]
+    },
+    {
+      "title": "red dress",
+      "score": 0.699,
+      "demand": 0.61,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "red",
+        "dress"
+      ]
+    },
+    {
+      "title": "Bamboo pajamas",
+      "score": 0.698,
+      "demand": 0.608,
+      "freshness": 1.0,
+      "sources": [
+        "exploding_topics"
+      ],
+      "keywords": [
+        "bamboo",
+        "pajamas"
+      ]
+    },
+    {
+      "title": "iced blue coconut matcha",
+      "score": 0.693,
+      "demand": 0.6,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "iced",
+        "blue",
+        "coconut",
+        "matcha"
+      ]
+    },
+    {
+      "title": "linen mini dress",
+      "score": 0.693,
+      "demand": 0.6,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "linen",
+        "mini",
+        "dress"
+      ]
+    },
+    {
+      "title": "rrl corduroy collar deck jacket",
+      "score": 0.693,
+      "demand": 0.6,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "rrl",
+        "corduroy",
+        "collar",
+        "deck",
+        "jacket"
+      ]
+    },
+    {
+      "title": "autumn outfits",
+      "score": 0.691,
+      "demand": 0.54,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "autumn",
+        "outfits"
+      ]
+    },
+    {
+      "title": "copper kitchen lights",
+      "score": 0.687,
+      "demand": 0.59,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "lights"
+      ]
+    },
+    {
+      "title": "corduroy jacket",
+      "score": 0.687,
+      "demand": 0.59,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "corduroy",
+        "jacket"
+      ]
+    },
+    {
+      "title": "autumn dress",
+      "score": 0.651,
+      "demand": 0.53,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "autumn",
+        "dress"
+      ]
+    },
+    {
+      "title": "long linen dress",
+      "score": 0.639,
+      "demand": 0.51,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "long",
+        "linen",
+        "dress"
+      ]
+    },
+    {
+      "title": "copper kitchen faucets",
+      "score": 0.633,
+      "demand": 0.5,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "faucets"
+      ]
+    },
+    {
+      "title": "how to crochet a tote bag",
+      "score": 0.633,
+      "demand": 0.5,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "how",
+        "crochet",
+        "tote",
+        "bag"
+      ]
+    },
+    {
+      "title": "seed linen dress",
+      "score": 0.633,
+      "demand": 0.5,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "seed",
+        "linen",
+        "dress"
+      ]
+    },
+    {
+      "title": "copper kitchen hsr",
+      "score": 0.633,
+      "demand": 0.5,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "hsr"
+      ]
+    },
+    {
+      "title": "copper kitchen aid mixer",
+      "score": 0.633,
+      "demand": 0.5,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "aid",
+        "mixer"
+      ]
+    },
+    {
+      "title": "blue linen dress",
+      "score": 0.627,
+      "demand": 0.49,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "blue",
+        "linen",
+        "dress"
+      ]
+    },
+    {
+      "title": "tote bag crochet",
+      "score": 0.621,
+      "demand": 0.48,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "tote",
+        "bag",
+        "crochet"
+      ]
+    },
+    {
+      "title": "tote bag",
+      "score": 0.621,
+      "demand": 0.48,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "tote",
+        "bag"
+      ]
+    },
+    {
+      "title": "copper kitchen aid",
+      "score": 0.607,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising",
+        "pytrends_top"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "aid"
+      ]
+    },
+    {
+      "title": "crochet bag pattern free",
+      "score": 0.595,
+      "demand": 0.38,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "crochet",
+        "bag",
+        "pattern",
+        "free"
+      ]
+    },
+    {
+      "title": "copper kitchen sinks",
+      "score": 0.579,
+      "demand": 0.41,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "sinks"
+      ]
+    },
+    {
+      "title": "yellow butter color",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "yellow",
+        "butter",
+        "color"
+      ]
+    },
+    {
+      "title": "ysl crochet bag",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "ysl",
+        "crochet",
+        "bag"
+      ]
+    },
+    {
+      "title": "mens linen dress pants",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "mens",
+        "linen",
+        "dress",
+        "pants"
+      ]
+    },
+    {
+      "title": "butter yellow color",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "butter",
+        "yellow",
+        "color"
+      ]
+    },
+    {
+      "title": "dunkin donuts iced matcha latte",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "keywords": [
+        "dunkin",
+        "donuts",
+        "iced",
+        "matcha",
+        "latte"
+      ]
+    },
+    {
+      "title": "Ninja Luxe Caf\u00e9 Premier Series Coffee Espresso Machine, Certified Refurbished",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "ninja",
+        "luxe",
+        "caf\u00e9",
+        "premier",
+        "series",
+        "coffee",
+        "espresso",
+        "machine,"
+      ]
+    },
+    {
+      "title": "Men Loafer Shoes Dress Shoes Slip-on Penny Business Formal Shoes Size",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "men",
+        "loafer",
+        "shoes",
+        "dress",
+        "shoes",
+        "slip-on",
+        "penny",
+        "business"
+      ]
+    },
+    {
+      "title": "ECO-WORTHY 10KW Output 16KWH Off Grid Solar System Complete Kit for Home",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "eco-worthy",
+        "10kw",
+        "output",
+        "16kwh",
+        "off",
+        "grid",
+        "solar",
+        "system"
+      ]
+    },
+    {
+      "title": "DAZY Solid Coloured Stand Collar Pocket Short Jacket For Women,Fall Clothes",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "shein_home"
+      ],
+      "keywords": [
+        "dazy",
+        "solid",
+        "coloured",
+        "stand",
+        "collar",
+        "pocket",
+        "short",
+        "jacket"
+      ]
+    },
+    {
+      "title": "Head Extreme Elite Pickleball Paddle Racquets: Modified Tear Frame Extra",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "head",
+        "extreme",
+        "elite",
+        "pickleball",
+        "paddle",
+        "racquets:",
+        "modified",
+        "tear"
+      ]
+    },
+    {
+      "title": "New Omega Seamaster Diver 300M Automatic Black Men&#39;s Watch 210.30.42.20.01.0",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "new",
+        "omega",
+        "seamaster",
+        "diver",
+        "300m",
+        "automatic",
+        "black",
+        "men&#39;s"
+      ]
+    },
+    {
+      "title": "23-26 SUPER DUTY Towing Mirror PC3B17682CC Passenger Door Heated Glass XL XLT OE",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "23-26",
+        "super",
+        "duty",
+        "towing",
+        "mirror",
+        "pc3b17682cc",
+        "passenger",
+        "door"
+      ]
+    },
+    {
+      "title": "2023 2024 F250 F350 F450 F550 SIDE VIEW MIRROR RH PASSENGER PC3B-17682-CC5YGY",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "2023",
+        "2024",
+        "f250",
+        "f350",
+        "f450",
+        "f550",
+        "side",
+        "view"
+      ]
+    },
+    {
+      "title": "23-26 Ford Super Duty Heated Mirror PC3B17682CC RH Passenger Side OEM Factory XL",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "23-26",
+        "ford",
+        "super",
+        "duty",
+        "heated",
+        "mirror",
+        "pc3b17682cc",
+        "passenger"
+      ]
+    },
+    {
+      "title": "OEM 21-25 Bronco Fender Flares PLASTIC Set of Wheel Opening Lips OE Factory Ford",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "oem",
+        "21-25",
+        "bronco",
+        "fender",
+        "flares",
+        "plastic",
+        "set",
+        "wheel"
+      ]
+    },
+    {
+      "title": "Lenovo - Yoga 7a 2-in-1 14\\",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "lenovo",
+        "yoga",
+        "2-in-1",
+        "14\\"
+      ]
+    },
+    {
+      "title": "Lenovo - Yoga 7i 2-in-1 14\\",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "lenovo",
+        "yoga",
+        "2-in-1",
+        "14\\"
+      ]
+    },
+    {
+      "title": "2002 Paper Rolex Men&#39;s GMT-Master II Black Stainless Steel Oyster Watch 1671",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "2002",
+        "paper",
+        "rolex",
+        "men&#39;s",
+        "gmt-master",
+        "black",
+        "stainless",
+        "steel"
+      ]
+    },
+    {
+      "title": "Rolex Men&#39;s Submariner Date Dial 18K Gold & SS Oyster Watch With Paper 16613",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "rolex",
+        "men&#39;s",
+        "submariner",
+        "date",
+        "dial",
+        "18k",
+        "gold",
+        "oyster"
+      ]
+    },
+    {
+      "title": "Universal 1PC Auto Double Sided Sticky Adhesive Glue Tape",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "universal",
+        "1pc",
+        "auto",
+        "double",
+        "sided",
+        "sticky",
+        "adhesive",
+        "glue"
+      ]
+    },
+    {
+      "title": "Disc 800 Grit 5 PSA Green Auto Sanding Paper Sheets Repair Sand 10PC",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "disc",
+        "800",
+        "grit",
+        "psa",
+        "green",
+        "auto",
+        "sanding",
+        "paper"
+      ]
+    },
+    {
+      "title": "New Omega Seamaster Diver 300M Automatic Black Men's Watch 210.30.42.20.01.001",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "new",
+        "omega",
+        "seamaster",
+        "diver",
+        "300m",
+        "automatic",
+        "black",
+        "men's"
+      ]
+    },
+    {
+      "title": "17+ Ford SD Running Board Mounting Bracket HC3B16470ACW SD F250 F350 OEM Factory",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "17+",
+        "ford",
+        "running",
+        "board",
+        "mounting",
+        "bracket",
+        "hc3b16470acw",
+        "f250"
+      ]
+    },
+    {
+      "title": "Mercedes R129 SL320 SL500 Top Hydraulic Roof Cylinders Set Remanufactured",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "mercedes",
+        "r129",
+        "sl320",
+        "sl500",
+        "top",
+        "hydraulic",
+        "roof",
+        "cylinders"
+      ]
+    },
+    {
+      "title": "2002 Paper Rolex Men's GMT-Master II Black Stainless Steel Oyster Watch 16713",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "2002",
+        "paper",
+        "rolex",
+        "men's",
+        "gmt-master",
+        "black",
+        "stainless",
+        "steel"
+      ]
+    },
+    {
+      "title": "Rolex Men's Submariner Date Dial 18K Gold & SS Oyster Watch With Paper 16613LN",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "rolex",
+        "men's",
+        "submariner",
+        "date",
+        "dial",
+        "18k",
+        "gold",
+        "oyster"
+      ]
+    },
+    {
+      "title": "Digital Timing Light EPI3568 Brand New!",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "digital",
+        "timing",
+        "light",
+        "epi3568",
+        "brand",
+        "new!"
+      ]
+    },
+    {
+      "title": "TIMING LIGHT ADVANCE EPI5568 Brand New!",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "timing",
+        "light",
+        "advance",
+        "epi5568",
+        "brand",
+        "new!"
+      ]
+    },
+    {
+      "title": "super bowl 2027",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "trends_rss_US"
+      ],
+      "keywords": [
+        "super",
+        "bowl",
+        "2027"
+      ]
+    },
+    {
+      "title": "Apple Watch Ultra 1st GPS & Cellular Unlocked 49mm Titanium US Version Excellent",
+      "score": 0.573,
+      "demand": 0.4,
+      "freshness": 1.0,
+      "sources": [
+        "ebay_deals"
+      ],
+      "keywords": [
+        "apple",
+        "watch",
+        "ultra",
+        "1st",
+        "gps",
+        "cellular",
+        "unlocked",
+        "49mm"
+      ]
+    },
+    {
+      "title": "copper kitchen appliances",
+      "score": 0.561,
+      "demand": 0.38,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "appliances"
+      ]
+    },
+    {
+      "title": "autumn outfit for women",
+      "score": 0.561,
+      "demand": 0.38,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "autumn",
+        "outfit",
+        "for",
+        "women"
+      ]
+    },
+    {
+      "title": "how to crochet a bag",
+      "score": 0.543,
+      "demand": 0.35,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "how",
+        "crochet",
+        "bag"
+      ]
+    },
+    {
+      "title": "copper kitchen accessories",
+      "score": 0.535,
+      "demand": 0.33,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "accessories"
+      ]
+    },
+    {
+      "title": "iced matcha calories",
+      "score": 0.519,
+      "demand": 0.31,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "iced",
+        "matcha",
+        "calories"
+      ]
+    },
+    {
+      "title": "crochet bag tutorial",
+      "score": 0.517,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "crochet",
+        "bag",
+        "tutorial"
+      ]
+    },
+    {
+      "title": "autumn outfit inspo",
+      "score": 0.517,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "autumn",
+        "outfit",
+        "inspo"
+      ]
+    },
+    {
+      "title": "copper kitchen taps",
+      "score": 0.507,
+      "demand": 0.29,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "taps"
+      ]
+    },
+    {
+      "title": "copper kitchen utensils",
+      "score": 0.501,
+      "demand": 0.28,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen",
+        "utensils"
+      ]
+    },
+    {
+      "title": "yellow outfit",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "yellow",
+        "outfit"
+      ]
+    },
+    {
+      "title": "yellow outfit for girls",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "yellow",
+        "outfit",
+        "for",
+        "girls"
+      ]
+    },
+    {
+      "title": "yellow outfit for baby boy",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "yellow",
+        "outfit",
+        "for",
+        "baby",
+        "boy"
+      ]
+    },
+    {
+      "title": "yellow outfit baby girl",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "yellow",
+        "outfit",
+        "baby",
+        "girl"
+      ]
+    },
+    {
+      "title": "yellow outfit ideas",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "yellow",
+        "outfit",
+        "ideas"
+      ]
+    },
+    {
+      "title": "yellow dress for wedding guest",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "yellow",
+        "dress",
+        "for",
+        "wedding",
+        "guest"
+      ]
+    },
+    {
+      "title": "yellow dress shirt",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "yellow",
+        "dress",
+        "shirt"
+      ]
+    },
+    {
+      "title": "yellow dress for girls",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "yellow",
+        "dress",
+        "for",
+        "girls"
+      ]
+    },
+    {
+      "title": "butter yellow nail polish",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "butter",
+        "yellow",
+        "nail",
+        "polish"
+      ]
+    },
+    {
+      "title": "butter yellow workout set",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "butter",
+        "yellow",
+        "workout",
+        "set"
+      ]
+    },
+    {
+      "title": "coquette style",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "coquette",
+        "style"
+      ]
+    },
+    {
+      "title": "coquette style clothes",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "coquette",
+        "style",
+        "clothes"
+      ]
+    },
+    {
+      "title": "coquette style meaning",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "coquette",
+        "style",
+        "meaning"
+      ]
+    },
+    {
+      "title": "coquette style dress",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "coquette",
+        "style",
+        "dress"
+      ]
+    },
+    {
+      "title": "coquette style outfits",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "coquette",
+        "style",
+        "outfits"
+      ]
+    },
+    {
+      "title": "coquette style room",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "coquette",
+        "style",
+        "room"
+      ]
+    },
+    {
+      "title": "coquette style bedroom",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "coquette",
+        "style",
+        "bedroom"
+      ]
+    },
+    {
+      "title": "coquette style cake",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "coquette",
+        "style",
+        "cake"
+      ]
+    },
+    {
+      "title": "aesthetic style names",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "aesthetic",
+        "style",
+        "names"
+      ]
+    },
+    {
+      "title": "aesthetic style quiz",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "aesthetic",
+        "style",
+        "quiz"
+      ]
+    },
+    {
+      "title": "aesthetic style meaning",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "aesthetic",
+        "style",
+        "meaning"
+      ]
+    },
+    {
+      "title": "aesthetic style wheel",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "aesthetic",
+        "style",
+        "wheel"
+      ]
+    },
+    {
+      "title": "bridal lingerie",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bridal",
+        "lingerie"
+      ]
+    },
+    {
+      "title": "bridal lingerie dress",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bridal",
+        "lingerie",
+        "dress"
+      ]
+    },
+    {
+      "title": "silk lingerie dress",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "silk",
+        "lingerie",
+        "dress"
+      ]
+    },
+    {
+      "title": "silk lingerie kali uchis",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "silk",
+        "lingerie",
+        "kali",
+        "uchis"
+      ]
+    },
+    {
+      "title": "silk lingerie lyrics",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "silk",
+        "lingerie",
+        "lyrics"
+      ]
+    },
+    {
+      "title": "silk lingerie kali uchis lyrics",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "silk",
+        "lingerie",
+        "kali",
+        "uchis",
+        "lyrics"
+      ]
+    },
+    {
+      "title": "lingerie sets for women",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "lingerie",
+        "sets",
+        "for",
+        "women"
+      ]
+    },
+    {
+      "title": "lingerie set victoria secret",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "lingerie",
+        "set",
+        "victoria",
+        "secret"
+      ]
+    },
+    {
+      "title": "lingerie set nearby",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "lingerie",
+        "set",
+        "nearby"
+      ]
+    },
+    {
+      "title": "trend color 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "trend",
+        "color",
+        "2026"
+      ]
+    },
+    {
+      "title": "trend color 2026 summer",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "trend",
+        "color",
+        "2026",
+        "summer"
+      ]
+    },
+    {
+      "title": "trend color 2026 hair",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "trend",
+        "color",
+        "2026",
+        "hair"
+      ]
+    },
+    {
+      "title": "trend color 2026 fall",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "trend",
+        "color",
+        "2026",
+        "fall"
+      ]
+    },
+    {
+      "title": "trend color 2026 fashion",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "trend",
+        "color",
+        "2026",
+        "fashion"
+      ]
+    },
+    {
+      "title": "trend color 2026 nails",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "trend",
+        "color",
+        "2026",
+        "nails"
+      ]
+    },
+    {
+      "title": "trend color 2026 wgsn",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "trend",
+        "color",
+        "2026",
+        "wgsn"
+      ]
+    },
+    {
+      "title": "mocha mousse hair color",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "mocha",
+        "mousse",
+        "hair",
+        "color"
+      ]
+    },
+    {
+      "title": "mocha mousse cake",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "mocha",
+        "mousse",
+        "cake"
+      ]
+    },
+    {
+      "title": "mocha mousse color",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "mocha",
+        "mousse",
+        "color"
+      ]
+    },
+    {
+      "title": "mocha mousse paint color",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "mocha",
+        "mousse",
+        "paint",
+        "color"
+      ]
+    },
+    {
+      "title": "mocha mousse cake chinese buffet",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "mocha",
+        "mousse",
+        "cake",
+        "chinese",
+        "buffet"
+      ]
+    },
+    {
+      "title": "color of the year 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "color",
+        "the",
+        "year",
+        "2026"
+      ]
+    },
+    {
+      "title": "color of the year 2027",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "color",
+        "the",
+        "year",
+        "2027"
+      ]
+    },
+    {
+      "title": "color of the year",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "color",
+        "the",
+        "year"
+      ]
+    },
+    {
+      "title": "color of the year 2025",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "color",
+        "the",
+        "year",
+        "2025"
+      ]
+    },
+    {
+      "title": "color of the year 2007",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "color",
+        "the",
+        "year",
+        "2007"
+      ]
+    },
+    {
+      "title": "color of the year 2009",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "color",
+        "the",
+        "year",
+        "2009"
+      ]
+    },
+    {
+      "title": "color of the year 2006",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "color",
+        "the",
+        "year",
+        "2006"
+      ]
+    },
+    {
+      "title": "color of the year 2010",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "color",
+        "the",
+        "year",
+        "2010"
+      ]
+    },
+    {
+      "title": "cocktail trends",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "cocktail",
+        "trends"
+      ]
+    },
+    {
+      "title": "cocktail trends 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "cocktail",
+        "trends",
+        "2026"
+      ]
+    },
+    {
+      "title": "cocktail trends fall 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "cocktail",
+        "trends",
+        "fall",
+        "2026"
+      ]
+    },
+    {
+      "title": "cocktail trends summer 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "cocktail",
+        "trends",
+        "summer",
+        "2026"
+      ]
+    },
+    {
+      "title": "cocktail trends 2027",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "cocktail",
+        "trends",
+        "2027"
+      ]
+    },
+    {
+      "title": "cocktail trending song",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "cocktail",
+        "trending",
+        "song"
+      ]
+    },
+    {
+      "title": "cocktail trend tiktok",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "cocktail",
+        "trend",
+        "tiktok"
+      ]
+    },
+    {
+      "title": "cocktail trends right now",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "cocktail",
+        "trends",
+        "right",
+        "now"
+      ]
+    },
+    {
+      "title": "gel nails at home",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "gel",
+        "nails",
+        "home"
+      ]
+    },
+    {
+      "title": "gel nails kit",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "gel",
+        "nails",
+        "kit"
+      ]
+    },
+    {
+      "title": "nail designs",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "designs"
+      ]
+    },
+    {
+      "title": "nail design ideas",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "design",
+        "ideas"
+      ]
+    },
+    {
+      "title": "nail designs 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "designs",
+        "2026"
+      ]
+    },
+    {
+      "title": "nail designs for summer",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "designs",
+        "for",
+        "summer"
+      ]
+    },
+    {
+      "title": "nail designs for short nails",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "designs",
+        "for",
+        "short",
+        "nails"
+      ]
+    },
+    {
+      "title": "nail designs for fall",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "designs",
+        "for",
+        "fall"
+      ]
+    },
+    {
+      "title": "nail designs summer 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "designs",
+        "summer",
+        "2026"
+      ]
+    },
+    {
+      "title": "nail designs simple",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "designs",
+        "simple"
+      ]
+    },
+    {
+      "title": "nail trends",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "trends"
+      ]
+    },
+    {
+      "title": "nail trends summer 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "trends",
+        "summer",
+        "2026"
+      ]
+    },
+    {
+      "title": "nail trends 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "trends",
+        "2026"
+      ]
+    },
+    {
+      "title": "nail trends fall 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "trends",
+        "fall",
+        "2026"
+      ]
+    },
+    {
+      "title": "nail trendz",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "trendz"
+      ]
+    },
+    {
+      "title": "nail trends august 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "trends",
+        "august",
+        "2026"
+      ]
+    },
+    {
+      "title": "nail trends right now",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "trends",
+        "right",
+        "now"
+      ]
+    },
+    {
+      "title": "nail trends september 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "nail",
+        "trends",
+        "september",
+        "2026"
+      ]
+    },
+    {
+      "title": "blush trends summer 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "blush",
+        "trends",
+        "summer",
+        "2026"
+      ]
+    },
+    {
+      "title": "blush trend it up",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "blush",
+        "trend"
+      ]
+    },
+    {
+      "title": "blush trend fall 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "blush",
+        "trend",
+        "fall",
+        "2026"
+      ]
+    },
+    {
+      "title": "blush trend tiktok",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "blush",
+        "trend",
+        "tiktok"
+      ]
+    },
+    {
+      "title": "dewy skin look makeup",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "dewy",
+        "skin",
+        "look",
+        "makeup"
+      ]
+    },
+    {
+      "title": "lip oil makeup revolution",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "lip",
+        "oil",
+        "makeup",
+        "revolution"
+      ]
+    },
+    {
+      "title": "lip oil makeup",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "lip",
+        "oil",
+        "makeup"
+      ]
+    },
+    {
+      "title": "lip oil makeup by mario",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "lip",
+        "oil",
+        "makeup",
+        "mario"
+      ]
+    },
+    {
+      "title": "lip oil makeup forever",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "lip",
+        "oil",
+        "makeup",
+        "forever"
+      ]
+    },
+    {
+      "title": "lip oil makeup city",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "lip",
+        "oil",
+        "makeup",
+        "city"
+      ]
+    },
+    {
+      "title": "lip oil milk makeup",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "lip",
+        "oil",
+        "milk",
+        "makeup"
+      ]
+    },
+    {
+      "title": "hair color trends 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "color",
+        "trends",
+        "2026"
+      ]
+    },
+    {
+      "title": "hair color trends fall 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "color",
+        "trends",
+        "fall",
+        "2026"
+      ]
+    },
+    {
+      "title": "hair color trends 2026 female",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "color",
+        "trends",
+        "2026",
+        "female"
+      ]
+    },
+    {
+      "title": "hair color trends",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "color",
+        "trends"
+      ]
+    },
+    {
+      "title": "hair color trends summer 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "color",
+        "trends",
+        "summer",
+        "2026"
+      ]
+    },
+    {
+      "title": "hair color trends 2026 female fall",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "color",
+        "trends",
+        "2026",
+        "female",
+        "fall"
+      ]
+    },
+    {
+      "title": "hair color trends 2027",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "color",
+        "trends",
+        "2027"
+      ]
+    },
+    {
+      "title": "hair color trends now",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "color",
+        "trends",
+        "now"
+      ]
+    },
+    {
+      "title": "hair cut trends 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "cut",
+        "trends",
+        "2026"
+      ]
+    },
+    {
+      "title": "hair cut trends 2026 women",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "cut",
+        "trends",
+        "2026",
+        "women"
+      ]
+    },
+    {
+      "title": "hair cut trends",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "cut",
+        "trends"
+      ]
+    },
+    {
+      "title": "hair cut trends summer 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "cut",
+        "trends",
+        "summer",
+        "2026"
+      ]
+    },
+    {
+      "title": "hair cut trend fall 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "cut",
+        "trend",
+        "fall",
+        "2026"
+      ]
+    },
+    {
+      "title": "hair cut trends 2026 female",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "cut",
+        "trends",
+        "2026",
+        "female"
+      ]
+    },
+    {
+      "title": "hair cut trends 2026 men",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hair",
+        "cut",
+        "trends",
+        "2026",
+        "men"
+      ]
+    },
+    {
+      "title": "hairstyle trends summer 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "hairstyle",
+        "trends",
+        "summer",
+        "2026"
+      ]
+    },
+    {
+      "title": "jewelry trends summer 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "jewelry",
+        "trends",
+        "summer",
+        "2026"
+      ]
+    },
+    {
+      "title": "jewelry trends fall winter 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "jewelry",
+        "trends",
+        "fall",
+        "winter",
+        "2026"
+      ]
+    },
+    {
+      "title": "bag trends",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bag",
+        "trends"
+      ]
+    },
+    {
+      "title": "bag trends fall 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bag",
+        "trends",
+        "fall",
+        "2026"
+      ]
+    },
+    {
+      "title": "bag trends 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bag",
+        "trends",
+        "2026"
+      ]
+    },
+    {
+      "title": "bag trends 2027",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bag",
+        "trends",
+        "2027"
+      ]
+    },
+    {
+      "title": "bag trends summer 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bag",
+        "trends",
+        "summer",
+        "2026"
+      ]
+    },
+    {
+      "title": "bag trends fall winter 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bag",
+        "trends",
+        "fall",
+        "winter",
+        "2026"
+      ]
+    },
+    {
+      "title": "bag trends vendor",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bag",
+        "trends",
+        "vendor"
+      ]
+    },
+    {
+      "title": "bag trendz",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bag",
+        "trendz"
+      ]
+    },
+    {
+      "title": "accessory trends summer 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "accessory",
+        "trends",
+        "summer",
+        "2026"
+      ]
+    },
+    {
+      "title": "accessory trends spring 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "accessory",
+        "trends",
+        "spring",
+        "2026"
+      ]
+    },
+    {
+      "title": "travel outfit set",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "travel",
+        "outfit",
+        "set"
+      ]
+    },
+    {
+      "title": "travel outfit ideas for women",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "travel",
+        "outfit",
+        "ideas",
+        "for",
+        "women"
+      ]
+    },
+    {
+      "title": "travel trend news",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "travel",
+        "trend",
+        "news"
+      ]
+    },
+    {
+      "title": "travel trends summer 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "travel",
+        "trends",
+        "summer",
+        "2026"
+      ]
+    },
+    {
+      "title": "handmade craft ideas for home",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "handmade",
+        "craft",
+        "ideas",
+        "for",
+        "home"
+      ]
+    },
+    {
+      "title": "handmade craft jobs work from home",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "handmade",
+        "craft",
+        "jobs",
+        "work",
+        "from",
+        "home"
+      ]
+    },
+    {
+      "title": "crochet bag",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "crochet",
+        "bag"
+      ]
+    },
+    {
+      "title": "crochet bag pattern",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "crochet",
+        "bag",
+        "pattern"
+      ]
+    },
+    {
+      "title": "crochet bag charms",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "crochet",
+        "bag",
+        "charms"
+      ]
+    },
+    {
+      "title": "crochet bag strap",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "crochet",
+        "bag",
+        "strap"
+      ]
+    },
+    {
+      "title": "crochet bag holder",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "crochet",
+        "bag",
+        "holder"
+      ]
+    },
+    {
+      "title": "crochet bag handles",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "crochet",
+        "bag",
+        "handles"
+      ]
+    },
+    {
+      "title": "bedroom decor ideas",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bedroom",
+        "decor",
+        "ideas"
+      ]
+    },
+    {
+      "title": "bedroom decor",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bedroom",
+        "decor"
+      ]
+    },
+    {
+      "title": "bedroom decor inspiration",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bedroom",
+        "decor",
+        "inspiration"
+      ]
+    },
+    {
+      "title": "bedroom decor wall",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bedroom",
+        "decor",
+        "wall"
+      ]
+    },
+    {
+      "title": "bedroom decor ideas for couples",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bedroom",
+        "decor",
+        "ideas",
+        "for",
+        "couples"
+      ]
+    },
+    {
+      "title": "bedroom decor ideas for women",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bedroom",
+        "decor",
+        "ideas",
+        "for",
+        "women"
+      ]
+    },
+    {
+      "title": "bedroom decorating ideas 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bedroom",
+        "decorating",
+        "ideas",
+        "2026"
+      ]
+    },
+    {
+      "title": "bedroom decor for men",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "bedroom",
+        "decor",
+        "for",
+        "men"
+      ]
+    },
+    {
+      "title": "living room ideas",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "living",
+        "room",
+        "ideas"
+      ]
+    },
+    {
+      "title": "living room ideas for small spaces",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "living",
+        "room",
+        "ideas",
+        "for",
+        "small",
+        "spaces"
+      ]
+    },
+    {
+      "title": "living room ideas decor",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "living",
+        "room",
+        "ideas",
+        "decor"
+      ]
+    },
+    {
+      "title": "living room ideas with grey couch",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "living",
+        "room",
+        "ideas",
+        "with",
+        "grey",
+        "couch"
+      ]
+    },
+    {
+      "title": "living room ideas with fireplace",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "living",
+        "room",
+        "ideas",
+        "with",
+        "fireplace"
+      ]
+    },
+    {
+      "title": "living room ideas for apartments",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "living",
+        "room",
+        "ideas",
+        "for",
+        "apartments"
+      ]
+    },
+    {
+      "title": "home interior trends 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "home",
+        "interior",
+        "trends",
+        "2026"
+      ]
+    },
+    {
+      "title": "home interior trends",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "home",
+        "interior",
+        "trends"
+      ]
+    },
+    {
+      "title": "home interior trends 2027",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "home",
+        "interior",
+        "trends",
+        "2027"
+      ]
+    },
+    {
+      "title": "home interior trends 2025",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "home",
+        "interior",
+        "trends",
+        "2025"
+      ]
+    },
+    {
+      "title": "home interior trends 2026 uk",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "home",
+        "interior",
+        "trends",
+        "2026"
+      ]
+    },
+    {
+      "title": "home interior trending colors",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "home",
+        "interior",
+        "trending",
+        "colors"
+      ]
+    },
+    {
+      "title": "home trends interior design",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "home",
+        "trends",
+        "interior",
+        "design"
+      ]
+    },
+    {
+      "title": "home decor trend",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "home",
+        "decor",
+        "trend"
+      ]
+    },
+    {
+      "title": "sage green decor",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "sage",
+        "green",
+        "decor"
+      ]
+    },
+    {
+      "title": "sage green decor ideas",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "sage",
+        "green",
+        "decor",
+        "ideas"
+      ]
+    },
+    {
+      "title": "sage green decor for bedroom",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "sage",
+        "green",
+        "decor",
+        "for",
+        "bedroom"
+      ]
+    },
+    {
+      "title": "sage green decorative bowl",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "sage",
+        "green",
+        "decorative",
+        "bowl"
+      ]
+    },
+    {
+      "title": "sage green decor for living room",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "sage",
+        "green",
+        "decor",
+        "for",
+        "living",
+        "room"
+      ]
+    },
+    {
+      "title": "sage green decor for bathroom",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "sage",
+        "green",
+        "decor",
+        "for",
+        "bathroom"
+      ]
+    },
+    {
+      "title": "copper kitchen",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "copper",
+        "kitchen"
+      ]
+    },
+    {
+      "title": "specialty coffee drink ideas",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "specialty",
+        "coffee",
+        "drink",
+        "ideas"
+      ]
+    },
+    {
+      "title": "special coffee drinks",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "special",
+        "coffee",
+        "drinks"
+      ]
+    },
+    {
+      "title": "special coffee drinks with alcohol",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "special",
+        "coffee",
+        "drinks",
+        "with",
+        "alcohol"
+      ]
+    },
+    {
+      "title": "specialty coffee drinks",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "specialty",
+        "coffee",
+        "drinks"
+      ]
+    },
+    {
+      "title": "specialty coffee drink recipes",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "specialty",
+        "coffee",
+        "drink",
+        "recipes"
+      ]
+    },
+    {
+      "title": "specialty coffee drinks with alcohol",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "specialty",
+        "coffee",
+        "drinks",
+        "with",
+        "alcohol"
+      ]
+    },
+    {
+      "title": "matcha latte calories",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "matcha",
+        "latte",
+        "calories"
+      ]
+    },
+    {
+      "title": "matcha latte ratio",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "matcha",
+        "latte",
+        "ratio"
+      ]
+    },
+    {
+      "title": "matcha latte caffeine",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "matcha",
+        "latte",
+        "caffeine"
+      ]
+    },
+    {
+      "title": "matcha latte powder",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "matcha",
+        "latte",
+        "powder"
+      ]
+    },
+    {
+      "title": "iced matcha",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "iced",
+        "matcha"
+      ]
+    },
+    {
+      "title": "linen shirt with jeans",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "linen",
+        "shirt",
+        "with",
+        "jeans"
+      ]
+    },
+    {
+      "title": "linen dress",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "linen",
+        "dress"
+      ]
+    },
+    {
+      "title": "linen dress pants",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "linen",
+        "dress",
+        "pants"
+      ]
+    },
+    {
+      "title": "linen dresses for summer",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "linen",
+        "dresses",
+        "for",
+        "summer"
+      ]
+    },
+    {
+      "title": "linen dress shirts for men",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "linen",
+        "dress",
+        "shirts",
+        "for",
+        "men"
+      ]
+    },
+    {
+      "title": "linen dress pants men",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "linen",
+        "dress",
+        "pants",
+        "men"
+      ]
+    },
+    {
+      "title": "girl fashion makeup games free",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "girl",
+        "fashion",
+        "makeup",
+        "games",
+        "free"
+      ]
+    },
+    {
+      "title": "girl fashion makeup games",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "girl",
+        "fashion",
+        "makeup",
+        "games"
+      ]
+    },
+    {
+      "title": "girl fashion makeup games online",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "girl",
+        "fashion",
+        "makeup",
+        "games",
+        "online"
+      ]
+    },
+    {
+      "title": "girl fashion makeup games offline",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "girl",
+        "fashion",
+        "makeup",
+        "games",
+        "offline"
+      ]
+    },
+    {
+      "title": "teen outfit ideas",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "teen",
+        "outfit",
+        "ideas"
+      ]
+    },
+    {
+      "title": "teen outfit inspo",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "teen",
+        "outfit",
+        "inspo"
+      ]
+    },
+    {
+      "title": "transitional coat",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "transitional",
+        "coat"
+      ]
+    },
+    {
+      "title": "transitional coat women",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "transitional",
+        "coat",
+        "women"
+      ]
+    },
+    {
+      "title": "transitional coat meaning",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "transitional",
+        "coat",
+        "meaning"
+      ]
+    },
+    {
+      "title": "transitional coat men",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "transitional",
+        "coat",
+        "men"
+      ]
+    },
+    {
+      "title": "transitional coat rack",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "transitional",
+        "coat",
+        "rack"
+      ]
+    },
+    {
+      "title": "transitional coat hooks",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "transitional",
+        "coat",
+        "hooks"
+      ]
+    },
+    {
+      "title": "transitional coat by f\u00e9raud",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "transitional",
+        "coat",
+        "f\u00e9raud"
+      ]
+    },
+    {
+      "title": "transitional coat by lawrence grey",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "transitional",
+        "coat",
+        "lawrence",
+        "grey"
+      ]
+    },
+    {
+      "title": "knit sweater styles",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "knit",
+        "sweater",
+        "styles"
+      ]
+    },
+    {
+      "title": "knit sweater style men",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "knit",
+        "sweater",
+        "style",
+        "men"
+      ]
+    },
+    {
+      "title": "knitted sweater style jo sharp",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "knitted",
+        "sweater",
+        "style",
+        "sharp"
+      ]
+    },
+    {
+      "title": "knit cardigan style",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "knit",
+        "cardigan",
+        "style"
+      ]
+    },
+    {
+      "title": "knit jumper styles",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "knit",
+        "jumper",
+        "styles"
+      ]
+    },
+    {
+      "title": "knit sweater fashion",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "knit",
+        "sweater",
+        "fashion"
+      ]
+    },
+    {
+      "title": "knit sweater fashion nova",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "knit",
+        "sweater",
+        "fashion",
+        "nova"
+      ]
+    },
+    {
+      "title": "knit sweater fashion men",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "knit",
+        "sweater",
+        "fashion",
+        "men"
+      ]
+    },
+    {
+      "title": "autumn outfits women",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "autumn",
+        "outfits",
+        "women"
+      ]
+    },
+    {
+      "title": "autumn outfits men",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "autumn",
+        "outfits",
+        "men"
+      ]
+    },
+    {
+      "title": "autumn outfits women 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "autumn",
+        "outfits",
+        "women",
+        "2026"
+      ]
+    },
+    {
+      "title": "autumn outfits 2026",
+      "score": 0.483,
+      "demand": 0.25,
+      "freshness": 1.0,
+      "sources": [
+        "google_autocomplete"
+      ],
+      "keywords": [
+        "autumn",
+        "outfits",
+        "2026"
+      ]
+    },
+    {
+      "title": "corduroy dress",
+      "score": 0.471,
+      "demand": 0.23,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "corduroy",
+        "dress"
+      ]
+    },
+    {
+      "title": "butter yellow colour",
+      "score": 0.459,
+      "demand": 0.21,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "butter",
+        "yellow",
+        "colour"
+      ]
+    },
+    {
+      "title": "iced coffee",
+      "score": 0.459,
+      "demand": 0.21,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "iced",
+        "coffee"
+      ]
+    },
+    {
+      "title": "butter yellow cake",
+      "score": 0.459,
+      "demand": 0.21,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "butter",
+        "yellow",
+        "cake"
+      ]
+    },
+    {
+      "title": "corduroy jeans",
+      "score": 0.435,
+      "demand": 0.17,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "corduroy",
+        "jeans"
+      ]
+    },
+    {
+      "title": "small crochet bag",
+      "score": 0.435,
+      "demand": 0.17,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "small",
+        "crochet",
+        "bag"
+      ]
+    },
+    {
+      "title": "iced strawberry matcha",
+      "score": 0.435,
+      "demand": 0.17,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "iced",
+        "strawberry",
+        "matcha"
+      ]
+    },
+    {
+      "title": "strawberry matcha",
+      "score": 0.435,
+      "demand": 0.17,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "strawberry",
+        "matcha"
+      ]
+    },
+    {
+      "title": "autumn outfit for men",
+      "score": 0.435,
+      "demand": 0.17,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "autumn",
+        "outfit",
+        "for",
+        "men"
+      ]
+    },
+    {
+      "title": "corduroy sofa",
+      "score": 0.429,
+      "demand": 0.16,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "corduroy",
+        "sofa"
+      ]
+    },
+    {
+      "title": "crochet bag patterns",
+      "score": 0.429,
+      "demand": 0.16,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "crochet",
+        "bag",
+        "patterns"
+      ]
+    },
+    {
+      "title": "strawberry iced matcha",
+      "score": 0.429,
+      "demand": 0.16,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "strawberry",
+        "iced",
+        "matcha"
+      ]
+    },
+    {
+      "title": "corduroy skirt",
+      "score": 0.423,
+      "demand": 0.15,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "corduroy",
+        "skirt"
+      ]
+    },
+    {
+      "title": "korea autumn outfit",
+      "score": 0.423,
+      "demand": 0.15,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "korea",
+        "autumn",
+        "outfit"
+      ]
+    },
+    {
+      "title": "butter yellow bag",
+      "score": 0.417,
+      "demand": 0.14,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "butter",
+        "yellow",
+        "bag"
+      ]
+    },
+    {
+      "title": "mini crochet bag",
+      "score": 0.417,
+      "demand": 0.14,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "mini",
+        "crochet",
+        "bag"
+      ]
+    },
+    {
+      "title": "granny square crochet bag",
+      "score": 0.417,
+      "demand": 0.14,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "granny",
+        "square",
+        "crochet",
+        "bag"
+      ]
+    },
+    {
+      "title": "granny square bag",
+      "score": 0.417,
+      "demand": 0.14,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "granny",
+        "square",
+        "bag"
+      ]
+    },
+    {
+      "title": "iced matcha latte calories",
+      "score": 0.411,
+      "demand": 0.13,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "iced",
+        "matcha",
+        "latte",
+        "calories"
+      ]
+    },
+    {
+      "title": "crochet shoulder bag",
+      "score": 0.405,
+      "demand": 0.12,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "crochet",
+        "shoulder",
+        "bag"
+      ]
+    },
+    {
+      "title": "iced banana bread matcha",
+      "score": 0.405,
+      "demand": 0.12,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "iced",
+        "banana",
+        "bread",
+        "matcha"
+      ]
+    },
+    {
+      "title": "how to make matcha",
+      "score": 0.405,
+      "demand": 0.12,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "how",
+        "make",
+        "matcha"
+      ]
+    },
+    {
+      "title": "how to make iced matcha",
+      "score": 0.405,
+      "demand": 0.12,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "how",
+        "make",
+        "iced",
+        "matcha"
+      ]
+    },
+    {
+      "title": "butter yellow outfit",
+      "score": 0.399,
+      "demand": 0.11,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "butter",
+        "yellow",
+        "outfit"
+      ]
+    },
+    {
+      "title": "butter yellow dress women",
+      "score": 0.399,
+      "demand": 0.11,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "butter",
+        "yellow",
+        "dress",
+        "women"
+      ]
+    },
+    {
+      "title": "butter yellow sweater",
+      "score": 0.399,
+      "demand": 0.11,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "butter",
+        "yellow",
+        "sweater"
+      ]
+    },
+    {
+      "title": "corduroy hat",
+      "score": 0.399,
+      "demand": 0.11,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "corduroy",
+        "hat"
+      ]
+    },
+    {
+      "title": "autumn outfit in japan",
+      "score": 0.393,
+      "demand": 0.1,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "autumn",
+        "outfit",
+        "japan"
+      ]
+    },
+    {
+      "title": "corduroy collar jacket",
+      "score": 0.387,
+      "demand": 0.09,
+      "freshness": 1.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "keywords": [
+        "corduroy",
+        "collar",
+        "jacket"
+      ]
+    }
+  ]
+}

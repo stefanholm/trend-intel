@@ -1,0 +1,9 @@
+# Fixed anchor seeds — edit these; agent adds auto-discovered seeds to seeds.txt
+linen dress
+rust orange scarf
+iced matcha
+copper kitchen
+butter yellow
+sage green decor
+cherry red nails
+corduroy
