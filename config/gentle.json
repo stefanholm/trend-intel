@@ -1,0 +1,11 @@
+{
+  "mode": "gentle",
+  "source_group_size": 2,
+  "autocomplete_per_cycle": 8,
+  "pytrends_batches": 2,
+  "verify_terms": 8,
+  "sleep_between_sources": [15, 35],
+  "sleep_between_requests": [4, 10],
+  "cycle_interval_hours": 6,
+  "rss_geos_per_cycle": 3
+}

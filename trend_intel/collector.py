@@ -14,7 +14,7 @@ import time
 from pathlib import Path
 
 from .db import DB, DEFAULT_DB
-from . import scoring
+from . import scoring, pacing
 from .sources import trends_rss, pinterest, google_queries, marketplaces, autocomplete, temu
 
 PKG_DIR = Path(__file__).resolve().parent
@@ -46,6 +46,8 @@ def jittered_sleep(base, spread=0.3):
 
 def run_cycle(db, verbose=False):
     results = {}
+    cfg = pacing.load_config()
+    gentle = cfg["mode"] == "gentle"
 
     rid = db.start_run("cycle")
     total = 0
@@ -71,47 +73,68 @@ def run_cycle(db, verbose=False):
         if reason:
             db.set_nugget_status(n["title"], "rejected", reason)
 
-    # 1. Google Trends RSS (many geos, no auth, tolerant)
-    n = trends_rss.harvest(db, run_all=verbose)
+    # 1. Google Trends RSS (geos rotate in gentle mode)
+    geos = None
+    if gentle:
+        geos = pacing.rotate(trends_rss.GEOS, cfg["rss_geos_per_cycle"],
+                             "rss_geo_pos", db)
+    n = trends_rss.harvest(db, geos=geos, run_all=verbose)
     results["trends_rss"] = n
     total += n
-    jittered_sleep(5)
+    pacing.gentle_sleep(cfg["sleep_between_sources"])
 
-    # 2. Pinterest trends (lifestyle-rich)
+    # 2. Pinterest trends
     n = pinterest.harvest(db, run_all=verbose)
     results["pinterest"] = n
     total += n
-    jittered_sleep(5)
+    pacing.gentle_sleep(cfg["sleep_between_sources"])
 
-    # 3. marketplace & trend-site intel (exploding topics, ebay, shein, temu)
-    n = marketplaces.harvest(db, which=["exploding_topics", "ebay_deals", "shein_home"], verbose=verbose)
+    # 3. marketplace sources (rotate in gentle mode)
+    msrcs = ["exploding_topics", "ebay_deals", "shein_home"]
+    if gentle:
+        msrcs = pacing.rotate(msrcs, cfg["source_group_size"], "market_pos", db)
+    n = marketplaces.harvest(db, which=msrcs, verbose=verbose)
     results["marketplaces"] = n
     total += n
-    jittered_sleep(4)
+    pacing.gentle_sleep(cfg["sleep_between_sources"])
 
     # 3b. temu trending products
     n = temu.harvest(db, verbose=verbose)
     results["temu"] = n
     total += n
-    jittered_sleep(4)
+    pacing.gentle_sleep(cfg["sleep_between_sources"])
 
-    # 3c. google autocomplete — area + seasonal seeds (leading indicator)
+    # 3c. google autocomplete — seeds rotate in gentle mode
     from .areas import area_seeds, seasonal_seeds
-    n = autocomplete.harvest(db, area_seeds() + seasonal_seeds(), verbose=verbose)
+    all_seeds = area_seeds() + seasonal_seeds()
+    if gentle:
+        all_seeds = pacing.rotate(all_seeds, cfg["autocomplete_per_cycle"],
+                                  "ac_seed_pos", db)
+    n = autocomplete.harvest(db, all_seeds, verbose=verbose)
     results["autocomplete"] = n
     total += n
-    jittered_sleep(2)
+    pacing.gentle_sleep(cfg["sleep_between_requests"])
 
-    # 4. pytrends related queries (optional, seed-driven)
+    # 4. pytrends related queries (fewer batches in gentle mode)
     seeds = load_seeds()
     if seeds:
-        n = google_queries.harvest(db, seeds[:10], run_all=verbose)
+        n = google_queries.harvest(
+            db, seeds[:cfg["pytrends_batches"] * 5] if gentle else seeds[:10],
+            run_all=verbose)
         results["pytrends"] = n
         total += n
 
     # 5. Build nuggets from everything collected
     stats = scoring.build_nuggets(db)
     results["nuggets"] = stats
+
+    # 6. Manifest shortlist (gate + rank + enrich for the scene layer)
+    try:
+        from .manifest_gate import export_shortlist
+        sl = export_shortlist()
+        results["shortlist"] = len(sl["shortlist"])
+    except Exception as e:  # noqa: BLE001
+        results["shortlist"] = f"error: {e}"
 
     db.finish_run(rid, "ok", items=total)
     return results

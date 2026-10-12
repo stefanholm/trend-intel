@@ -1,0 +1,384 @@
+{
+  "generated_at": 1791815142,
+  "shortlist": [
+    {
+      "title": "copper kitchen sink",
+      "hotness": 0.387,
+      "score": 0.967,
+      "demand": 1.0,
+      "approx_traffic": null,
+      "state": "steady",
+      "slope": 0.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": true,
+      "seen_count": 1,
+      "first_seen": 1791726980,
+      "variant_count": 23,
+      "variants": [
+        "black and copper kitchen",
+        "copper kitchen",
+        "copper kitchen accessories",
+        "copper kitchen aid",
+        "copper kitchen aid mixer"
+      ],
+      "area": "warm_kitchen",
+      "keep": true,
+      "drop_reason": "ok",
+      "image_need": "Environment interior",
+      "prop_hero": "copper kitchen sink",
+      "setting_hint": "oak dining table, morning window light, styled with intent",
+      "trajectory": {
+        "state": "steady",
+        "hotness": 0.387,
+        "sources": 1,
+        "gt_verified": true
+      },
+      "people_hands": "1 person mid-motion",
+      "buyer_use": "furniture retail / home staging"
+    },
+    {
+      "title": "donut bag crochet pattern",
+      "hotness": 0.373,
+      "score": 0.933,
+      "demand": 1.0,
+      "approx_traffic": null,
+      "state": "steady",
+      "slope": 0.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": true,
+      "seen_count": 1,
+      "first_seen": 1791726919,
+      "variant_count": 17,
+      "variants": [
+        "bag crochet pattern",
+        "crochet bag",
+        "crochet bag charms",
+        "crochet bag handles",
+        "crochet bag holder"
+      ],
+      "area": "crochet_craft",
+      "keep": true,
+      "drop_reason": "ok",
+      "image_need": "Product still-life",
+      "prop_hero": "donut bag crochet pattern",
+      "setting_hint": "quiet interior corner, single window light",
+      "trajectory": {
+        "state": "steady",
+        "hotness": 0.373,
+        "sources": 1,
+        "gt_verified": true
+      },
+      "people_hands": "none, hands-only on product",
+      "buyer_use": "ecommerce / craft brand"
+    },
+    {
+      "title": "corduroy pants",
+      "hotness": 0.187,
+      "score": 0.933,
+      "demand": 1.0,
+      "approx_traffic": null,
+      "state": "unknown",
+      "slope": 0.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": true,
+      "seen_count": 1,
+      "first_seen": 1791733643,
+      "variant_count": 4,
+      "variants": [
+        "brown corduroy pants",
+        "corduroy pants women",
+        "women corduroy pants"
+      ],
+      "area": "autumn_fashion",
+      "keep": true,
+      "drop_reason": "ok",
+      "image_need": "Environment worn apparel",
+      "prop_hero": "corduroy pants",
+      "setting_hint": "autumn interior or tree-lined street, worn apparel, warm light",
+      "trajectory": {
+        "state": "unknown",
+        "hotness": 0.187,
+        "sources": 1,
+        "gt_verified": true
+      },
+      "people_hands": "1 person mid-motion",
+      "buyer_use": "fashion lookbook / autumn editorial"
+    },
+    {
+      "title": "iced latte",
+      "hotness": 0.187,
+      "score": 0.933,
+      "demand": 1.0,
+      "approx_traffic": null,
+      "state": "unknown",
+      "slope": 0.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": true,
+      "seen_count": 1,
+      "first_seen": 1791733643,
+      "variant_count": 5,
+      "variants": [
+        "dunkin donuts iced matcha latte",
+        "iced matcha latte calories",
+        "iced matcha latte zu sp\u00e4t beim pilates",
+        "latte"
+      ],
+      "area": "matcha_drinks",
+      "keep": true,
+      "drop_reason": "ok",
+      "image_need": "Macro drink",
+      "prop_hero": "iced latte",
+      "setting_hint": "cafe marble counter, filled glass with condensation, soft daylight",
+      "trajectory": {
+        "state": "unknown",
+        "hotness": 0.187,
+        "sources": 1,
+        "gt_verified": true
+      },
+      "people_hands": "1 hand holding / pouring",
+      "buyer_use": "cafe menus / delivery app hero"
+    },
+    {
+      "title": "dark cherry red nails",
+      "hotness": 0.187,
+      "score": 0.933,
+      "demand": 1.0,
+      "approx_traffic": null,
+      "state": "unknown",
+      "slope": 0.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": true,
+      "seen_count": 1,
+      "first_seen": 1791733643,
+      "variant_count": 1,
+      "variants": [],
+      "area": "colors",
+      "keep": true,
+      "drop_reason": "ok",
+      "image_need": "Beauty detail",
+      "prop_hero": "dark cherry red nails",
+      "setting_hint": "vanity top with mirror soft light, hands in frame",
+      "trajectory": {
+        "state": "unknown",
+        "hotness": 0.187,
+        "sources": 1,
+        "gt_verified": true
+      },
+      "people_hands": "1 person mid-motion",
+      "buyer_use": "cosmetics campaign / tutorial"
+    },
+    {
+      "title": "butter yellow",
+      "hotness": 0.175,
+      "score": 0.877,
+      "demand": 0.85,
+      "approx_traffic": null,
+      "state": "unknown",
+      "slope": 0.0,
+      "sources": [
+        "google_autocomplete",
+        "pytrends_top"
+      ],
+      "source_count": 2,
+      "verified_by_google_trends": true,
+      "seen_count": 1,
+      "first_seen": 1791733643,
+      "variant_count": 15,
+      "variants": [
+        "butter yellow bridesmaid dresses",
+        "butter yellow cake",
+        "butter yellow color",
+        "butter yellow colour",
+        "butter yellow dress"
+      ],
+      "area": "colors",
+      "keep": true,
+      "drop_reason": "ok",
+      "image_need": "Environment lifestyle",
+      "prop_hero": "butter yellow",
+      "setting_hint": "quiet interior corner, single window light",
+      "trajectory": {
+        "state": "unknown",
+        "hotness": 0.175,
+        "sources": 2,
+        "gt_verified": true
+      },
+      "people_hands": "1 person mid-motion",
+      "buyer_use": "lifestyle campaign"
+    },
+    {
+      "title": "rrl corduroy collar deck jacket",
+      "hotness": 0.139,
+      "score": 0.693,
+      "demand": 0.6,
+      "approx_traffic": null,
+      "state": "unknown",
+      "slope": 0.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": true,
+      "seen_count": 1,
+      "first_seen": 1791730256,
+      "variant_count": 3,
+      "variants": [
+        "corduroy collar jacket",
+        "corduroy jacket"
+      ],
+      "area": "autumn_fashion",
+      "keep": true,
+      "drop_reason": "ok",
+      "image_need": "Environment worn apparel",
+      "prop_hero": "rrl corduroy collar deck jacket",
+      "setting_hint": "autumn interior or tree-lined street, worn apparel, warm light",
+      "trajectory": {
+        "state": "unknown",
+        "hotness": 0.139,
+        "sources": 1,
+        "gt_verified": true
+      },
+      "people_hands": "1 person mid-motion",
+      "buyer_use": "fashion lookbook / autumn editorial"
+    },
+    {
+      "title": "iced blue coconut matcha",
+      "hotness": 0.139,
+      "score": 0.693,
+      "demand": 0.6,
+      "approx_traffic": null,
+      "state": "unknown",
+      "slope": 0.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": true,
+      "seen_count": 1,
+      "first_seen": 1791727408,
+      "variant_count": 5,
+      "variants": [
+        "iced matcha",
+        "iced matcha calories",
+        "iced strawberry matcha",
+        "strawberry iced matcha"
+      ],
+      "area": "matcha_drinks",
+      "keep": true,
+      "drop_reason": "ok",
+      "image_need": "Macro drink",
+      "prop_hero": "iced blue coconut matcha",
+      "setting_hint": "cafe marble counter, filled glass with condensation, soft daylight",
+      "trajectory": {
+        "state": "unknown",
+        "hotness": 0.139,
+        "sources": 1,
+        "gt_verified": true
+      },
+      "people_hands": "1 hand holding / pouring",
+      "buyer_use": "cafe menus / delivery app hero"
+    },
+    {
+      "title": "autumn outfits",
+      "hotness": 0.138,
+      "score": 0.691,
+      "demand": 0.54,
+      "approx_traffic": null,
+      "state": "unknown",
+      "slope": 0.0,
+      "sources": [
+        "pytrends_top"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": true,
+      "seen_count": 1,
+      "first_seen": 1791726919,
+      "variant_count": 5,
+      "variants": [
+        "autumn outfits 2026",
+        "autumn outfits men",
+        "autumn outfits women",
+        "autumn outfits women 2026"
+      ],
+      "area": "autumn_fashion",
+      "keep": true,
+      "drop_reason": "ok",
+      "image_need": "Environment worn apparel",
+      "prop_hero": "autumn outfits",
+      "setting_hint": "quiet interior corner, single window light",
+      "trajectory": {
+        "state": "unknown",
+        "hotness": 0.138,
+        "sources": 1,
+        "gt_verified": true
+      },
+      "people_hands": "1 person mid-motion",
+      "buyer_use": "fashion lookbook / autumn editorial"
+    },
+    {
+      "title": "seed linen dress",
+      "hotness": 0.127,
+      "score": 0.633,
+      "demand": 0.5,
+      "approx_traffic": null,
+      "state": "unknown",
+      "slope": 0.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": true,
+      "seen_count": 1,
+      "first_seen": 1791727408,
+      "variant_count": 5,
+      "variants": [
+        "linen dress pants",
+        "linen dress pants men",
+        "linen dress shirts for men",
+        "mens linen dress pants"
+      ],
+      "area": "linen_summer",
+      "keep": true,
+      "drop_reason": "ok",
+      "image_need": "Environment worn apparel",
+      "prop_hero": "seed linen dress",
+      "setting_hint": "quiet interior corner, single window light",
+      "trajectory": {
+        "state": "unknown",
+        "hotness": 0.127,
+        "sources": 1,
+        "gt_verified": true
+      },
+      "people_hands": "1 person mid-motion",
+      "buyer_use": "fashion lookbook / autumn editorial"
+    }
+  ],
+  "rejected_summary": {
+    "weak_provenance": 114,
+    "low_hotness": 7,
+    "stock_unsafe": 1
+  },
+  "legend": {
+    "image_need": "who licenses this: Macro drink / Beauty detail / Environment ...",
+    "prop_hero": "concrete hero object for the frame (from the title)",
+    "setting_hint": "coherent micro-setting mapped from the title",
+    "trajectory": "state + hotness + source count + GT verification",
+    "people_hands": "hands/usage mandate (filled vessels, no empty)",
+    "buyer_use": "one-line buyer use case"
+  }
+}

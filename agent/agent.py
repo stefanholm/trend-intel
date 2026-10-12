@@ -21,7 +21,7 @@ STATUS = DATA / "status.json"
 SEEDS = BASE / "config" / "seeds.txt"
 ANCHORS = BASE / "config" / "anchors.txt"
 MAX_SEEDS = 12
-CYCLE_MIN_SECS = 4 * 3600
+CYCLE_MIN_SECS = 6 * 3600  # gentle default; config/gentle.json overrides
 MAX_BACKOFF = 6 * 3600
 
 logging.basicConfig(
