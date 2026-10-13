@@ -27,6 +27,16 @@ DATA = Path(__file__).resolve().parent.parent / "data"
 REPORT = DATA / "intel_report.json"
 
 
+def _failure_learning_block():
+    """Learned bans/fixes from the render app's QC reports — same report as
+    everything else so consumers read one file."""
+    try:
+        from . import failure_learning
+        return failure_learning.report_block()
+    except Exception:  # noqa: BLE001
+        return {"n_rows": 0, "note": "failure-learning unavailable"}
+
+
 def _load(path):
     try:
         return json.loads(Path(path).read_text())
@@ -164,6 +174,7 @@ def write_report(db, path=REPORT):
     report = {
         "updated_at": int(time.time()),
         "data_quality": data_quality,
+        "failure_learning": _failure_learning_block(),
         "legend": {
             "hotness": "0-1 composite: base score x trajectory weight (rising 1.0, steady 0.4, peaked 0.1, falling 0.0) x momentum x stickiness. USE THIS for ranking.",
             "score": "0-1 intake score: 0.6*demand + 0.3*freshness + 0.1*multi-source corroboration. Demand-dominated.",

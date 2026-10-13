@@ -126,6 +126,7 @@ def run_cycle():
     """Every stage isolated; the report is ALWAYS written at the end so
     the intel file is readable at all times, with clear verification state."""
     _stage("ingest_burned", _ingest_burned)
+    _stage("failure_learning", _failure_learning)
     _stage("re_gate", re_gate_nuggets)
     write_status("collecting")
 
@@ -143,6 +144,22 @@ def run_cycle():
     _stage("toplists", _search_toplists_low_yield)
     _stage("report", _write_report)   # ALWAYS runs — intel always readable
     return collect_ok
+
+
+def _failure_learning():
+    """Read the render app's QC reports (latest_report.json / report_*.json
+    in data/ or NFE_REPORT_DIR): scores -> hard bans (DB) + fix directives.
+    Runs BEFORE re-gate so learned bans apply to this cycle's shortlist."""
+    sys.path.insert(0, str(BASE))
+    from trend_intel.db import DB
+    from trend_intel import failure_learning
+    db = DB(BASE / "data" / "intel.db")
+    ctx = failure_learning.run(db=db)
+    if ctx["n_rows"]:
+        log.info("failure-learning: bans titles=%d roots=%d false_demand=%d",
+                 len(ctx["hard_ban_titles"]),
+                 len(ctx["hard_ban_roots"]),
+                 len(ctx["false_demand"]))
 
 
 def _ingest_burned():
