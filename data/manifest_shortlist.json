@@ -1,5 +1,5 @@
 {
-  "generated_at": 1791815142,
+  "generated_at": 1791898969,
   "shortlist": [
     {
       "title": "copper kitchen sink",
@@ -114,43 +114,6 @@
       "buyer_use": "fashion lookbook / autumn editorial"
     },
     {
-      "title": "iced latte",
-      "hotness": 0.187,
-      "score": 0.933,
-      "demand": 1.0,
-      "approx_traffic": null,
-      "state": "unknown",
-      "slope": 0.0,
-      "sources": [
-        "pytrends_top"
-      ],
-      "source_count": 1,
-      "verified_by_google_trends": true,
-      "seen_count": 1,
-      "first_seen": 1791733643,
-      "variant_count": 5,
-      "variants": [
-        "dunkin donuts iced matcha latte",
-        "iced matcha latte calories",
-        "iced matcha latte zu sp\u00e4t beim pilates",
-        "latte"
-      ],
-      "area": "matcha_drinks",
-      "keep": true,
-      "drop_reason": "ok",
-      "image_need": "Macro drink",
-      "prop_hero": "iced latte",
-      "setting_hint": "cafe marble counter, filled glass with condensation, soft daylight",
-      "trajectory": {
-        "state": "unknown",
-        "hotness": 0.187,
-        "sources": 1,
-        "gt_verified": true
-      },
-      "people_hands": "1 hand holding / pouring",
-      "buyer_use": "cafe menus / delivery app hero"
-    },
-    {
       "title": "dark cherry red nails",
       "hotness": 0.187,
       "score": 0.933,
@@ -165,9 +128,12 @@
       "verified_by_google_trends": true,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "variant_count": 1,
-      "variants": [],
-      "area": "colors",
+      "variant_count": 3,
+      "variants": [
+        "black cherry nails",
+        "cherry mocha nails"
+      ],
+      "area": "nails_detail",
       "keep": true,
       "drop_reason": "ok",
       "image_need": "Beauty detail",
@@ -198,13 +164,13 @@
       "verified_by_google_trends": true,
       "seen_count": 1,
       "first_seen": 1791733643,
-      "variant_count": 15,
+      "variant_count": 18,
       "variants": [
+        "butter yellow bag",
         "butter yellow bridesmaid dresses",
         "butter yellow cake",
         "butter yellow color",
-        "butter yellow colour",
-        "butter yellow dress"
+        "butter yellow colour"
       ],
       "area": "colors",
       "keep": true,
@@ -220,6 +186,44 @@
       },
       "people_hands": "1 person mid-motion",
       "buyer_use": "lifestyle campaign"
+    },
+    {
+      "title": "iced matcha latte zu sp\u00e4t beim pilates",
+      "hotness": 0.175,
+      "score": 0.873,
+      "demand": 0.9,
+      "approx_traffic": null,
+      "state": "unknown",
+      "slope": 0.0,
+      "sources": [
+        "pytrends_rising"
+      ],
+      "source_count": 1,
+      "verified_by_google_trends": true,
+      "seen_count": 1,
+      "first_seen": 1791727408,
+      "variant_count": 11,
+      "variants": [
+        "dunkin donuts iced matcha latte",
+        "iced matcha",
+        "iced matcha calories",
+        "iced matcha latte calories",
+        "iced strawberry matcha"
+      ],
+      "area": "matcha_drinks",
+      "keep": true,
+      "drop_reason": "ok",
+      "image_need": "Macro drink",
+      "prop_hero": "iced matcha latte zu sp\u00e4t beim pilates",
+      "setting_hint": "cafe marble counter, filled glass with condensation, soft daylight",
+      "trajectory": {
+        "state": "unknown",
+        "hotness": 0.175,
+        "sources": 1,
+        "gt_verified": true
+      },
+      "people_hands": "1 hand holding / pouring",
+      "buyer_use": "cafe menus / delivery app hero"
     },
     {
       "title": "rrl corduroy collar deck jacket",
@@ -271,13 +275,8 @@
       "verified_by_google_trends": true,
       "seen_count": 1,
       "first_seen": 1791727408,
-      "variant_count": 5,
-      "variants": [
-        "iced matcha",
-        "iced matcha calories",
-        "iced strawberry matcha",
-        "strawberry iced matcha"
-      ],
+      "variant_count": 1,
+      "variants": [],
       "area": "matcha_drinks",
       "keep": true,
       "drop_reason": "ok",
@@ -331,6 +330,39 @@
       "buyer_use": "fashion lookbook / autumn editorial"
     },
     {
+      "title": "burgundy nails",
+      "hotness": 0.133,
+      "score": 0.667,
+      "demand": 0.5,
+      "approx_traffic": null,
+      "state": "unknown",
+      "slope": 0.0,
+      "sources": [
+        "pytrends_rising",
+        "pytrends_top"
+      ],
+      "source_count": 2,
+      "verified_by_google_trends": true,
+      "seen_count": 1,
+      "first_seen": 1791733643,
+      "variant_count": 1,
+      "variants": [],
+      "area": "nails_detail",
+      "keep": true,
+      "drop_reason": "ok",
+      "image_need": "Beauty detail",
+      "prop_hero": "burgundy nails",
+      "setting_hint": "vanity top with mirror soft light, hands in frame",
+      "trajectory": {
+        "state": "unknown",
+        "hotness": 0.133,
+        "sources": 2,
+        "gt_verified": true
+      },
+      "people_hands": "1 person mid-motion",
+      "buyer_use": "cosmetics campaign / tutorial"
+    },
+    {
       "title": "seed linen dress",
       "hotness": 0.127,
       "score": 0.633,
@@ -366,11 +398,49 @@
       },
       "people_hands": "1 person mid-motion",
       "buyer_use": "fashion lookbook / autumn editorial"
+    },
+    {
+      "title": "crochet patterns",
+      "hotness": 0.103,
+      "score": 0.517,
+      "demand": 0.25,
+      "approx_traffic": null,
+      "state": "unknown",
+      "slope": 0.0,
+      "sources": [
+        "google_autocomplete",
+        "pytrends_top"
+      ],
+      "source_count": 2,
+      "verified_by_google_trends": true,
+      "seen_count": 1,
+      "first_seen": 1791733643,
+      "variant_count": 5,
+      "variants": [
+        "crochet patterns for baby blankets",
+        "crochet patterns for beginners",
+        "crochet patterns for blankets",
+        "crochet patterns free"
+      ],
+      "area": "crochet_craft",
+      "keep": true,
+      "drop_reason": "ok",
+      "image_need": "Product still-life",
+      "prop_hero": "crochet patterns",
+      "setting_hint": "quiet interior corner, single window light",
+      "trajectory": {
+        "state": "unknown",
+        "hotness": 0.103,
+        "sources": 2,
+        "gt_verified": true
+      },
+      "people_hands": "none, hands-only on product",
+      "buyer_use": "ecommerce / craft brand"
     }
   ],
   "rejected_summary": {
-    "weak_provenance": 114,
-    "low_hotness": 7,
+    "weak_provenance": 118,
+    "low_hotness": 6,
     "stock_unsafe": 1
   },
   "legend": {
@@ -379,6 +449,9 @@
     "setting_hint": "coherent micro-setting mapped from the title",
     "trajectory": "state + hotness + source count + GT verification",
     "people_hands": "hands/usage mandate (filled vessels, no empty)",
-    "buyer_use": "one-line buyer use case"
+    "buyer_use": "one-line buyer use case",
+    "supply_bucket": "Agent B supply: flooded | competitive | thin | unknown",
+    "demand_action": "expand_or_differentiate = flooded: use differentiation_angle",
+    "priority_slot": "thin supply + hot demand \u2014 best licensing slot"
   }
 }

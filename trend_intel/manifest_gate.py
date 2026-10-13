@@ -92,6 +92,7 @@ def rank(db, limit=20, area_quota=None):
             t["drop_reason"] = reason
             candidates.append(t)
 
+    demand_map = load_demand_context()
     kept = [c for c in candidates if c["keep"]]
     kept.sort(key=lambda c: (-c.get("hotness", 0),
                              -int(bool(c.get("verified_by_google_trends"))),
@@ -106,7 +107,7 @@ def rank(db, limit=20, area_quota=None):
         if per_area.get(a, 0) >= cap:
             continue
         per_area[a] = per_area.get(a, 0) + 1
-        out.append(enrich(c))
+        out.append(enrich(c, demand_map))
         if len(out) >= limit:
             break
     return out, candidates
@@ -168,7 +169,43 @@ def prop_hero(title):
     return title.strip()[:60]
 
 
-def enrich(c):
+def load_demand_context():
+    """Agent B's night output: supply buckets + gap hints per phrase.
+    Missing/stale file -> empty map; the gate never blocks on Agent B."""
+    path = DATA / "demand_context.json"
+    try:
+        data = json.loads(path.read_text())
+    except (OSError, ValueError):
+        return {}
+    if time.time() - data.get("updated_at", 0) > 48 * 3600:
+        return {}
+    return {q["phrase"].strip().lower(): q for q in data.get("queries", [])}
+
+
+def demand_context(c, demand_map):
+    """Attach Agent B's supply knowledge to a shortlist candidate and
+    force a differentiation angle when supply is flooded (merge rule)."""
+    q = demand_map.get(c["title"].strip().lower())
+    if not q:
+        return c
+    c["supply_bucket"] = q.get("supply_bucket", "unknown")
+    c["adobe_approx_hits"] = q.get("adobe_approx_hits")
+    if q.get("supply_bucket") == "flooded":
+        c["demand_action"] = "expand_or_differentiate"
+        angle = q.get("gap_hint") or \
+            "living-frame differentiation: add hands/pour/usage context"
+        c["differentiation_angle"] = angle
+        c["setting_hint"] = (c.get("setting_hint", "") +
+                             " | DIFFERENTIATE: " + angle).strip(" |")
+    elif q.get("supply_bucket") == "thin" and c.get("hotness", 0) >= 0.12:
+        c["demand_action"] = "keep"
+        c["priority_slot"] = True
+    elif q.get("gap_hint"):
+        c["gap_hint"] = q["gap_hint"]
+    return c
+
+
+def enrich(c, demand_map=None):
     c["title"] = strip_brand(c["title"])
     t = c["title"]
     c["image_need"] = image_need(t)
@@ -187,6 +224,8 @@ def enrich(c):
                       "Environment worn apparel": "fashion lookbook / autumn editorial",
                       "Environment interior": "furniture retail / home staging",
                       "Product still-life": "ecommerce / craft brand"}.get(c["image_need"], "lifestyle campaign")
+    if demand_map is not None:
+        c = demand_context(c, demand_map)
     return c
 
 
@@ -230,6 +269,9 @@ def export_shortlist(limit=20, path=None):
             "trajectory": "state + hotness + source count + GT verification",
             "people_hands": "hands/usage mandate (filled vessels, no empty)",
             "buyer_use": "one-line buyer use case",
+            "supply_bucket": "Agent B supply: flooded | competitive | thin | unknown",
+            "demand_action": "expand_or_differentiate = flooded: use differentiation_angle",
+            "priority_slot": "thin supply + hot demand — best licensing slot",
         },
     }
     path.write_text(json.dumps(out, indent=2))
