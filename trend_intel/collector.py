@@ -15,7 +15,7 @@ from pathlib import Path
 
 from .db import DB, DEFAULT_DB
 from . import scoring, pacing
-from .sources import trends_rss, pinterest, google_queries, marketplaces, autocomplete, temu
+from .sources import trends_rss, pinterest, google_queries, marketplaces, autocomplete, temu, verticals
 
 PKG_DIR = Path(__file__).resolve().parent
 EXPORT_PATH = PKG_DIR.parent / "data" / "intel_snapshot.json"
@@ -103,6 +103,17 @@ def run_cycle(db, verbose=False):
     results["temu"] = n
     total += n
     pacing.gentle_sleep(cfg["sleep_between_sources"])
+
+    # 3c-dedicated. vertical harvests: beauty + adult (lexicon-gated,
+    # evergreen fallback, never toplist-fed)
+    nb = verticals.harvest_beauty(db, verbose=verbose)
+    results["beauty_vertical"] = nb
+    total += nb
+    pacing.gentle_sleep(cfg["sleep_between_requests"])
+    na = verticals.harvest_adult(db, verbose=verbose)
+    results["adult_vertical"] = na
+    total += na
+    pacing.gentle_sleep(cfg["sleep_between_requests"])
 
     # 3c. google autocomplete — seeds rotate in gentle mode
     from .areas import area_seeds, seasonal_seeds

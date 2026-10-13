@@ -23,15 +23,23 @@ def _chunks(lst, n):
         yield lst[i:i + n]
 
 
+PRIORITY_AREAS = ["matcha_drinks", "autumn_fashion", "beauty_makeup",
+                  "adult_lingerie", "linen_summer", "hairstyles"]
+
+
 def verify_batch(db, batch_size=5, max_terms=30, min_gap=5.0):
     """Verify provisional nuggets against Google Trends.
 
-    Returns list of {title, state, slope, recent_mean, prev_mean, verified}.
-    """
+    Priority areas verified first (food/fashion/beauty/adult before
+    gadgets/travel) so a rate-limit degrades the least important areas."""
+    from .areas import match_area
     provisional = [n for n in db.active_nuggets(limit=2000)
                    if any(s != "pytrends_rising" and "trends_rss" not in s
                           for s in n.get("sources", []))]
-    provisional = provisional[:max_terms]
+    prio = [n for n in provisional
+            if match_area(n["title"]) in PRIORITY_AREAS]
+    rest = [n for n in provisional if n not in prio]
+    provisional = (prio + rest)[:max_terms]
     results = []
     for batch in _chunks([p["title"] for p in provisional], batch_size):
         if not trajectory.google_available():

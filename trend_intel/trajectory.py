@@ -82,3 +82,48 @@ def hotness(nugget_score, state, slope, seen_count=1):
     momentum = max(0.0, min(1.5, 1 + (slope or 0)))
     stickiness = min(1.2, 1 + 0.05 * (seen_count - 1))
     return round(nugget_score * w * momentum * stickiness, 3)
+
+
+# ---- track record: rising-call predictions stored & scored ----
+
+def record_prediction(db, title, state):
+    """Store a trajectory prediction so it can be verified later."""
+    import json, time as _t
+    try:
+        raw = db.get_meta("gt_predictions", "{}")
+        preds = json.loads(raw)
+    except (ValueError, TypeError):
+        preds = {}
+    if state == "rising":
+        preds.setdefault(title, {"first_called": int(_t.time()),
+                                  "calls": 0})
+        preds[title]["calls"] += 1
+        preds[title]["last_called"] = int(_t.time())
+        db.set_meta("gt_predictions", json.dumps(preds))
+
+
+def score_track_record(db, min_age_days=3):
+    """Check stored rising calls against current states: hit = still
+    rising/steady after min_age_days, miss = peaked/falling."""
+    import json, time as _t
+    try:
+        preds = json.loads(db.get_meta("gt_predictions", "{}"))
+    except (ValueError, TypeError):
+        return {"calls": 0, "hits": 0, "detail": {}}
+    now = _t.time()
+    detail, hits, calls = {}, 0, 0
+    for title, p in preds.items():
+        age = (now - p.get("first_called", now)) / 86400
+        if age < min_age_days:
+            continue
+        calls += 1
+        row = db._conn().execute(
+            "SELECT state FROM interest_history WHERE title=? "
+            "ORDER BY ts DESC LIMIT 1", (title,)).fetchone()
+        cur = row["state"] if row else "unknown"
+        ok = cur in ("rising", "steady")
+        hits += int(ok)
+        detail[title] = {"called": "rising", "now": cur,
+                         "verdict": "hit" if ok else "miss",
+                         "age_days": round(age, 1)}
+    return {"calls": calls, "hits": hits, "detail": detail}

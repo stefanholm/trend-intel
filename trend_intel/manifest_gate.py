@@ -18,6 +18,18 @@ from .areas import AREAS, match_area
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 
+BRAND_PREFIX_RE = re.compile(
+    r"^(dunkin|starbucks|nike|adidas|xiaomi|shokz|pact|hobbs|app?le|"
+    r"samsung|sony|lego|ninja|philips|dyson|bosch)\b\s*", re.I)
+
+
+def strip_brand(title):
+    """Remove leading brand tokens for the manifest; brand stays in source
+    metadata only."""
+    t = BRAND_PREFIX_RE.sub("", title).strip()
+    return t or title
+
+
 STOCK_UNSAFE_RE = re.compile(
     r"\b(game|games|gaming|coloring|colouring|printable|template|funeral|"
     r"simulator|roblox|minecraft|fortnite|sketch|drawing|pixel|"
@@ -155,6 +167,7 @@ def prop_hero(title):
 
 
 def enrich(c):
+    c["title"] = strip_brand(c["title"])
     t = c["title"]
     c["image_need"] = image_need(t)
     c["prop_hero"] = prop_hero(t)
@@ -175,12 +188,37 @@ def enrich(c):
     return c
 
 
+def adult_slot(shortlist, evergreen_pool=None):
+    """P3 adult lock: the adult slot must be intimates/swimwear per the
+    lexicon gate. Non-intimates adult themes are rewritten pre-manifest."""
+    from .sources.verticals import gate_adult, ADULT_EVERGREEN
+    pool = evergreen_pool or ADULT_EVERGREEN
+    rewritten = 0
+    for c in shortlist:
+        if c.get("area") == "adult_lingerie" and not gate_adult(c["title"]):
+            old_t = c["title"]
+            c["title"] = pool[rewritten % len(pool)]
+            c["adult_theme_rewritten"] = old_t
+            c["image_need"] = "SFW intimates"
+            c["setting_hint"] = "sunlit bedroom, linen bedding, private boudoir"
+            c["people_hands"] = "1 person mid-motion, tasteful SFW framing"
+            rewritten += 1
+    return shortlist, rewritten
+
+
 def export_shortlist(limit=20, path=None):
     path = Path(path or DATA / "manifest_shortlist.json")
     db = DB(DATA / "intel.db")
     shortlist, all_candidates = rank(db, limit=limit)
+    shortlist, adult_rewritten = adult_slot(shortlist)
+    if adult_rewritten:
+        # log shortfall per P3 spec
+        out_extra = {"shortfall": {"adult_theme_rewritten": adult_rewritten}}
+    else:
+        out_extra = {}
     out = {
         "generated_at": int(time.time()),
+        **out_extra,
         "shortlist": shortlist,
         "rejected_summary": _reject_summary(all_candidates),
         "legend": {

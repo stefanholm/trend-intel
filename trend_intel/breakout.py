@@ -87,10 +87,12 @@ def run(db, max_batches=8, min_gap=6.0, verbose=False):
             if len(series) < 4:
                 continue
             state, slope = record_history(db, t, series)
+            trajectory.record_prediction(db, t, state)
             states[t] = (state, slope)
         time.sleep(random.uniform(min_gap, min_gap * 2))
 
     verdicts = verify_predictions(db)
+    real_track = trajectory.score_track_record(db)
 
     out = []
     for n in nuggets:
@@ -120,9 +122,9 @@ def export(out, path=None, verdicts=None):
         "count": len(out),
         "nuggets": out,
         "prediction_track_record": {
-            "calls": len(verdicts or {}),
-            "hits": sum(1 for v in (verdicts or {}).values() if v["verdict"] == "hit"),
-            "detail": verdicts or {},
+            "calls": real_track["calls"],
+            "hits": real_track["hits"],
+            "detail": real_track["detail"],
         },
     }
     path.parent.mkdir(parents=True, exist_ok=True)

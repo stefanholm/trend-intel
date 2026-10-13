@@ -194,10 +194,12 @@ def _search_toplists_low_yield():
         a = match_area(n["title"])
         if a:
             per_area[a] = per_area.get(a, 0) + 1
-    low = [k for k in AREAS if per_area.get(k, 0) < 2]
+    # beauty_makeup and adult_lingerie have DEDICATED lexicon-gated harvests —
+    # the global toplist fallback is poison for them and never runs there
+    PROTECTED = {"beauty_makeup", "adult_lingerie", "nails_detail"}
+    low = [k for k in AREAS if per_area.get(k, 0) < 2 and k not in PROTECTED]
     if not low:
         return
-    # expand searches into the low-yield areas via autocomplete on their seeds
     queries = []
     for k in low:
         queries.extend(AREAS[k]["seeds"])
