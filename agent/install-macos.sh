@@ -63,6 +63,9 @@ case "${1:-run}" in
   status)  exec "$PY" "$DIR/agent/status.py" "${@:2}" ;;
   collect) cd "$DIR" && exec "$PY" -m trend_intel.collector "${@:2}" ;;
   report)  exec cat "$DIR/data/intel_report.json" ;;
+  agentb)  exec "$PY" "$DIR/agentb/night_runner.py" ;;
+  demand)  exec cat "$DIR/data/demand_context.json" ;;
+  calendar)  exec cat "$DIR/data/buyer_calendar.json" ;;
   stop)    launchctl unload "$HOME/Library/LaunchAgents/com.trendintel.agent.plist" 2>/dev/null || true
            pkill -f "agent/agent.py" 2>/dev/null || true
            echo "stopped" ;;
@@ -95,6 +98,31 @@ PLIST
 if command -v launchctl >/dev/null; then
   launchctl unload "$HOME/Library/LaunchAgents/com.trendintel.agent.plist" 2>/dev/null || true
   launchctl load "$HOME/Library/LaunchAgents/com.trendintel.agent.plist"
+
+  echo "==> Installing Agent B (night demand-context, 00:30 daily) ..."
+  cat > "$HOME/Library/LaunchAgents/com.trendintel.agentb.plist" <<PLISTB
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.trendintel.agentb</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>${TARGET}/bin/trendintel</string>
+    <string>agentb</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>0</integer>
+    <key>Minute</key><integer>30</integer>
+  </dict>
+  <key>StandardOutPath</key><string>${TARGET}/data/agentb.log</string>
+  <key>StandardErrorPath</key><string>${TARGET}/data/agentb.log</string>
+</dict>
+</plist>
+PLISTB
+  launchctl unload "$HOME/Library/LaunchAgents/com.trendintel.agentb.plist" 2>/dev/null || true
+  launchctl load "$HOME/Library/LaunchAgents/com.trendintel.agentb.plist"
 else
   echo "(launchctl not available here — on macOS the agent loads automatically)"
 fi
