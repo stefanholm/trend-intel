@@ -141,8 +141,29 @@ def write_report(db, path=REPORT):
             "GROUP BY source", (int(time.time()) - 86400,)).fetchall():
         sources[r["source"]] = r["c"]
 
+    # explicit data-quality block: what is GT-validated vs provisional
+    total = len(verified) + len(provisional)
+    v = sum(1 for e in verified if e.get("verified_by_google_trends"))
+    gt_ok = True
+    try:
+        from .trajectory import google_available
+        gt_ok = google_available()
+    except Exception:  # noqa: BLE001
+        pass
+    data_quality = {
+        "google_trends_available": gt_ok,
+        "note": "verified_by_google_trends=false entries are source-signal "
+                "only (autocomplete/marketplace). They carry hotness but NOT "
+                "a Google-measured trajectory. Treat as provisional.",
+        "total_trends": total,
+        "gt_verified_count": v,
+        "provisional_count": len(provisional),
+        "fallen_count": len(fallen),
+    }
+
     report = {
         "updated_at": int(time.time()),
+        "data_quality": data_quality,
         "legend": {
             "hotness": "0-1 composite: base score x trajectory weight (rising 1.0, steady 0.4, peaked 0.1, falling 0.0) x momentum x stickiness. USE THIS for ranking.",
             "score": "0-1 intake score: 0.6*demand + 0.3*freshness + 0.1*multi-source corroboration. Demand-dominated.",

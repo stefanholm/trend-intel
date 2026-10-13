@@ -111,23 +111,38 @@ def re_gate_nuggets():
                  rejected, learned)
 
 
-def run_cycle():
-    _ingest_burned()
-    re_gate_nuggets()
-    write_status("collecting")
-    result = subprocess.run(
-        [sys.executable, "-m", "trend_intel.collector", "--verbose"],
-        cwd=str(BASE), capture_output=True, text=True, timeout=1800)
-    if result.returncode != 0:
-        log.error("collector failed: %s", result.stderr[-500:])
-        write_status("error", error=result.stderr[-300:])
+def _stage(name, fn):
+    """Run one cycle stage; a crash NEVER kills the agent (that caused a
+    launchd restart loop and endless 429 hammering). Isolated + logged."""
+    try:
+        fn()
+        return True
+    except Exception:  # noqa: BLE001
+        log.exception("stage %s failed (isolated — cycle continues)", name)
         return False
-    _verify_findings()
-    _run_breakout()
-    _review_areas()
-    _search_toplists_low_yield()
-    _write_report()
-    return True
+
+
+def run_cycle():
+    """Every stage isolated; the report is ALWAYS written at the end so
+    the intel file is readable at all times, with clear verification state."""
+    _stage("ingest_burned", _ingest_burned)
+    _stage("re_gate", re_gate_nuggets)
+    write_status("collecting")
+
+    def _collect():
+        result = subprocess.run(
+            [sys.executable, "-m", "trend_intel.collector", "--verbose"],
+            cwd=str(BASE), capture_output=True, text=True, timeout=1800)
+        if result.returncode != 0:
+            raise RuntimeError(result.stderr[-500:])
+    collect_ok = _stage("collect", _collect)
+
+    _stage("verify", _verify_findings)
+    _stage("breakout", _run_breakout)
+    _stage("area_review", _review_areas)
+    _stage("toplists", _search_toplists_low_yield)
+    _stage("report", _write_report)   # ALWAYS runs — intel always readable
+    return collect_ok
 
 
 def _ingest_burned():
@@ -245,26 +260,34 @@ def snapshot_summary():
 
 def main():
     log.info("agent started (pid %d)", __import__("os").getpid())
-    backoff = 300
-    try:
-        while True:
+    backoff = 1800  # first retry no sooner than 30 min
+    while True:
+        try:
             ok = run_cycle()
-            if ok:
-                backoff = 300
-                refresh_seeds()
-                log.info("cycle ok — %d nuggets in snapshot", snapshot_summary())
-                wait = CYCLE_MIN_SECS * random.uniform(0.9, 1.1)
-                write_status("idle", cycle={"nuggets": snapshot_summary()})
-            else:
-                wait = backoff
-                backoff = min(backoff * 2, MAX_BACKOFF)
-                log.warning("backoff: next retry in %.0fs", wait)
-            end = time.time() + wait
-            while time.time() < end:
+        except Exception:  # noqa: BLE001
+            log.exception("cycle crashed hard (isolated at top level)")
+            ok = False
+        try:
+            refresh_seeds()
+        except Exception:  # noqa: BLE001
+            log.exception("seed refresh failed (isolated)")
+        if ok:
+            backoff = 1800
+            log.info("cycle ok — %d nuggets in snapshot", snapshot_summary())
+            wait = CYCLE_MIN_SECS * random.uniform(0.9, 1.1)
+            write_status("idle", cycle={"nuggets": snapshot_summary()})
+        else:
+            wait = backoff
+            backoff = min(backoff * 2, MAX_BACKOFF)
+            log.warning("failed cycle — next retry in %.0fs (no rapid-restart)", wait)
+        end = time.time() + wait
+        while time.time() < end:
+            try:
                 time.sleep(min(10, end - time.time()))
-    except KeyboardInterrupt:
-        log.info("agent stopped")
-        write_status("stopped")
+            except KeyboardInterrupt:
+                log.info("agent stopped")
+                write_status("stopped")
+                return
 
 
 if __name__ == "__main__":

@@ -19,18 +19,65 @@ log = logging.getLogger("trend_intel.trajectory")
 STATE_WEIGHT = {"rising": 1.0, "steady": 0.4, "peaked": 0.1, "falling": 0.0}
 
 
-_cooldown_until = 0
+# Persistent cooldown: stored in the DB meta table so restarts do NOT reset
+# it (launchd KeepAlive restarts the agent; an in-memory timer would be
+# wiped every restart and Google would get hammered again).
+_COOLDOWN_KEY = "gt_cooldown_until"
+_COOLDOUN_COUNT_KEY = "gt_cooldown_count"
+
+
+def _get_meta(key, default=None):
+    try:
+        from .db import DEFAULT_DB
+        db = DEFAULT_DB.parent.parent / "data" / "intel.db"
+        import sqlite3
+        c = sqlite3.connect(str(db), timeout=10)
+        row = c.execute("SELECT value FROM meta WHERE key=?", (key,)).fetchone()
+        c.close()
+        return row[0] if row else default
+    except Exception:  # noqa: BLE001
+        return default
+
+
+def _set_meta(key, value):
+    try:
+        from .db import DEFAULT_DB
+        db = DEFAULT_DB.parent.parent / "data" / "intel.db"
+        import sqlite3
+        c = sqlite3.connect(str(db), timeout=10)
+        c.execute("INSERT INTO meta (key, value) VALUES (?,?) "
+                  "ON CONFLICT(key) DO UPDATE SET value=excluded.value",
+                  (key, str(value)))
+        c.commit()
+        c.close()
+    except Exception:  # noqa: BLE001
+        pass
 
 
 def google_available():
-    """False while the 429 circuit-breaker cooldown is active."""
-    return time.time() >= _cooldown_until
+    """False while the 429 circuit-breaker cooldown is active (persistent)."""
+    until = float(_get_meta(_COOLDOWN_KEY, "0") or 0)
+    return time.time() >= until
+
+
+def open_cooldown():
+    """Escalating cooldown: 1h, 2h, 4h, 8h ... max 24h. Persistent in DB."""
+    count = int(_get_meta(_COOLDOUN_COUNT_KEY, "0") or 0)
+    hours = min(24, 2 ** count)
+    _set_meta(_COOLDOWN_KEY, time.time() + hours * 3600)
+    _set_meta(_COOLDOUN_COUNT_KEY, count + 1)
+    return hours
+
+
+def clear_cooldown():
+    """Successful fetches reset the escalation counter."""
+    _set_meta(_COOLDOWN_KEY, "0")
+    _set_meta(_COOLDOUN_COUNT_KEY, "0")
 
 
 def fetch_interest(terms, timeframe="today 3-m"):
     """terms: up to 5. Returns {term: [values...]} or {} on failure.
-    On a 429, opens a 1-hour cooldown so the whole cycle stops hammering."""
-    global _cooldown_until
+    429 / DNS / connection failures open a persistent escalating cooldown."""
     if not google_available():
         return {}
     try:
@@ -42,11 +89,18 @@ def fetch_interest(terms, timeframe="today 3-m"):
         df = pt.interest_over_time()
         if df is None or df.empty:
             return {}
+        clear_cooldown()
         return {t: [float(v) for v in df[t].tolist()] for t in df.columns if t != "isPartial"}
     except Exception as e:  # noqa: BLE001
-        if "429" in str(e):
-            _cooldown_until = time.time() + 3600
-            log.warning("google trends 429 — cooling down 1h")
+        estr = str(e)
+        if "429" in estr:
+            hours = open_cooldown()
+            log.warning("google trends 429 — cooling down %dh (persistent)", hours)
+            return {}
+        if ("NameResolution" in estr or "Failed to resolve" in estr
+                or "gaierror" in estr or "nodename nor servname" in estr):
+            hours = open_cooldown()
+            log.warning("google trends DNS failure — cooling down %dh (persistent)", hours)
             return {}
         log.warning("interest fetch failed for %s: %s", terms[:2], e)
         return {}
