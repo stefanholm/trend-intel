@@ -112,20 +112,16 @@ def run(db, max_batches=8, min_gap=6.0, verbose=False):
             "verdict": verdicts.get(t, {}).get("verdict"),
         })
     out.sort(key=lambda x: -x["hotness"])
-    return out
+    return out, real_track
 
 
-def export(out, path=None, verdicts=None):
+def export(out, path=None, verdicts=None, track_record=None):
     path = Path(path or DATA / "breakout_snapshot.json")
     snap = {
         "exported_at": int(time.time()),
         "count": len(out),
         "nuggets": out,
-        "prediction_track_record": {
-            "calls": real_track["calls"],
-            "hits": real_track["hits"],
-            "detail": real_track["detail"],
-        },
+        "prediction_track_record": track_record or {"calls": 0, "hits": 0, "detail": []},
     }
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(".tmp")

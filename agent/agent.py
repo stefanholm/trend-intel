@@ -203,8 +203,8 @@ def _run_breakout():
     from trend_intel.db import DB
     from trend_intel import breakout
     db = DB(BASE / "data" / "intel.db")
-    out = breakout.run(db, max_batches=6, min_gap=5.0)
-    snap = breakout.export(out)
+    out, track = breakout.run(db, max_batches=6, min_gap=5.0)
+    snap = breakout.export(out, track_record=track)
     tr = snap["prediction_track_record"]
     log.info("breakout: %d ranked, track record %d/%d hits",
              snap["count"], tr["hits"], tr["calls"])

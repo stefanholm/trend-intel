@@ -117,9 +117,9 @@ def fetch_trend_intel_block():
             q.get("action"),
             (" | " + q["gap_hint"]) if q.get("gap_hint") else ""))
     for w in (calendar.get("need_windows") or [])[:6]:
-        lines.append("CALENDAR: %-38s %s (in %sd) — %s" % (
-            (w.get("label") or "")[:38], w.get("window_status"),
-            w.get("days_until"), ", ".join((w.get("keywords") or [])[:3])))
+        lines.append("CALENDAR: %-38s %s (in %sd)" % (
+            (w.get("need_title") or w.get("label") or "")[:38],
+            w.get("window_status"), w.get("days_until")))
     if entries:
         lines.append("INTEL SHORTLIST (priority slots first, then hotness):")
     for e in entries[:20]:
