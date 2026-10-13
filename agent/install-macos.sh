@@ -64,13 +64,23 @@ case "${1:-run}" in
   collect) cd "$DIR" && exec "$PY" -m trend_intel.collector "${@:2}" ;;
   report)  exec cat "$DIR/data/intel_report.json" ;;
   agentb)  exec "$PY" "$DIR/agentb/night_runner.py" ;;
+  runall)  exec "$PY" "$DIR/agent/run_all.py" "${@:2}" ;;
+  faillearn) cd "$DIR" && exec "$PY" -c "
+import sys; sys.path.insert(0, '.')
+from trend_intel.db import DB
+from trend_intel import failure_learning as fl, report
+db = DB('data/intel.db')
+ctx = fl.run(db=db)
+r = report.write_report(db)
+print('learned rows:', ctx['n_rows'])
+print('report refreshed, n_rows in report:', r['failure_learning']['n_rows'])" ;;
   demand)  exec cat "$DIR/data/demand_context.json" ;;
   calendar)  exec cat "$DIR/data/buyer_calendar.json" ;;
   stop)    launchctl unload "$HOME/Library/LaunchAgents/com.trendintel.agent.plist" 2>/dev/null || true
            pkill -f "agent/agent.py" 2>/dev/null || true
            echo "stopped" ;;
   log)     exec tail -n "${2:-50}" "$DIR/data/agent.log" ;;
-  *) echo "usage: trendintel {run|status|collect|report|stop|log}" >&2; exit 1 ;;
+  *) echo "usage: trendintel {run|runall|status|collect|report|agentb|demand|calendar|faillearn|stop|log}" >&2; exit 1 ;;
 esac
 CLI
 chmod +x "$TARGET/bin/trendintel"
@@ -123,6 +133,32 @@ if command -v launchctl >/dev/null; then
 PLISTB
   launchctl unload "$HOME/Library/LaunchAgents/com.trendintel.agentb.plist" 2>/dev/null || true
   launchctl load "$HOME/Library/LaunchAgents/com.trendintel.agentb.plist"
+
+  echo "==> Installing fail-read watcher (fires the moment a render report arrives) ..."
+  NFE_REPORTS="${NFE_REPORT_DIR:-/Applications/Adobe image creator/generated_stock_images}"
+  cat > "$HOME/Library/LaunchAgents/com.trendintel.failread.plist" <<'PLISTF'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.trendintel.failread</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>TARGET/bin/trendintel</string>
+    <string>faillearn</string>
+  </array>
+  <key>WatchPaths</key>
+  <array>
+    <string>NFE_REPORTS_DIR</string>
+    <string>TARGET/data</string>
+  </array>
+  <key>ThrottleInterval</key><integer>120</integer>
+</dict>
+</plist>
+PLISTF
+  sed -i '' -e "s|TARGET|$TARGET|g" -e "s|NFE_REPORTS_DIR|$NFE_REPORTS|g" "$HOME/Library/LaunchAgents/com.trendintel.failread.plist"
+  launchctl unload "$HOME/Library/LaunchAgents/com.trendintel.failread.plist" 2>/dev/null || true
+  launchctl load "$HOME/Library/LaunchAgents/com.trendintel.failread.plist"
 else
   echo "(launchctl not available here — on macOS the agent loads automatically)"
 fi
