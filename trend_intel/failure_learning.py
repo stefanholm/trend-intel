@@ -97,6 +97,38 @@ def load_renders(data_dir=None, max_files=4, max_renders=400):
             })
             if len(rows) >= max_renders:
                 return rows, files
+        # newer pre-render format: shots[] with tt + human_qc (1-5 scale)
+        for s in data.get("shots") or []:
+            hq = s.get("human_qc") or {}
+            if not s.get("tt") or not hq:
+                continue
+            title = s["tt"].strip()
+            visual = float(hq.get("visual_score") or 0)
+            market = float(hq.get("market_score") or 0)
+            adult = float(hq.get("adult_score") or 0)
+            killed = bool(hq.get("kill_repetitive"))
+            # map 1-5 human scale onto the classifier's scales:
+            # visual 2 -> aes 3.0 (reject), 3 -> 5.0, 4+ -> winner range
+            aes = visual * 2.0 - 1.0 if visual else 0.0
+            market_scaled = market * 20.0            # 1-5 -> 20-100
+            if killed or (visual and visual <= 2) or adult >= 4:
+                verdict = "REJECT"
+            elif visual >= 4:
+                verdict = "GOOD"
+            else:
+                verdict = "MARGINAL"
+            rows.append({
+                "title": title,
+                "norm": _norm(title),
+                "root": _root(title),
+                "market": market_scaled,
+                "aes": aes,
+                "clip": 99.0,                        # no CLIP in this format
+                "verdict": verdict,
+                "src": path.name,
+            })
+            if len(rows) >= max_renders:
+                return rows, files
     return rows, files
 
 
@@ -117,6 +149,10 @@ def classify(rows):
             ban_titles.add(r["norm"])
             ban_roots.add(r["root"])
 
+        # adult leak: banned regardless of verdict (never adult slot)
+        if ADULT_LEAK_RE.search(r["title"]) and not INTIMATES_RE.search(r["title"]):
+            adult_leaks.append(r["title"])
+
         if is_reject:
             failures.append(r)
             ban_titles.add(r["norm"])
@@ -125,9 +161,6 @@ def classify(rows):
             if r["market"] >= 70 and (r["aes"] < 4.0 or r["clip"] < 25):
                 false_demand.append(r)
                 ban_roots.add(r["root"])
-            if ADULT_LEAK_RE.search(r["title"]) and not INTIMATES_RE.search(r["title"]):
-                adult_leaks.append(r["title"])
-                ban_titles.add(r["norm"])
         elif is_good:
             winners.append(r)
 
