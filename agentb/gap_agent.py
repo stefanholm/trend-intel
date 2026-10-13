@@ -215,16 +215,21 @@ def _load_json(path, default):
 
 
 def top_candidates(limit=10):
-    """Best verified candidates from Agent A's shortlist."""
+    """Best verified candidates from Agent A's shortlist. Falls back to
+    top-hotness entries when nothing is verified (GT rate-limited cycles) —
+    Agent B always has something to probe."""
     sl = _load_json(DATA / "manifest_shortlist.json", {})
-    out = []
+    all_c = []
+    verified = []
     for c in sl.get("shortlist", []):
+        entry = {"phrase": c["title"],
+                 "hotness": c.get("hotness", 0),
+                 "area": c.get("area"),
+                 "image_need": c.get("image_need")}
+        all_c.append(entry)
         if c.get("verified_by_google_trends") or c.get("source_count", 0) >= 2:
-            out.append({"phrase": c["title"],
-                        "hotness": c.get("hotness", 0),
-                        "area": c.get("area"),
-                        "image_need": c.get("image_need")})
-    return out[:limit]
+            verified.append(entry)
+    return (verified or all_c)[:limit]
 
 
 def false_demand_from_report(report_path, limit=8):
