@@ -58,7 +58,9 @@ def keep_rule(nug):
 
     if not stock_safe(t):
         return False, "stock_unsafe"
-    if src_count < 2 and not verified:
+    if "gmail_newsletter" in (nug.get("sources") or []):
+        pass  # trusted newsletter = quality provenance on its own
+    elif src_count < 2 and not verified:
         return False, "weak_provenance"
     if state == "falling":
         return False, "falling"

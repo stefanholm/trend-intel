@@ -15,7 +15,7 @@ from pathlib import Path
 
 from .db import DB, DEFAULT_DB
 from . import scoring, pacing
-from .sources import trends_rss, pinterest, google_queries, marketplaces, autocomplete, temu, verticals
+from .sources import trends_rss, pinterest, google_queries, marketplaces, autocomplete, temu, verticals, gmail_newsletters
 
 PKG_DIR = Path(__file__).resolve().parent
 EXPORT_PATH = PKG_DIR.parent / "data" / "intel_snapshot.json"
@@ -113,6 +113,12 @@ def run_cycle(db, verbose=False):
     na = verticals.harvest_adult(db, verbose=verbose)
     results["adult_vertical"] = na
     total += na
+    pacing.gentle_sleep(cfg["sleep_between_requests"])
+
+    # 3c-bis. gmail newsletter intel (optional; no-op without credentials)
+    ng = gmail_newsletters.harvest(db, verbose=verbose)
+    results["gmail_newsletters"] = ng
+    total += ng
     pacing.gentle_sleep(cfg["sleep_between_requests"])
 
     # 3c. google autocomplete — seeds rotate in gentle mode
