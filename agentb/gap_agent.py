@@ -84,6 +84,41 @@ def probe_ddg(phrase):
 _run_state = {"adobe_blocked": False}
 
 
+def probe_shutterstock(phrase):
+    """Shutterstock search: density proxy via result count."""
+    slug = phrase.lower().replace(" ", "-")
+    body = _get(f"https://www.shutterstock.com/search/{slug}")
+    m = re.search(r"(\d[\d,\.\s]{2,15}?)\s*(?:results|matches|stock images)",
+                  body, re.I)
+    hits = int(m.group(1).replace(",", "").replace(".", "").strip()) if m else None
+    return {"hits": hits, "titles": []} if hits else None
+
+
+def probe_bing(phrase):
+    """Bing Images count: broad web-image density (less stock-specific)."""
+    import urllib.parse
+    q = urllib.parse.quote(f'"{phrase}"')
+    body = _get(f"https://www.bing.com/images/search?q={q}")
+    m = re.search(r"(\d[\d,\.\s]{2,15}?)\s*(?:ERGEBNISSE|RESULTS|results)",
+                  body, re.I)
+    hits = int(m.group(1).replace(",", "").replace(".", "").strip()) if m else None
+    return {"hits": hits, "titles": []} if hits else None
+
+
+def probe_openverse(phrase):
+    """Openverse API (CC image aggregator): clean result_count, no auth,
+    reliable from any IP. Counts are ~1000x smaller than Adobe — classified
+    with its own thresholds."""
+    import urllib.parse
+    body = _get("https://api.openverse.org/v1/images/?q="
+                + urllib.parse.quote(phrase) + "&page_size=1")
+    m = re.search(r'"result_count"\s*:\s*(\d+)', body)
+    if not m:
+        return None
+    return {"hits": int(m.group(1)), "titles": [],
+            "scale": "openverse"}  # marker: different thresholds
+
+
 def probe(phrase, max_age_h=24):
     """Cached probe: never re-hit the same phrase within 24h. If Adobe 403s,
     it's IP-blocked for this run — skip to DDG immediately (saves minutes)."""
@@ -93,7 +128,9 @@ def probe(phrase, max_age_h=24):
     if entry and time.time() - entry.get("ts", 0) < max_age_h * 3600:
         return entry
     result = None
-    fns = (probe_ddg,) if _run_state["adobe_blocked"] else (probe_adobe, probe_ddg)
+    ladder = (probe_adobe, probe_shutterstock, probe_openverse, probe_bing, probe_ddg)
+    fns = tuple(f for i, f in enumerate(ladder)
+                if not (_run_state["adobe_blocked"] and i == 0))
     for fn in fns:
         try:
             result = fn(phrase)
@@ -116,9 +153,16 @@ def probe(phrase, max_age_h=24):
 
 
 # ------------------------------------------------------------- analysis
-def classify_supply(hits):
+def classify_supply(hits, scale="adobe"):
     if hits is None:
         return "unknown"
+    if scale == "openverse":
+        # CC-aggregator counts: ~1000x smaller than Adobe
+        if hits >= 1000:
+            return "flooded"
+        if hits >= 150:
+            return "competitive"
+        return "thin"
     if hits >= 100_000:
         return "flooded"
     if hits >= 20_000:
@@ -199,7 +243,7 @@ def run(max_phrases=10):
     results = []
     for c in queries:
         p = probe(c["phrase"])
-        bucket = classify_supply(p.get("hits"))
+        bucket = classify_supply(p.get("hits"), p.get("scale", "adobe"))
         formula, gap = build_formula(p.get("titles") or [])
         results.append({
             "phrase": c["phrase"],
