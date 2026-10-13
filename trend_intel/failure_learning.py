@@ -37,7 +37,10 @@ ADULT_LEAK_RE = re.compile(
     r"\b(turtleneck|riding hood|sequin|red carpet|celebrity|"
     r"sparkles in|goes pantsless|steps out)\b", re.I)
 
-MAX_AGE_S = 14 * 24 * 3600
+MAX_AGE_S = 14 * 24 * 3600   # render reports older than this are ignored
+SEASONAL_BAN_DAYS = 60      # failed trends re-eligible next season
+PERM_BAN_REASON = "failure_learning_permanent"
+TEMP_BAN_REASON = "failure_learning_ban"
 
 
 def _norm(t):
@@ -134,6 +137,7 @@ def load_renders(data_dir=None, max_files=4, max_renders=400):
 
 def classify(rows):
     ban_titles, ban_roots = set(), set()
+    perm_titles, perm_roots = set(), set()          # brand/SKU + adult leaks: never expire
     false_demand, adult_leaks, brand_hits, fix_directives = [], [], [], []
     winners, failures = [], []
     root_fail = Counter()
@@ -146,12 +150,13 @@ def classify(rows):
 
         if BRAND_SKU_RE.search(r["title"]):
             brand_hits.append(r["title"])
-            ban_titles.add(r["norm"])
-            ban_roots.add(r["root"])
+            perm_titles.add(r["norm"])
+            perm_roots.add(r["root"])
 
-        # adult leak: banned regardless of verdict (never adult slot)
+        # adult leak: banned regardless of verdict (never adult slot), permanent
         if ADULT_LEAK_RE.search(r["title"]) and not INTIMATES_RE.search(r["title"]):
             adult_leaks.append(r["title"])
+            perm_titles.add(r["norm"])
 
         if is_reject:
             failures.append(r)
@@ -164,9 +169,25 @@ def classify(rows):
         elif is_good:
             winners.append(r)
 
+    # winners rehabilitate: a title that later GOODs is not banned again,
+    # and its root's failure count is forgiven
+    win_norms = {r["norm"] for r in winners}
+    win_roots = {r["root"] for r in winners}
+    ban_titles -= win_norms
+    for root in win_roots:
+        root_fail.pop(root, None)
+
     for root, n in root_fail.items():
         if n >= 2 and root:
             ban_roots.add(root)
+
+    ban_titles -= perm_titles
+    ban_roots = {r for r in ban_roots if r} - perm_roots
+    # a winner forgives its whole root: the theme CAN render well, so a
+    # differentiated retry is allowed next season/manifest
+    ban_roots -= win_roots
+    ban_titles = {t for t in ban_titles
+                  if not any(t.startswith(r) for r in win_roots)}
 
     if plastic_skin:
         fix_directives.append("beauty renders: pores/texture pass BEFORE "
@@ -182,6 +203,8 @@ def classify(rows):
         "n_rows": len(rows),
         "hard_ban_titles": sorted(ban_titles)[:80],
         "hard_ban_roots": sorted(x for x in ban_roots if x)[:60],
+        "permanent_ban_titles": sorted(perm_titles)[:80],
+        "permanent_ban_roots": sorted(x for x in perm_roots if x)[:60],
         "false_demand": [{"title": x["title"], "market": x["market"],
                           "aes": x["aes"], "clip": x["clip"]}
                          for x in false_demand[:30]],
@@ -199,9 +222,10 @@ def classify(rows):
 
 def _empty():
     return {"updated_at": int(time.time()), "n_rows": 0,
-            "hard_ban_titles": [], "hard_ban_roots": [], "false_demand": [],
-            "adult_leaks": [], "brand_sku_hits": [], "fix_directives": [],
-            "winners": [], "failure_sample": []}
+            "hard_ban_titles": [], "hard_ban_roots": [],
+            "permanent_ban_titles": [], "permanent_ban_roots": [],
+            "false_demand": [], "adult_leaks": [], "brand_sku_hits": [],
+            "fix_directives": [], "winners": [], "failure_sample": []}
 
 
 def run(db=None, data_dir=None):
@@ -222,11 +246,24 @@ def run(db=None, data_dir=None):
                      len(ctx["false_demand"]))
         OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
         OUT_PATH.write_text(json.dumps(ctx, indent=2, ensure_ascii=False))
-        if db is not None and ctx["hard_ban_titles"]:
-            banned = db.mark_burned(
-                [t for t in ctx["hard_ban_titles"] if t],
-                reason="failure_learning_ban")
-            log.info("failure-learning: %d nuggets marked burned", banned)
+        if db is not None:
+            expired = db.expire_burned(TEMP_BAN_REASON,
+                                       SEASONAL_BAN_DAYS * 24 * 3600)
+            if expired:
+                log.info("failure-learning: %d seasonal bans expired "
+                         "(re-eligible)", expired)
+            if ctx["hard_ban_titles"]:
+                banned = db.mark_burned(
+                    [t for t in ctx["hard_ban_titles"] if t],
+                    reason=TEMP_BAN_REASON)
+                log.info("failure-learning: %d nuggets burned (60d expiry)",
+                         banned)
+            if ctx["permanent_ban_titles"]:
+                perm = db.mark_burned(
+                    [t for t in ctx["permanent_ban_titles"] if t],
+                    reason=PERM_BAN_REASON)
+                log.info("failure-learning: %d nuggets burned permanently",
+                         perm)
     except Exception:  # noqa: BLE001
         log.exception("failure-learning failed (isolated)")
         ctx = _empty()

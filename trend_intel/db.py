@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS nuggets (
     created_at INTEGER NOT NULL,
     status TEXT NOT NULL DEFAULT 'active',  -- active | rejected | used
     reject_reason TEXT,
+    burned_at INTEGER,
     UNIQUE(title)
 );
 
@@ -106,6 +107,11 @@ class DB:
     def _init_schema(self):
         with self._lock():
             self._conn().executescript(SCHEMA)
+            cols = {r["name"] for r in self._conn().execute(
+                "PRAGMA table_info(nuggets)")}
+            if "burned_at" not in cols:
+                self._conn().execute(
+                    "ALTER TABLE nuggets ADD COLUMN burned_at INTEGER")
             self._conn().commit()
 
     def _lock(self):
@@ -187,17 +193,31 @@ class DB:
 
     def mark_burned(self, titles, reason="render_qc_failed"):
         """Bulk-mark titles as burned (from the render app's QC failures).
-        Burned nuggets never re-enter the shortlist."""
+        Temporary failure-learning bans can be lifted later via expire_burned."""
         burned = 0
+        now = int(time.time())
         with self._lock():
             for t in titles:
                 cur = self._conn().execute(
-                    "UPDATE nuggets SET status='burned', reject_reason=? "
+                    "UPDATE nuggets SET status='burned', reject_reason=?, burned_at=? "
                     "WHERE title=? AND status IN ('active','used')",
-                    (reason, t))
+                    (reason, now, t))
                 burned += cur.rowcount
             self._conn().commit()
         return burned
+
+    def expire_burned(self, reason, older_than_s):
+        """Lift temporary bans: nuggets burned with `reason` before the window
+        ends become active again (seasonal trends get a new season)."""
+        with self._lock():
+            cur = self._conn().execute(
+                """UPDATE nuggets SET status='active', reject_reason=NULL,
+                                     burned_at=NULL
+                   WHERE status='burned' AND reject_reason=?
+                   AND burned_at IS NOT NULL AND burned_at < ?""",
+                (reason, int(time.time()) - older_than_s))
+            self._conn().commit()
+            return cur.rowcount
 
     def set_nugget_status(self, title, status, reason=None):
         with self._lock():
