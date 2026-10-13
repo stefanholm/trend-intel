@@ -47,7 +47,18 @@ def stock_safe(title):
     return not STOCK_UNSAFE_RE.search(title)
 
 
-def keep_rule(nug):
+def _gt_cooldown_active():
+    """True while the Google Trends 429 circuit-breaker is cooling down.
+    During cooldown the gate relaxes provenance rules instead of starving
+    the shortlist — provisional entries pass, clearly marked."""
+    try:
+        from .trajectory import google_available
+        return not google_available()
+    except Exception:  # noqa: BLE001
+        return False
+
+
+def keep_rule(nug, gt_down=False):
     """Return (keep: bool, reason)."""
     t = nug["title"]
     verified = nug.get("verified_by_google_trends", False)
@@ -61,7 +72,11 @@ def keep_rule(nug):
     if "gmail_newsletter" in (nug.get("sources") or []):
         pass  # trusted newsletter = quality provenance on its own
     elif src_count < 2 and not verified:
-        return False, "weak_provenance"
+        if gt_down and hot >= 0.5 * AREA_MIN_HOTNESS.get(area or "", 0.10) \
+                and state != "falling":
+            pass  # GT cooldown: hot provisional entries pass, marked below
+        else:
+            return False, "weak_provenance"
     if state == "falling":
         return False, "falling"
     if state == "peaked" and (area or "") not in EVERGREEN_VERTICALS:
@@ -83,11 +98,15 @@ def rank(db, limit=20, area_quota=None):
         if (DATA / "intel_report.json").exists() else {"areas": {}}
 
     candidates = []
+    gt_down = _gt_cooldown_active()
     for key, a in report.get("areas", {}).items():
         for t in a.get("trends", []):
             t = dict(t)
             t["area"] = t.get("area") or key
-            keep, reason = keep_rule(t)
+            keep, reason = keep_rule(t, gt_down=gt_down)
+            if gt_down and keep and not t.get("verified_by_google_trends") \
+                    and t.get("source_count", 1) < 2:
+                t["provisional_gt_cooldown"] = True
             t["keep"] = keep
             t["drop_reason"] = reason
             candidates.append(t)
