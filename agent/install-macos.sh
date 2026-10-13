@@ -32,11 +32,12 @@ if [[ -n "$SUDO" ]]; then
   # make it user-owned so the agent can write its data
   $SUDO chown "$USER" "$TARGET"
 fi
-cp -R "$SRC/." "$TARGET/"
-rm -rf "$TARGET/trend_intel/__pycache__" \
-       "$TARGET/trend_intel/sources/__pycache__" \
-       "$TARGET/agent/__pycache__" \
-       "$TARGET/data"
+mkdir -p "$TARGET"
+# preserve live data across reinstalls: rsync everything except data/
+rsync -a --delete \
+      --exclude 'data' --exclude '__pycache__' --exclude '.git' \
+      "$SRC/" "$TARGET/"
+mkdir -p "$TARGET/data"
 
 echo "==> Creating private venv (PEP 668-safe, no system Python changes) ..."
 if python3 -m venv "$TARGET/.venv"; then
