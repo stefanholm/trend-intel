@@ -105,6 +105,19 @@ def fetch_trend_intel_block():
             banned_count += 1
             continue
         entries.append(e)
+    # variant clustering: keep ONE representative per 3-word root
+    # ("mesh bodysuit black" / "mesh bodysuit thong" -> single "mesh bodysuit")
+    clusters = {}
+    for e in entries:
+        words = re.split(r"[^a-z0-9]+", (e["title"] or "").lower()) or ["?"]
+        words = [w for w in words if w] or ["?"]
+        root = " ".join(words[:2])
+        if not e.get("image_need"):
+            root = "raw:" + root  # raw leads never displace gate-approved entries
+        prev = clusters.get(root)
+        if not prev or float(e.get("hotness") or 0) > float(prev.get("hotness") or 0):
+            clusters[root] = e
+    entries = list(clusters.values())
     # rule 4 + rule 1: priority first, then hotness desc
     entries.sort(key=lambda e: (not bool(e.get("priority_slot")),
                                 -(float(e.get("hotness") or 0.0))))
@@ -135,6 +148,8 @@ def fetch_trend_intel_block():
             flags.append("provisional(GT-cooldown)")
         elif not e.get("verified_by_google_trends") and not e.get("state"):
             flags.append("provisional")
+        if not e.get("image_need"):
+            flags.append("raw lead (no shot class — verify before render)")
         tag = (" [" + "; ".join(flags) + "]") if flags else ""
         lines.append("- %s | hotness %.2f | image_need %s%s" % (
             e.get("title"), float(e.get("hotness") or 0.0),
