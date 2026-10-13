@@ -43,8 +43,17 @@ def verify_batch(db, batch_size=5, max_terms=30, min_gap=5.0):
     results = []
     for batch in _chunks([p["title"] for p in provisional], batch_size):
         if not trajectory.google_available():
-            log.warning("google cooling down — deferring remaining verification")
-            break
+            log.warning("google cooling down — falling back to wikipedia "
+                         "pageviews verification for this batch")
+            from . import wikipedia_verify
+            for t, r in wikipedia_verify.verify_batch(batch).items():
+                if r.get("verified"):
+                    views = r.get("monthly_views") or []
+                    third = max(1, len(views) // 3)
+                    r["recent_mean"] = sum(v for _, v in views[-third:]) / third
+                    r["prev_mean"] = sum(v for _, v in views[:third]) / third
+                results.append(r)
+            continue
         data = trajectory.fetch_interest(batch, timeframe="today 3-m")
         for t, series in data.items():
             state, slope = trajectory.classify(series)
