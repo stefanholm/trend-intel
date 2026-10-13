@@ -26,7 +26,11 @@ from pathlib import Path
 log = logging.getLogger("trend_intel.gmail")
 
 BASE = Path(__file__).resolve().parent.parent
-CREDENTIALS = BASE / "config" / "gmail_credentials.json"
+# accept the common Google download names — rename nothing
+CREDENTIALS = next((BASE / "config" / n for n in
+                    ("gmail_credentials.json", "credentials.json",
+                     "client_secret.json")
+                    if (BASE / "config" / n).exists()), None)
 TOKEN = BASE / "config" / "gmail_token.json"
 
 # sender domains → vertical (retailer newsletters we want intel from)
@@ -64,7 +68,7 @@ def _vertical_for_sender(sender):
 
 
 def _get_service():
-    if not CREDENTIALS.exists():
+    if CREDENTIALS is None:
         return None
     try:
         from google.oauth2.credentials import Credentials
@@ -79,7 +83,7 @@ def _get_service():
                 creds.refresh(None)
             else:
                 flow = InstalledAppFlow.from_client_secrets_file(
-                    str(CREDENTIALS), SCOPES)
+                    str(CREDENTIALS), SCOPES)  # type: ignore[arg-type]
                 creds = flow.run_local_server(port=0)
             TOKEN.write_text(creds.to_json())
         return build("gmail", "v1", credentials=creds)
