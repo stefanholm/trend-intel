@@ -173,6 +173,11 @@ META_FILLER = re.compile(
     r"july)$", re.I)
 
 
+QUESTION_RE = re.compile(
+    r"^(why|what|how|when|where|who|which|is|are|do|does|did|can|could|should)\b",
+    re.I)
+
+
 def is_meta_query(title):
     """True for queries that SEARCH FOR trend lists, not trends themselves:
     "hair color trends fall 2026", "autumn outfit ideas". After stripping
@@ -257,6 +262,8 @@ def looks_like_junk(title, extra=None):
         return "brand_token"
     if is_meta_query(t):
         return "meta_query"
+    if QUESTION_RE.match(t):
+        return "question_query"
     if is_baseline(t):
         return "baseline"
     if len(t.split()) > 9:

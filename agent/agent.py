@@ -63,6 +63,14 @@ def refresh_seeds():
         anchors = [l.strip() for l in ANCHORS.read_text().splitlines()
                    if l.strip() and not l.startswith("#")]
     anchor_set = {a.lower() for a in anchors}
+    # buyer-window keywords from Agent B (calendar-intent): protected like
+    # anchors so the collection cycle always aims at open buyer windows
+    cal_seeds_path = BASE / "config" / "calendar_seeds.txt"
+    cal_seeds = []
+    if cal_seeds_path.exists():
+        cal_seeds = [l.strip() for l in cal_seeds_path.read_text().splitlines()
+                     if l.strip() and not l.startswith("#")]
+        anchor_set.update(c.lower() for c in cal_seeds)
     candidates = []
     for n in api.top(60):
         t = n["title"]
@@ -74,7 +82,7 @@ def refresh_seeds():
             continue
         candidates.append(t)
     candidates = candidates[:MAX_SEEDS - len(anchors)]
-    new_seeds = anchors + candidates
+    new_seeds = anchors + cal_seeds + candidates
     if new_seeds:
         SEEDS.parent.mkdir(parents=True, exist_ok=True)
     SEEDS.write_text(
