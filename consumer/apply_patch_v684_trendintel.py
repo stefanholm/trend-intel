@@ -175,6 +175,11 @@ def fetch_trend_intel_block():
             banned_count, len(ban_titles), len(ban_roots)))
     for d in (fl.get("fix_directives") or [])[:4]:
         lines.append("INTEL FIX: " + d)
+    for a, st in (fl.get("area_health") or {}).items():
+        if st.get("shots", 0) >= 5:
+            lines.append("VERTICAL HEALTH: %s — %d/%d rejects (rate %.0f%%), avg AES %.1f — gate slots capped accordingly" % (
+                a, st["rejects"], st["shots"], st.get("reject_rate", 0) * 100,
+                st.get("avg_aes", 0)))
     lines.append("=== END TREND INTEL ===")
     return "\n".join(lines)
 '''

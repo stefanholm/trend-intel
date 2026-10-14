@@ -88,10 +88,12 @@ def load_renders(data_dir=None, max_files=4, max_renders=400):
             title = (s.get("title") or s.get("trend_title") or "").strip()
             if not title:
                 continue
+            from .areas import match_area
             rows.append({
                 "title": title,
                 "norm": _norm(title),
                 "root": _root(title),
+                "area": match_area(title),
                 "market": float(s.get("market_score") or s.get("Market") or 0),
                 "aes": float(s.get("aesthetic_score") or s.get("AES") or 0),
                 "clip": float(s.get("clip_score") or s.get("rendered_CLIP") or 0),
@@ -120,10 +122,12 @@ def load_renders(data_dir=None, max_files=4, max_renders=400):
                 verdict = "GOOD"
             else:
                 verdict = "MARGINAL"
+            from .areas import match_area
             rows.append({
                 "title": title,
                 "norm": _norm(title),
                 "root": _root(title),
+                "area": match_area(title),
                 "market": market_scaled,
                 "aes": aes,
                 "clip": 99.0,                        # no CLIP in this format
@@ -198,8 +202,31 @@ def classify(rows):
     if brand_hits:
         fix_directives.append("no brand/SKU titles (OEAK, Eichholtz, Full HD...)")
 
+    # per-area health: reject rate + avg AES from the render reports
+    area_stats = {}
+    for r in rows:
+        a = r.get("area")
+        if not a:
+            continue
+        st = area_stats.setdefault(a, {"shots": 0, "rejects": 0, "aes_sum": 0.0})
+        st["shots"] += 1
+        v = r["verdict"].upper()
+        if "REJECT" in v or r["aes"] < 4.0:
+            st["rejects"] += 1
+        st["aes_sum"] += r["aes"]
+    area_health = {}
+    for a, st in area_stats.items():
+        if st["shots"] >= 5:
+            area_health[a] = {
+                "shots": st["shots"],
+                "rejects": st["rejects"],
+                "reject_rate": round(st["rejects"] / st["shots"], 2),
+                "avg_aes": round(st["aes_sum"] / st["shots"], 2),
+            }
+
     return {
         "updated_at": int(time.time()),
+        "area_health": area_health,
         "n_rows": len(rows),
         "hard_ban_titles": sorted(ban_titles)[:80],
         "hard_ban_roots": sorted(x for x in ban_roots if x)[:60],
@@ -221,7 +248,7 @@ def classify(rows):
 
 
 def _empty():
-    return {"updated_at": int(time.time()), "n_rows": 0,
+    return {"updated_at": int(time.time()), "n_rows": 0, "area_health": {},
             "hard_ban_titles": [], "hard_ban_roots": [],
             "permanent_ban_titles": [], "permanent_ban_roots": [],
             "false_demand": [], "adult_leaks": [], "brand_sku_hits": [],

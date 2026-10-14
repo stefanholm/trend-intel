@@ -89,13 +89,49 @@ def keep_rule(nug, gt_down=False):
     return True, "ok"
 
 
+def load_area_health():
+    """Agent C's per-area reject rates from real render reports. Missing or
+    stale (>7d) knowledge -> empty dict: quotas stay at default."""
+    try:
+        data = json.loads((DATA / "failure_learning.json").read_text())
+    except (OSError, ValueError):
+        return {}
+    if time.time() - data.get("updated_at", 0) > 7 * 24 * 3600:
+        return {}
+    return data.get("area_health") or {}
+
+
+def health_quotas(base=3):
+    """Area quotas from render-outcome health (vertical feedback loop):
+    reject_rate <= 0.35 or avg_aes >= 5.0 -> healthy -> base cap
+    cold (reject_rate >= 0.55 or avg_aes < 3.5) -> cap 1
+    middling -> cap 2
+    A healthy area keeps its slots; a cold one shrinks but never to zero —
+    the shortlist always keeps vertical diversity."""
+    out = {}
+    for area, st in load_area_health().items():
+        rr, aes = st.get("reject_rate", 0), st.get("avg_aes", 0)
+        if rr >= 0.55 or aes < 3.5:
+            out[area] = 1
+        elif rr >= 0.45 or aes < 4.0:
+            out[area] = 2
+        else:
+            out[area] = base
+    return out
+
+
 def rank(db, limit=20, area_quota=None):
     """Shortlist: hotness-ranked, trajectory-aware, vertical-diverse.
 
     Burned titles (render-QC failures reported by the consumer app) never
-    appear — active_nuggets already excludes non-active statuses."""
+    appear — active_nuggets already excludes non-active statuses.
+    Area caps shrink automatically for verticals whose renders keep
+    failing (Agent C health feedback) — cold areas get fewer slots."""
     report = json.loads((DATA / "intel_report.json").read_text()) \
         if (DATA / "intel_report.json").exists() else {"areas": {}}
+    if area_quota is None:
+        hq = health_quotas()
+        area_quota = hq if hq else None
 
     candidates = []
     gt_down = _gt_cooldown_active()
