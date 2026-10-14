@@ -260,6 +260,36 @@ def demand_context(c, demand_map):
     return c
 
 
+FRAMING_HINTS = {
+    "Macro drink": ("tight on hero allowed; keep full vessel rim + pour point "
+                    "in frame; hands enter from edge, crop mid-forearm never "
+                    "at the wrist"),
+    "Beauty detail": ("face/hands may fill the frame but eyes+lips fully "
+                      "inside with 5% headroom; crop at mid-forearm, never "
+                      "at joints; face >= 1/3 frame height for inpaint density"),
+    "SFW intimates": ("waist-up minimum, full head in frame with 8% headroom; "
+                      "crop at torso, never at neck/joints; face >= 1/4 frame "
+                      "for face inpaint"),
+    "Environment worn apparel": ("full headroom, garment hero fully visible; "
+                                 "crop mid-body at most, never at ankles/"
+                                 "wrists; subject inside inner 90% of frame"),
+    "Environment interior": ("no crop on the hero object; hero inside inner "
+                             "90% of frame; leave 15% negative space for "
+                             "campaign text"),
+    "Product still-life": ("hero fully inside frame with 10% margin all "
+                           "sides; hands enter from frame edge only"),
+    "Environment lifestyle": ("full head + mid-action body inside frame; "
+                              "subject never overlaps background life; "
+                              "foreground occlusion must not cover the face"),
+}
+
+
+def framing_hint(image_need_class):
+    return FRAMING_HINTS.get(image_need_class,
+                             "full subject inside frame, no limb/face crops, "
+                             "8% headroom")
+
+
 def people_hands(image_need_class):
     return ("1 hand holding / pouring" if "drink" in image_need_class.lower()
             else "none, hands-only on product" if "Product" in image_need_class
@@ -277,6 +307,7 @@ def enrich(c, demand_map=None):
                         "sources": c.get("source_count", 1),
                         "gt_verified": bool(c.get("verified_by_google_trends"))}
     c["people_hands"] = people_hands(c["image_need"])
+    c["framing_hint"] = framing_hint(c["image_need"])
     c["buyer_use"] = {"Macro drink": "cafe menus / delivery app hero",
                       "Beauty detail": "cosmetics campaign / tutorial",
                       "SFW intimates": "apparel lookbook / brand campaign",

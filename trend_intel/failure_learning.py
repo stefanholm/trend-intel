@@ -33,6 +33,12 @@ BRAND_SKU_RE = re.compile(
 INTIMATES_RE = re.compile(
     r"\b(lingerie|intimates|bralette|bra\b|slip|robe|bodysuit|lounge|"
     r"nightwear|sleepwear|thong|bikini|underkläd|bh\b)\b", re.I)
+FRAMING_FAILURE_RE = re.compile(
+    r"\b(crop|cropped|cropping|cut off|cut-off|severed|chopped|"
+    r"decapitat\w*|headless|out of frame|partial face|half face|"
+    r"face cut|face too small|too far|too close|zoom\w*|"
+    r"framing|cluttered frame|distract\w*|overflow\w*)\b", re.I)
+
 ADULT_LEAK_RE = re.compile(
     r"\b(turtleneck|riding hood|sequin|red carpet|celebrity|"
     r"sparkles in|goes pantsless|steps out)\b", re.I)
@@ -146,6 +152,7 @@ def classify(rows):
     winners, failures = [], []
     root_fail = Counter()
     plastic_skin = focus_issues = 0
+    framing_issues = []
 
     for r in rows:
         v = r["verdict"].upper()
@@ -161,6 +168,11 @@ def classify(rows):
         if ADULT_LEAK_RE.search(r["title"]) and not INTIMATES_RE.search(r["title"]):
             adult_leaks.append(r["title"])
             perm_titles.add(r["norm"])
+
+        # framing failure signals: title or comment mentions crop/zoom issues
+        hay = r["title"] + " " + (r.get("comment") or "")
+        if FRAMING_FAILURE_RE.search(hay):
+            framing_issues.append(r["title"])
 
         if is_reject:
             failures.append(r)
@@ -201,6 +213,11 @@ def classify(rows):
                               "turtleneck/red-carpet/celebrity themes never adult")
     if brand_hits:
         fix_directives.append("no brand/SKU titles (OEAK, Eichholtz, Full HD...)")
+    if framing_issues:
+        fix_directives.append(
+            "FRAMING: %d shots flagged crop/zoom/face-size issues — enforce "
+            "framing_hint per shot class (full headroom, no joint crops, "
+            "face >= 1/4 frame when inpainted)" % len(framing_issues))
 
     # per-area health: reject rate + avg AES from the render reports
     area_stats = {}
@@ -236,6 +253,7 @@ def classify(rows):
                           "aes": x["aes"], "clip": x["clip"]}
                          for x in false_demand[:30]],
         "adult_leaks": sorted(set(adult_leaks))[:20],
+        "framing_issues": sorted(set(framing_issues))[:15],
         "brand_sku_hits": sorted(set(brand_hits))[:20],
         "fix_directives": fix_directives,
         "winners": [{"title": x["title"], "aes": x["aes"],

@@ -170,6 +170,9 @@ def fetch_trend_intel_block():
             e.get("image_need") or "n/a", tag))
         if hint:
             lines.append("    setting_hint: " + hint[:300])
+        fh = e.get("framing_hint") or ""
+        if fh:
+            lines.append("    framing_hint: " + fh[:300])
     if ban_titles or ban_roots:
         lines.append("INTEL BAN LEDGER: %d banned candidates filtered; ledger = %d titles + %d roots (normalized comparison; roots ban pivots too) — do not render these" % (
             banned_count, len(ban_titles), len(ban_roots)))

@@ -92,12 +92,13 @@ def write_report(db, path=REPORT):
         # consumers never see a raw lead without a shot class (V68.5)
         try:
             from .manifest_gate import (image_need, prop_hero, setting_hint,
-                                      people_hands)
+                                      people_hands, framing_hint)
             t_clean = entry["title"]
             entry["image_need"] = image_need(t_clean)
             entry["prop_hero"] = prop_hero(t_clean)
             entry["setting_hint"] = setting_hint(t_clean)
-            entry["people_hands"] = people_hands(t_clean)
+            entry["people_hands"] = people_hands(entry["image_need"])
+            entry["framing_hint"] = framing_hint(entry["image_need"])
             entry["buyer_use"] = {
                 "Macro drink": "cafe menus / delivery app hero",
                 "Beauty detail": "cosmetics campaign / tutorial",
