@@ -42,6 +42,13 @@ HELPER = r'''
 # V68.4 TREND INTEL DIGEST — consumer integration (docs/consumer-integration.md)
 TREND_INTEL_DIR = "/Applications/trend-intel/data"
 
+_ti_brand_re = re.compile(
+    r"\b(hobbs|dunkin|starbucks|nike|adidas|xiaomi|shokz|pact|app?le|"
+    r"samsung|sony|lego|ninja|philips|dyson|bosch|zidane|OEAK|Eichholtz|"
+    r"panache|H&M|Zara|Full HD|Wireless|SKU)\b", re.I)
+_ti_question_re = re.compile(
+    r"^(why|what|how|when|where|who|is|are|do|does|did|can|should)\b", re.I)
+
 def _ti_normalize(text):
     return re.sub(r"[^a-z0-9]+", "", (text or "").lower()).strip()
 
@@ -103,6 +110,13 @@ def fetch_trend_intel_block():
         seen.add(key)
         if _ti_banned(key, ban_titles, ban_roots):
             banned_count += 1
+            continue
+        # brand/SKU leak: raw leads bypass the gate's brand stripping
+        if _ti_brand_re.search(title):
+            banned_count += 1
+            continue
+        # question queries are not visual trends ("why is butter yellow")
+        if _ti_question_re.match(title.strip()):
             continue
         entries.append(e)
     # variant clustering: keep ONE representative per 3-word root
