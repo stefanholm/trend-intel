@@ -224,6 +224,12 @@ def demand_context(c, demand_map):
     return c
 
 
+def people_hands(image_need_class):
+    return ("1 hand holding / pouring" if "drink" in image_need_class.lower()
+            else "none, hands-only on product" if "Product" in image_need_class
+            else "1 person mid-motion")
+
+
 def enrich(c, demand_map=None):
     c["title"] = strip_brand(c["title"])
     t = c["title"]
@@ -234,9 +240,7 @@ def enrich(c, demand_map=None):
                         "hotness": c.get("hotness", 0),
                         "sources": c.get("source_count", 1),
                         "gt_verified": bool(c.get("verified_by_google_trends"))}
-    c["people_hands"] = ("1 hand holding / pouring" if "drink" in c["image_need"].lower()
-                         else "none, hands-only on product" if "Product" in c["image_need"]
-                         else "1 person mid-motion")
+    c["people_hands"] = people_hands(c["image_need"])
     c["buyer_use"] = {"Macro drink": "cafe menus / delivery app hero",
                       "Beauty detail": "cosmetics campaign / tutorial",
                       "SFW intimates": "apparel lookbook / brand campaign",

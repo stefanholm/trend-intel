@@ -88,6 +88,26 @@ def write_report(db, path=REPORT):
             "area": area,
             "state": state,
         }
+        # gate-classify every entry: shot directives travel with the report so
+        # consumers never see a raw lead without a shot class (V68.5)
+        try:
+            from .manifest_gate import (image_need, prop_hero, setting_hint,
+                                      people_hands)
+            t_clean = entry["title"]
+            entry["image_need"] = image_need(t_clean)
+            entry["prop_hero"] = prop_hero(t_clean)
+            entry["setting_hint"] = setting_hint(t_clean)
+            entry["people_hands"] = people_hands(t_clean)
+            entry["buyer_use"] = {
+                "Macro drink": "cafe menus / delivery app hero",
+                "Beauty detail": "cosmetics campaign / tutorial",
+                "SFW intimates": "apparel lookbook / brand campaign",
+                "Environment worn apparel": "fashion lookbook / autumn editorial",
+                "Environment interior": "furniture retail / home staging",
+                "Product still-life": "ecommerce / craft brand",
+            }.get(entry["image_need"], "lifestyle campaign")
+        except Exception:  # noqa: BLE001
+            pass
         if state == "falling":
             fallen.append(entry)
         elif is_google or state in ("rising", "steady", "peaked"):
