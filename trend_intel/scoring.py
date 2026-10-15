@@ -13,6 +13,13 @@ from pathlib import Path
 from datetime import datetime
 
 # --- intake gate filters (§1a-style junk kill, adapted to trend intel) ---
+CELEB_NAME_RE = re.compile(
+    r"\b(hailey bieber|kylie jenner|selena gomez|taylor swift|rihanna|"
+    r"huda beauty|by mario|matte lip mud|dedendorff|balenciaga|prada|"
+    r"gucci|chanel|dior|mugler|loewe|khaite|the row|skims|fenty|rare beauty|"
+    r"ghostrunner|rhode|ellen\b|oprah|beyonce|billie eilish|sabrina carpenter)\b",
+    re.I)
+
 CELEB_RE = re.compile(
     r"\b(goes|goes pantsless|steps out|spotted|strips off|flashes|"
     r"deaths?|dies|killed|arrested|charged|lawsuit|verdict|"
@@ -260,6 +267,8 @@ def looks_like_junk(title, extra=None):
         return "promo"
     if BRAND_RE.search(t):
         return "brand_token"
+    if CELEB_NAME_RE.search(t):
+        return "celebrity_name"
     if is_meta_query(t):
         return "meta_query"
     if QUESTION_RE.match(t):
