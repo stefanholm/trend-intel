@@ -48,7 +48,23 @@ ADULT_LEXICON = re.compile(
     r"\b(slip|bra|bralette|briefs?|robe|lounge|loungewear|bodysuit|"
     r"lingerie|sleepwear|nightdress|pyjama|pajama|camisole|corset|"
     r"balconette|intimates|swimsuit|swimwear|bikini|tankini|"
-    r"satin|lace|sheer|silk|mesh)\b", re.I)
+    r"satin|lace|sheer|silk|mesh|"
+    # bold mainstream lingerie vocabulary — restaged SFW downstream
+    r"bodystocking|strappy|cage|halter|plunge|deep v|open back|"
+    r"backless|garter|suspender|thigh.?high|stockings?|chemise|"
+    r"babydoll|teddy|bustier|basque|garter belt|harness|"
+    r"seductive|sensual|allure|provocative|daring|bold|"
+    r"strapless|wireless|push.?up|cut.?out|low.?cut|skimpy)\b", re.I)
+# boldness vocabulary — signals for downstream SFW restaging priority
+BOLD_RE = re.compile(
+    r"\b(sheer|strappy|cage|harness|cut.?out|plunge|deep v|open back|"
+    r"backless|garter|thigh.?high|bodystocking|seductive|sensual|"
+    r"provocative|daring|skimpy|barely there)\b", re.I)
+# explicit wall: hard-rejected at discovery (not restageable — Adobe ban)
+EXPLICIT_RE = re.compile(
+    r"\b(porn|xxx|nude|naked|nsfw|hardcore|explicit sex|"
+    r"topless|bottomless|crotchless|nipple|erotic)\b", re.I)
+
 BRAND_RE = re.compile(
     r"\b(loop|huda|rhode|rare beauty|fenty|skims|by mario|dedendorff|"
     r"hailey|bieber|kylie|jenner|victoria.?s secret|zara|h&m)\b", re.I)
@@ -107,6 +123,10 @@ SEEDS = {
         "lingerie", "pyjama set", "sleepwear", "camisole", "loungewear",
         "bridal lingerie", "honeymoon", "boudoir", "corset",
         "balconette", "swimsuit", "bikini",
+        # bold discovery: sensual mainstream demand vocabulary
+        "sheer bodystocking", "strappy lingerie", "plunge bodysuit",
+        "garter set", "cage bra", "open back lingerie", "chemise",
+        "seductive lingerie", "bridal corset", "boudoir lace",
     ],
 }
 
@@ -130,7 +150,8 @@ def gate(which, title):
     lex = BEAUTY_LEXICON if which == "beauty" else ADULT_LEXICON
     return (bool(lex.search(title))
             and not BRAND_RE.search(title)
-            and not PROCEDURE_RE.search(title))
+            and not PROCEDURE_RE.search(title)
+            and not EXPLICIT_RE.search(title))
 
 
 def discover(which, max_seeds=6, max_total=60):
@@ -168,7 +189,13 @@ def profile(which, trend, expansions):
     verb = next((v for v in VERBS[kind] if v in text), None)
     setting = SETTINGS[kind][hash(trend) % len(SETTINGS[kind])]
     img_need = ("Beauty detail" if kind == "beauty" else "SFW intimates")
+    bold = bool(BOLD_RE.search(text))
     return {
+        "boldness": ("high" if bold else "classic"),
+        "restage_note": ("downstream MUST restage to tasteful SFW boudoir "
+                         "per adult-intimates lock: lingerie/silk/lace "
+                         "wardrobe, private setting, no explicit framing"
+                         if bold else ""),
         "trend": trend,
         "vertical": kind,
         "image_need": img_need,
