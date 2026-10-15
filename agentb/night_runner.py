@@ -33,6 +33,13 @@ def main():
     except Exception as e:  # noqa: BLE001
         print(f"[agentB] gap run failed (isolated): {e}")
     try:
+        from agentb.beauty_intel_agent import run as beauty_intel_run
+        bi = beauty_intel_run()
+        print(f"[agentB] beauty-intel: {len(bi['beauty'])} beauty + "
+              f"{len(bi['adult'])} adult deep profiles")
+    except Exception as e:  # noqa: BLE001
+        print(f"[agentB] beauty-intel failed (isolated): {e}")
+    try:
         from trend_intel import style_genome
         style_genome.ensure_dropzone()   # operator channel always present
         pruned = style_genome.prune_genome()
