@@ -398,26 +398,39 @@ def process_sales_dropzone(boost=5.0):
     # unmatched sales are the strongest signal available: seed their
     # distinctive vocabulary as NEW genes (a sale proves commercial demand)
     seeded = []
+    bucket = "sales_proven"
+    genome.setdefault(bucket, {})
     for line in unmatched:
         toks = sorted({w for w in re.findall(r"[a-z]+", line.lower())
                         if len(w) >= 5 and w not in STOPWORDS})
         if len(toks) < 2 or any(b in line.lower() for b in BANNED_TOKENS):
             continue
         phrase = " ".join(toks[:6])
+        # match-first: compound an existing sales gene that shares >=2
+        # distinctive tokens (prevents near-duplicate genes per description)
+        hit = None
+        for k, v in genome[bucket].items():
+            v_toks = set(re.findall(r"[a-z]+", v["prompt"].lower()))
+            if len(set(toks) & v_toks) >= 2:
+                hit = k
+                break
+        if hit:
+            g = genome[bucket][hit]
+            g["alpha"] = round(g["alpha"] + boost, 2)
+            g["adobe_sales"] = int(g.get("adobe_sales", 0)) + 1
+            seeded.append(f"{bucket}/{hit}")
+            continue
         key = "_".join(toks[:3])[:40]
-        bucket = "sales_proven"
-        genome.setdefault(bucket, {})
-        if key not in genome[bucket]:
+        if key in genome[bucket]:
+            g = genome[bucket][key]
+            g["alpha"] = round(g["alpha"] + boost, 2)
+            g["adobe_sales"] = int(g.get("adobe_sales", 0)) + 1
+        else:
             genome[bucket][key] = {
                 "prompt": phrase, "alpha": 7.0, "beta": 1.0,
                 "adobe_sales": 1,
                 "seeded_from_sale": line[:80]}
-            seeded.append(f"{bucket}/{key}")
-        else:
-            g = genome[bucket][key]
-            g["alpha"] = round(g["alpha"] + boost, 2)
-            g["adobe_sales"] = int(g.get("adobe_sales", 0)) + 1
-            seeded.append(f"{bucket}/{key}")
+        seeded.append(f"{bucket}/{key}")
     save_genome(genome)
     SALES_DROPZONE.write_text(
         "# Paste sold Adobe Stock image titles below (one per line) "
