@@ -56,7 +56,9 @@ BRAND_RE = re.compile(
 PROCEDURE_RE = re.compile(
     r"\b(botox|filler|laser|microneedling|peel|surgery|surgical|"
     r"injection|clinique?\b|dermatolog\w+|med ?spa|before and after|"
-    r"cost|price|near me|procedure|treatment)\b", re.I)
+    r"cost|price|near me|procedure|treatment|"
+    r"lip flip|lip filler|fat dissolv\w+|thread lift|prp|"
+    r"b[aä]st i test)\b", re.I)
 
 # deep-detail vocabulary for profiling
 SHADES = {
@@ -148,9 +150,13 @@ def discover(which, max_seeds=6, max_total=60):
 
 
 def verify(trend):
-    """Commercial velocity: rich autocomplete tree = real search demand."""
+    """Commercial velocity: rich autocomplete tree = real search demand.
+    Trends whose expansion tree is dominated by procedure/shop queries
+    (botox, before-and-after, bäst-i-test, cost) are not visual subjects."""
     sugg = set(_ac(trend)) | set(_ac(trend, ds="sh"))
-    return len(sugg) >= 3, min(100, len(sugg) * 8), sorted(sugg)[:5]
+    clean = [x for x in sugg if not PROCEDURE_RE.search(x)]
+    ok = len(sugg) >= 3 and len(clean) >= max(2, len(sugg) // 2)
+    return ok, min(100, len(clean) * 8), sorted(clean)[:5]
 
 
 def profile(which, trend, expansions):
