@@ -384,9 +384,12 @@ def process_sales_dropzone(boost=5.0):
     if not lines:
         return []
     genome = load_genome()
-    boosted = []
+    boosted, unmatched = [], []
     for line in lines:
         used = infer_used_genes(line, genome)
+        if not used:
+            unmatched.append(line[:60])
+            continue
         for bucket, gid in used.items():
             g = genome[bucket][gid]
             g["alpha"] = round(g["alpha"] + boost, 2)
@@ -396,7 +399,8 @@ def process_sales_dropzone(boost=5.0):
     SALES_DROPZONE.write_text(
         "# Paste sold Adobe Stock image titles below (one per line) "
         "for +5.0 alpha boost:\n")
-    return boosted
+    return {"boosted": boosted, "consumed": len(lines),
+            "unmatched": unmatched}
 
 
 def seed_from_harvest(nuggets, area):

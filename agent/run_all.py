@@ -52,8 +52,10 @@ def main():
                     "from trend_intel import failure_learning as fl; "
                     "ctx = fl.run(db=DB('data/intel.db')); "
                     "from trend_intel import style_genome as sg; "
-                    "boosted = sg.process_sales_dropzone(); "
-                    "print('sales boosted:', boosted); "
+                    "res = sg.process_sales_dropzone(); "
+                    "print('sales:', res.get('boosted', []) or '[]', "
+                    "'| consumed', res.get('consumed', 0), 'lines', "
+                    "'| unmatched', len(res.get('unmatched', []))); "
                     f"print('rows:', ctx['n_rows'], "
                     f"'bans:', len(ctx['hard_ban_titles']) + "
                     f"len(ctx['permanent_ban_titles']))"],
