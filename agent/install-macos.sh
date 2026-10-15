@@ -36,6 +36,7 @@ if [[ -n "$SUDO" ]]; then
 fi
 rsync -a --delete \
       --exclude 'data' --exclude '__pycache__' --exclude '.git' \
+      --exclude 'config/calendar_seeds.txt' \
       "$SRC/" "$TARGET/"
 mkdir -p "$TARGET/data"
 
