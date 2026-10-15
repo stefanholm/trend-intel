@@ -17,7 +17,8 @@ CELEB_NAME_RE = re.compile(
     r"\b(hailey bieber|kylie jenner|selena gomez|taylor swift|rihanna|"
     r"huda beauty|by mario|matte lip mud|dedendorff|balenciaga|prada|"
     r"gucci|chanel|dior|mugler|loewe|khaite|the row|skims|fenty|rare beauty|"
-    r"ghostrunner|rhode|ellen\b|oprah|beyonce|billie eilish|sabrina carpenter)\b",
+    r"ghostrunner|rhode|ellen\b|oprah|beyonce|billie eilish|sabrina carpenter|"
+    r"\bloop earplugs\b|\bloop\b.{0,20}earplug)",
     re.I)
 
 CELEB_RE = re.compile(
