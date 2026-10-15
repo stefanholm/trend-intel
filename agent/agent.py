@@ -71,6 +71,15 @@ def refresh_seeds():
         cal_seeds = [l.strip() for l in cal_seeds_path.read_text().splitlines()
                      if l.strip() and not l.startswith("#")]
         anchor_set.update(c.lower() for c in cal_seeds)
+    # deep-intel trends from Agent B (beauty/adult deep agent): verified
+    # social/editorial + autocomplete trends, protected like anchors so
+    # Agent A expands them into related-query collection next cycle
+    deep_seeds_path = BASE / "config" / "deep_seeds.txt"
+    deep_seeds = []
+    if deep_seeds_path.exists():
+        deep_seeds = [l.strip() for l in deep_seeds_path.read_text().splitlines()
+                      if l.strip() and not l.startswith("#")]
+        anchor_set.update(d.lower() for d in deep_seeds)
     candidates = []
     for n in api.top(60):
         t = n["title"]
@@ -82,14 +91,14 @@ def refresh_seeds():
             continue
         candidates.append(t)
     candidates = candidates[:MAX_SEEDS - len(anchors)]
-    new_seeds = anchors + cal_seeds + candidates
+    new_seeds = anchors + cal_seeds + deep_seeds + candidates
     if new_seeds:
         SEEDS.parent.mkdir(parents=True, exist_ok=True)
     SEEDS.write_text(
         "# AUTO-MANAGED by agent.py — do not edit; edit config/anchors.txt\n"
         + "\n".join(new_seeds) + "\n")
-    log.info("seeds refreshed: %d anchors + %d auto-discovered",
-             len(anchors), len(candidates))
+    log.info("seeds refreshed: %d anchors + %d calendar + %d deep + %d auto-discovered",
+             len(anchors), len(cal_seeds), len(deep_seeds), len(candidates))
 
 
 def re_gate_nuggets():

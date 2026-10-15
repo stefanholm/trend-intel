@@ -292,6 +292,34 @@ def profile(which, trend, expansions):
     }
 
 
+def write_deep_seeds(out, max_seeds=10, min_velocity=40):
+    """Write verified deep trends into config/deep_seeds.txt so Agent A's
+    refresh_seeds merges them like anchors and expands them into related-
+    query collection next cycle. Own protected file — same pattern as
+    calendar_seeds.txt (writing into seeds.txt directly would get wiped
+    on the next rebuild)."""
+    keywords, seen = [], set()
+    for which in ("beauty", "adult"):
+        for p in out.get(which, []):
+            if p.get("velocity", 0) < min_velocity:
+                continue
+            t = p["trend"].strip().lower()
+            if (not t or t in seen or len(t.split()) > 4
+                    or len(t) < 5 or JUNK_RE.search(t)):
+                continue
+            seen.add(t)
+            keywords.append(t)
+    keywords = keywords[:max_seeds]
+    path = BASE / "config" / "deep_seeds.txt"
+    if not keywords:
+        return []
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        "# AUTO-MANAGED by agentb/beauty_intel_agent.py \u2014 deep-intel trends\n"
+        + "\n".join(keywords) + "\n")
+    return keywords
+
+
 def run(db=None, max_trends=12):
     """Full deep-intel pass. Writes data/beauty_intel.json. Never raises."""
     db = db or DB(DATA / "intel.db")
@@ -323,6 +351,12 @@ def run(db=None, max_trends=12):
     except Exception:  # noqa: BLE001
         log.exception("beauty-intel failed (isolated)")
     OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False))
+    try:
+        seeds = write_deep_seeds(out)
+        log.info("deep seeds: %d keywords injected into Agent A seeds",
+                 len(seeds))
+    except Exception:  # noqa: BLE001
+        log.exception("deep-seeds write failed (isolated)")
     return out
 
 
