@@ -254,7 +254,7 @@ STOPWORDS = {"with", "from", "that", "into", "this", "light", "natural",
             "real", "authentic", "color"}
 
 
-def infer_used_genes(text, genome):
+def infer_used_genes(text, genome, min_overlap=2, min_ratio=0.34):
     """Zero-touch telemetry: detect which genes a render used from its
     prompt/report text. SAFER than the memo version: only ever called on
     QC'd render rows (known verdict), never free-form file scans, so a
@@ -270,9 +270,9 @@ def infer_used_genes(text, genome):
                         if len(w) >= 4 and w not in STOPWORDS}
             overlap = tokens & g_tokens
             ratio = len(overlap) / max(1, min(len(g_tokens), 6))
-            if len(overlap) >= 2 and ratio > best_ratio:
+            if len(overlap) >= min_overlap and ratio > best_ratio:
                 best, best_ratio = gid, ratio
-        if best and best_ratio >= 0.34:
+        if best and best_ratio >= min_ratio:
             detected[bucket] = best
     return detected
 
@@ -395,12 +395,35 @@ def process_sales_dropzone(boost=5.0):
             g["alpha"] = round(g["alpha"] + boost, 2)
             g["adobe_sales"] = int(g.get("adobe_sales", 0)) + 1
             boosted.append(f"{bucket}/{gid}")
+    # unmatched sales are the strongest signal available: seed their
+    # distinctive vocabulary as NEW genes (a sale proves commercial demand)
+    seeded = []
+    for line in unmatched:
+        toks = sorted({w for w in re.findall(r"[a-z]+", line.lower())
+                        if len(w) >= 5 and w not in STOPWORDS})
+        if len(toks) < 2 or any(b in line.lower() for b in BANNED_TOKENS):
+            continue
+        phrase = " ".join(toks[:6])
+        key = "_".join(toks[:3])[:40]
+        bucket = "sales_proven"
+        genome.setdefault(bucket, {})
+        if key not in genome[bucket]:
+            genome[bucket][key] = {
+                "prompt": phrase, "alpha": 7.0, "beta": 1.0,
+                "adobe_sales": 1,
+                "seeded_from_sale": line[:80]}
+            seeded.append(f"{bucket}/{key}")
+        else:
+            g = genome[bucket][key]
+            g["alpha"] = round(g["alpha"] + boost, 2)
+            g["adobe_sales"] = int(g.get("adobe_sales", 0)) + 1
+            seeded.append(f"{bucket}/{key}")
     save_genome(genome)
     SALES_DROPZONE.write_text(
         "# Paste sold Adobe Stock image titles below (one per line) "
         "for +5.0 alpha boost:\n")
     return {"boosted": boosted, "consumed": len(lines),
-            "unmatched": unmatched}
+            "unmatched": unmatched, "seeded_from_sales": seeded}
 
 
 def seed_from_harvest(nuggets, area):
