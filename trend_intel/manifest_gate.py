@@ -153,6 +153,20 @@ def rank(db, limit=20, area_quota=None):
                              -int(bool(c.get("verified_by_google_trends"))),
                              -c.get("source_count", 1)))
 
+    # gene areas (colors/hairstyles/gadgets/styles...) are not render subjects:
+    # they become spliced style genes on the kept Core Subjects instead
+    from . import style_genome
+    gene_candidates = [c for c in kept if style_genome.is_gene_area(c.get("area"))]
+    kept = [c for c in kept if not style_genome.is_gene_area(c.get("area"))]
+    if gene_candidates:
+        style_genome.seed_from_harvest(gene_candidates,
+                                       gene_candidates[0].get("area"))
+    genes = style_genome.sample_genes(style_genome.load_genome())
+    gene_block = {"selected_genes": genes,
+                  "splice_formula": "Core Subject x (color | hairstyle | "
+                                    "accessory | gadget | style) genes"}
+    globals()["_last_gene_block"] = gene_block
+
     # vertical diversity: max 3 per area unless quota given
     per_area = {}
     out = []
@@ -163,6 +177,9 @@ def rank(db, limit=20, area_quota=None):
             continue
         per_area[a] = per_area.get(a, 0) + 1
         out.append(enrich(c, demand_map))
+        if genes:
+            out[-1]["style_genes"] = {b: g["prompt_fragment"]
+                                      for b, g in genes.items()}
         if len(out) >= limit:
             break
     return out, candidates
@@ -350,6 +367,7 @@ def export_shortlist(limit=20, path=None):
     out = {
         "generated_at": int(time.time()),
         **out_extra,
+        "style_genes": globals().get("_last_gene_block", {}),
         "shortlist": shortlist,
         "rejected_summary": _reject_summary(all_candidates),
         "legend": {

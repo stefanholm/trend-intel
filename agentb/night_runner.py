@@ -33,6 +33,12 @@ def main():
     except Exception as e:  # noqa: BLE001
         print(f"[agentB] gap run failed (isolated): {e}")
     try:
+        from trend_intel import style_genome
+        pruned = style_genome.prune_genome()
+        print(f"[agentB] genome: pruned {len(pruned)} weak style genes")
+    except Exception as e:  # noqa: BLE001
+        print(f"[agentB] genome prune failed (isolated): {e}")
+    try:
         seeds = calendar_seeds(cal)
         print(f"[agentB] calendar-intent: {len(seeds)} window keywords "
               f"injected into Agent A seeds")

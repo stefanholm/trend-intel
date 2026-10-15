@@ -289,6 +289,19 @@ def run(db=None, data_dir=None):
                      len(ctx["hard_ban_titles"]),
                      len(ctx["hard_ban_roots"]),
                      len(ctx["false_demand"]))
+        # positive render-fitness loop: gene usage from report shots updates
+        # the style genome's Thompson weights (reward GOOD, penalize reject)
+        try:
+            from . import style_genome
+            for r in rows:
+                used = r.get("style_genes") or {}
+                if used:
+                    style_genome.update_from_qc(
+                        used, passed=("GOOD" in r["verdict"].upper()
+                                      or r["aes"] >= 6.0))
+        except Exception:  # noqa: BLE001
+            log.exception("style-genome update failed (isolated)")
+
         OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
         OUT_PATH.write_text(json.dumps(ctx, indent=2, ensure_ascii=False))
         if db is not None:
