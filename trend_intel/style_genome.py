@@ -131,10 +131,25 @@ def autocomplete_velocity(phrase):
 
 # ---------------------------------------------------------------- splicing
 
-def sample_genes(genome, banned_tokens=None):
-    """Thompson sampling: draw Beta(alpha, beta) per gene, pick the winner
-    per bucket. Styles that render cleanly get chosen more; failing ones
-    decay — without banning the underlying subject."""
+COOLDOWN_HOURS = 24.0
+
+
+def _recency_factor(st, now):
+    """Anti echo-chamber: a gene used in the last 24h is scaled down to
+    min 5%, forcing visual variety across batches (Adobe spam guard).
+    Winners still dominate over time; they just can't monopolize."""
+    last = st.get("last_used_ts") or 0
+    if not last:
+        return 1.0
+    hours = max(0.0, (now - last) / 3600.0)
+    return min(1.0, max(0.05, hours / COOLDOWN_HOURS))
+
+
+def sample_genes(genome, banned_tokens=None, now=None):
+    """Thompson sampling with 24h recency cooldown: draw Beta(alpha, beta),
+    multiply by the recency factor, pick the winner per bucket. Stamps
+    last_used_ts so consecutive shortlist entries rotate genes."""
+    now = now or time.time()
     banned = [b.lower() for b in (banned_tokens or []) + BANNED_TOKENS]
     selected = {}
     for bucket, genes in genome.items():
@@ -144,17 +159,38 @@ def sample_genes(genome, banned_tokens=None):
                 continue
             draw = random.betavariate(max(0.5, st["alpha"]),
                                       max(0.5, st["beta"]))
+            draw *= _recency_factor(st, now)
             if draw > best:
                 best, best_key = draw, key
         if best_key:
             st = genome[bucket][best_key]
+            st["last_used_ts"] = round(now, 2)
+            now += 900.0          # stagger: same-batch entries diversify
             selected[bucket] = {
                 "gene_id": best_key,
                 "prompt_fragment": st["prompt"],
                 "expected_win_rate": round(
                     st["alpha"] / (st["alpha"] + st["beta"]), 3),
             }
+    save_genome(genome)
     return selected
+
+
+SHOT_1_SAFE_BUCKETS = {"colors", "hairstyles", "accessories", "styles",
+                       "yellow_color"}
+SHOT_2_3_ONLY_BUCKETS = {"gadgets", "costume_cosplay"}
+
+
+def shot_ladder(genes):
+    """Split selected genes for NFE's 3-shot ladder: tight beauty headshot
+    (shot 1) never gets gadgets/cosplay crammed next to a macro face."""
+    return {
+        "shot_1_beauty": {b: g for b, g in genes.items()
+                          if b in SHOT_1_SAFE_BUCKETS},
+        "shot_2_waist_up": {b: g for b, g in genes.items()
+                            if b not in ("costume_cosplay",)},
+        "shot_3_full_lifestyle": dict(genes),
+    }
 
 
 def splice(subject, genes):
@@ -172,6 +208,35 @@ def is_gene_area(area):
 
 
 # ---------------------------------------------------------------- render loop
+
+STOPWORDS = {"with", "from", "that", "into", "this", "light", "natural",
+            "warm", "soft", "subtle", "clean", "modern", "style", "editorial",
+            "lifestyle", "portrait", "background", "high", "full", "deep",
+            "real", "authentic", "color"}
+
+
+def infer_used_genes(text, genome):
+    """Zero-touch telemetry: detect which genes a render used from its
+    prompt/report text. SAFER than the memo version: only ever called on
+    QC'd render rows (known verdict), never free-form file scans, so a
+    gene can never be rewarded just for being mentioned somewhere."""
+    tokens = {w for w in re.findall(r"[a-z0-9]+", (text or "").lower())
+              if len(w) >= 4 and w not in STOPWORDS}
+    detected = {}
+    for bucket, genes in genome.items():
+        best, best_ratio = None, 0.0
+        for gid, st in genes.items():
+            slug = gid.lower().replace("_", " ")
+            g_tokens = {w for w in re.findall(r"[a-z0-9]+", slug + " " + st["prompt"].lower())
+                        if len(w) >= 4 and w not in STOPWORDS}
+            overlap = tokens & g_tokens
+            ratio = len(overlap) / max(1, min(len(g_tokens), 6))
+            if len(overlap) >= 2 and ratio > best_ratio:
+                best, best_ratio = gid, ratio
+        if best and best_ratio >= 0.34:
+            detected[bucket] = best
+    return detected
+
 
 def update_from_qc(gene_ids_by_bucket, passed):
     """Reward/penalize genes from a render's QC outcome. `passed` = the
@@ -205,6 +270,64 @@ def prune_genome(min_renders=10, min_win_rate=0.25):
     if pruned:
         save_genome(genome)
     return pruned
+
+
+MUTATION_POOL = {
+    "colors": [
+        "sun-washed saffron linen with travertine neutrals",
+        "muted pistachio green and raw unbleached silk",
+        "warm oat milk, smoked espresso, brushed bronze accents",
+    ],
+    "hairstyles": [
+        "chin-length French bob with sunlit flyaway wisps",
+        "low textured bun with matte acetate pin",
+        "silver-streaked wavy lob with realistic scalp parting",
+    ],
+    "accessories": [
+        "champagne-acetate optical frames with subtle lens refraction",
+        "sculptural matte recycled-silver ear cuff with patina",
+        "unbranded ceramic chronograph with worn suede strap",
+    ],
+    "gadgets": [
+        "anodized-aluminum air quality monitor with soft LED glow",
+        "brushed-steel pour-over coffee scale with condensation",
+        "fabric-wrapped smart home energy display, no logos",
+    ],
+    "styles": [
+        "50mm f/2.8 editorial lifestyle, warm tungsten bounce, "
+        "crisp fabric weave, natural skin subsurface scattering",
+        "35mm f/4 environmental storytelling, dappled courtyard "
+        "sunlight through olive leaves, deep focal-plane clarity",
+    ],
+}
+
+
+def breed_genome(champion_alpha=4.5, max_per_bucket=10):
+    """Nightly after prune: champion genes (alpha >= 4.5, win >= 0.65)
+    spawn one mutated sibling at alpha 2 / beta 1 — the pool evolves
+    instead of shrinking to a static list. Never exceeds max per bucket."""
+    genome = load_genome()
+    bred = []
+    for bucket, genes in genome.items():
+        if len(genes) >= max_per_bucket:
+            continue
+        champions = [k for k, g in genes.items()
+                     if g["alpha"] >= champion_alpha
+                     and g["alpha"] / (g["alpha"] + g["beta"]) >= 0.65]
+        pool = [m for m in MUTATION_POOL.get(bucket, [])
+                if m.lower() not in {g["prompt"].lower() for g in genes.values()}
+                and not any(b in m.lower() for b in BANNED_TOKENS)]
+        if (champions or len(genes) < 4) and pool:
+            prompt = random.choice(pool)
+            key = "_".join(re.findall(r"[a-z]+", prompt.lower())[:3])[:40]
+            if key not in genes:
+                genome[bucket][key] = {
+                    "prompt": prompt, "alpha": 2.0, "beta": 1.0,
+                    "parent": champions[0] if champions else "seed_pool"}
+                bred.append(f"{bucket}/{key}")
+    if bred:
+        save_genome(genome)
+    return bred
 
 
 def seed_from_harvest(nuggets, area):

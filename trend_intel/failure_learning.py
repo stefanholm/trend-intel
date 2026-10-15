@@ -293,8 +293,15 @@ def run(db=None, data_dir=None):
         # the style genome's Thompson weights (reward GOOD, penalize reject)
         try:
             from . import style_genome
+            genome = style_genome.load_genome()
             for r in rows:
-                used = r.get("style_genes") or {}
+                # explicit gene echo if NFE records it; otherwise infer from
+                # the row's prompt text (zero-touch, but ONLY on QC'd rows)
+                used = r.get("style_genes") or None
+                if not used:
+                    hay = " ".join([r["title"], r.get("comment") or "",
+                                    r.get("prompt") or ""])
+                    used = style_genome.infer_used_genes(hay, genome)
                 if used:
                     style_genome.update_from_qc(
                         used, passed=("GOOD" in r["verdict"].upper()

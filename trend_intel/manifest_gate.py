@@ -162,7 +162,9 @@ def rank(db, limit=20, area_quota=None):
         style_genome.seed_from_harvest(gene_candidates,
                                        gene_candidates[0].get("area"))
     genes = style_genome.sample_genes(style_genome.load_genome())
+    from .style_genome import shot_ladder
     gene_block = {"selected_genes": genes,
+                  "shot_ladder": shot_ladder(genes),
                   "splice_formula": "Core Subject x (color | hairstyle | "
                                     "accessory | gadget | style) genes"}
     globals()["_last_gene_block"] = gene_block

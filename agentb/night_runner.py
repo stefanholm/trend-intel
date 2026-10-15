@@ -35,7 +35,9 @@ def main():
     try:
         from trend_intel import style_genome
         pruned = style_genome.prune_genome()
-        print(f"[agentB] genome: pruned {len(pruned)} weak style genes")
+        bred = style_genome.breed_genome()
+        print(f"[agentB] genome: pruned {len(pruned)} weak style genes, "
+              f"bred {len(bred)} mutations")
     except Exception as e:  # noqa: BLE001
         print(f"[agentB] genome prune failed (isolated): {e}")
     try:
