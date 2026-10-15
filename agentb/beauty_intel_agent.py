@@ -78,7 +78,7 @@ STRIP_RE = re.compile(
 BRAND_RE = re.compile(
     r"\b(loop|huda|rhode|rare beauty|fenty|skims|by mario|dedendorff|"
     r"hailey|bieber|kylie|jenner|victoria.?s secret|zara|h&m|"
-    r"hunkem\u00f6ller\w*|hunkem\w+|intimissimi|lindex|agent provocateur|"
+    r"hunkem\w*|intimissimi|lindex|agent provocateur|"
     r"coco de mer|lounge underwear|change lingerie|sephora|ulta|lyko|"
     r"kicks|vogue|allure|byrdie|into the gloss)\b", re.I)
 # medical/aesthetic PROCEDURES are not licensable makeup-still-life subjects
