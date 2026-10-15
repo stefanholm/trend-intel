@@ -160,11 +160,69 @@ def _root(t):
     return " ".join(words[:2])
 
 
+JUNK_RE = re.compile(
+    r"\b(today|yesterday|tomorrow|show|offers?|sales?|deals?|shop|shopping|"
+    r"best|worst|top|new|my|me|you|your|i|we|the|a|to|of|in|on|for|"
+    r"review|reviews|guide|tips?|how|why|what|when|is|are|this|that|"
+    r"week|month|year|fall|winter|spring|summer)\b", re.I)
+
+
+def _phrases(text):
+    """Extract short trend phrases from social/editorial headlines.
+    A Reddit title like 'Finally nailed the glazed donut look' becomes
+    candidate phrases; long journalistic sentences are not trends, the
+    lexicon-ngrams inside them are. Junk-bearing ngrams (shop/best/
+    today/reviews) are commerce or filler, not trends."""
+    text = text.lower()
+    text = re.sub(r"[^a-z\s]", " ", text)
+    words = [w for w in text.split() if len(w) > 1]
+    phrases = []
+    for n in (3, 2, 4):
+        for i in range(len(words) - n + 1):
+            p = " ".join(words[i:i + n])
+            if 5 <= len(p) <= 42 and not JUNK_RE.search(p):
+                phrases.append(p)
+    return phrases
+
+
+def _social_discover(which, seen_roots, seen, max_total):
+    """Social-media + magazine harvesting through the same gate/root
+    clustering. Social titles carry community trend language; editorial
+    headlines carry magazine trend language. Both arrive as long titles,
+    so we mine lexicon-bearing phrases instead of using raw titles."""
+    found = []
+    try:
+        from agentb import social_discovery
+        raw_titles = social_discovery.harvest(which, max_items=25)
+    except Exception:  # noqa: BLE001
+        raw_titles = []
+    try:
+        from agentb import editorial_discovery
+        raw_titles += editorial_discovery.harvest(which, max_items=25)
+    except Exception:  # noqa: BLE001
+        pass
+    for title in raw_titles:
+        for s in _phrases(title):
+            root = _root(s)
+            if (not s or s.lower() in seen or not gate(which, s)
+                    or root in seen_roots):
+                continue
+            seen.add(s.lower())
+            seen_roots.add(root)
+            found.append({"trend": s, "via": "social/editorial"})
+            break
+        if len(found) >= max_total:
+            break
+    return found
+
+
 def discover(which, max_seeds=6, max_total=60, per_seed=2, per_root=1):
     """Fan out per seed; cluster variants by 2-word root so one concept
     (silk slip dress / silk slip mini / silk slip nightgown) consumes ONE
-    discovery slot, leaving room for bold/other concepts."""
+    discovery slot, leaving room for bold/other concepts. Social media
+    and magazine headlines join the same candidate pool."""
     found, seen_roots, seen = [], set(), set()
+    found += _social_discover(which, seen_roots, seen, max_total // 3)
     for seed in SEEDS[which][:max_seeds]:
         got = 0
         for sug in _ac(seed) + _ac(seed, ds="sh"):
@@ -248,6 +306,7 @@ def run(db=None, max_trends=12):
                     continue
                 p = profile(which, f["trend"], expansions)
                 p["velocity"] = velocity
+                p["discovered_via"] = f.get("via", "seed")
                 # store as nugget so the normal pipeline also sees it
                 db.upsert_raw(source=f"deep_{which}",
                               title=f["trend"][:80],
