@@ -154,18 +154,33 @@ def gate(which, title):
             and not EXPLICIT_RE.search(title))
 
 
-def discover(which, max_seeds=6, max_total=60):
-    """Fan out per seed, collect gated long-tail suggestions."""
-    found, seen = [], set()
+def _root(t):
+    """First two significant words — variant clustering key."""
+    words = [w for w in re.findall(r"[a-z]+", t.lower()) if len(w) > 2]
+    return " ".join(words[:2])
+
+
+def discover(which, max_seeds=6, max_total=60, per_seed=2, per_root=1):
+    """Fan out per seed; cluster variants by 2-word root so one concept
+    (silk slip dress / silk slip mini / silk slip nightgown) consumes ONE
+    discovery slot, leaving room for bold/other concepts."""
+    found, seen_roots, seen = [], set(), set()
     for seed in SEEDS[which][:max_seeds]:
+        got = 0
         for sug in _ac(seed) + _ac(seed, ds="sh"):
             s = sug.strip()[:80]
-            if not s or s.lower() in seen or not gate(which, s):
+            root = _root(s)
+            if (not s or s.lower() in seen or not gate(which, s)
+                    or root in seen_roots):
                 continue
             seen.add(s.lower())
+            seen_roots.add(root)
             found.append({"trend": s, "via": seed})
-            if len(found) >= max_total:
-                return found
+            got += 1
+            if got >= per_seed or len(found) >= max_total:
+                break
+        if len(found) >= max_total:
+            return found
         time.sleep(0.4)
     return found
 
@@ -225,7 +240,7 @@ def run(db=None, max_trends=12):
     out = {"updated_at": int(time.time()), "beauty": [], "adult": []}
     try:
         for which in ("beauty", "adult"):
-            found = discover(which)
+        found = discover(which, max_seeds=10)
             verified = []
             for f in found:
                 ok, velocity, expansions = verify(f["trend"])
