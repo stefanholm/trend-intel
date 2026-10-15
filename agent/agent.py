@@ -237,6 +237,11 @@ def _search_toplists_low_yield():
     # beauty_makeup and adult_lingerie have DEDICATED lexicon-gated harvests —
     # the global toplist fallback is poison for them and never runs there
     PROTECTED = {"beauty_makeup", "adult_lingerie", "nails_detail"}
+    # gene areas are exempt: they feed style_genome by design, and the
+    # toplist fallback is wasted effort there — redirect slots to real
+    # subject gaps instead
+    from trend_intel.style_genome import GENE_AREAS
+    PROTECTED |= GENE_AREAS
     low = [k for k in AREAS if per_area.get(k, 0) < 2 and k not in PROTECTED]
     if not low:
         return

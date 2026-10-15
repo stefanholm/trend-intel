@@ -179,9 +179,11 @@ def rank(db, limit=20, area_quota=None):
             continue
         per_area[a] = per_area.get(a, 0) + 1
         out.append(enrich(c, demand_map))
-        if genes:
-            out[-1]["style_genes"] = {b: g["prompt_fragment"]
-                                      for b, g in genes.items()}
+        # per-entry vibe-locked genes: the subject picks its own gene set
+        entry_genes = style_genome.sample_genes(genome, subject=c["title"])
+        out[-1]["vibe"] = style_genome.detect_vibe(c["title"])
+        out[-1]["style_genes"] = {b: g["prompt_fragment"]
+                                  for b, g in entry_genes.items()}
         if len(out) >= limit:
             break
     return out, candidates

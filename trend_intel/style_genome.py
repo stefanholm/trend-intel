@@ -133,6 +133,39 @@ def autocomplete_velocity(phrase):
 
 COOLDOWN_HOURS = 24.0
 
+VIBE_KEYWORDS = {
+    "warm_artisan": ["crochet", "knit", "wool", "ceramic", "pottery", "linen",
+                     "craft", "bakery", "wooden", "hygge", "autumn", "cozy",
+                     "boucle", "merino", "pumpkin", "candle"],
+    "festive_seasonal": ["christmas", "advent", "holiday", "candle", "winter",
+                         "lucia", "feast", "velvet", "celebration", "new year",
+                         "gift", "gingerbread", "glögg", "sparkler"],
+    "modern_b2b": ["office", "remote", "laptop", "fintech", "energy", "battery",
+                   "startup", "architect", "studio", "meeting", "data",
+                   "monitor", "e-ink", "smart home"],
+    "sunlit_wellness": ["travel", "spa", "skincare", "yoga", "longevity",
+                        "morning", "kitchen", "mediterranean", "hotel",
+                        "bath", "matcha", "wellness", "pilates"],
+    "editorial_allure": ["lingerie", "satin", "silk", "boudoir", "robe",
+                         "intimates", "loungewear", "slip dress", "mesh"],
+}
+
+
+def detect_vibe(text):
+    """Scene vibe from subject/gene text. editorial_allure wins when present
+    (intimates subjects must never get tech gadgets spliced in)."""
+    t = (text or "").lower()
+    if any(k in t for k in VIBE_KEYWORDS["editorial_allure"]):
+        return "editorial_allure"
+    scores = {v: sum(1 for k in kws if k in t)
+              for v, kws in VIBE_KEYWORDS.items()}
+    best = max(scores, key=lambda v: scores[v])
+    return best if scores[best] > 0 else "sunlit_wellness"
+
+
+def _gene_vibe(gid, st):
+    return st.setdefault("vibe", detect_vibe(gid.replace("_", " ") + " " + st["prompt"]))
+
 
 def _recency_factor(st, now):
     """Anti echo-chamber: a gene used in the last 24h is scaled down to
@@ -145,14 +178,20 @@ def _recency_factor(st, now):
     return min(1.0, max(0.05, hours / COOLDOWN_HOURS))
 
 
-def sample_genes(genome, banned_tokens=None, now=None):
-    """Thompson sampling with 24h recency cooldown: draw Beta(alpha, beta),
-    multiply by the recency factor, pick the winner per bucket. Stamps
-    last_used_ts so consecutive shortlist entries rotate genes."""
+def sample_genes(genome, banned_tokens=None, now=None, subject=None):
+    """Thompson sampling with 24h recency cooldown + vibe locking: when a
+    subject is given, each bucket is filtered to genes whose vibe matches the
+    subject's (fallback: whole bucket) — no air-quality monitors in crochet
+    scenes, no technical vests on advent tables. Franken-prompt prevention."""
     now = now or time.time()
     banned = [b.lower() for b in (banned_tokens or []) + BANNED_TOKENS]
+    vibe = detect_vibe(subject) if subject else None
     selected = {}
     for bucket, genes in genome.items():
+        if vibe:
+            locked = {k: v for k, v in genes.items()
+                      if _gene_vibe(k, v) == vibe}
+            genes = locked or genes      # empty bucket -> fall back, never starve
         best_key, best = None, -1.0
         for key, st in genes.items():
             if any(b in st["prompt"].lower() for b in banned):
@@ -328,6 +367,36 @@ def breed_genome(champion_alpha=4.5, max_per_bucket=10):
     if bred:
         save_genome(genome)
     return bred
+
+
+SALES_DROPZONE = DATA / "sales_dropzone.txt"
+
+
+def process_sales_dropzone(boost=5.0):
+    """Zero-OAuth sales reflex: paste sold Adobe Stock titles (one per line)
+    into data/sales_dropzone.txt. Each line matches genes via the same
+    inference used on QC rows and gives a commercial-sale super-boost.
+    Returns boosted gene list; file is consumed (cleared) after processing."""
+    if not SALES_DROPZONE.exists():
+        return []
+    lines = [ln.strip() for ln in SALES_DROPZONE.read_text().splitlines()
+             if ln.strip() and not ln.startswith("#")]
+    if not lines:
+        return []
+    genome = load_genome()
+    boosted = []
+    for line in lines:
+        used = infer_used_genes(line, genome)
+        for bucket, gid in used.items():
+            g = genome[bucket][gid]
+            g["alpha"] = round(g["alpha"] + boost, 2)
+            g["adobe_sales"] = int(g.get("adobe_sales", 0)) + 1
+            boosted.append(f"{bucket}/{gid}")
+    save_genome(genome)
+    SALES_DROPZONE.write_text(
+        "# Paste sold Adobe Stock image titles below (one per line) "
+        "for +5.0 alpha boost:\n")
+    return boosted
 
 
 def seed_from_harvest(nuggets, area):

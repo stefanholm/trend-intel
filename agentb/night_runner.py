@@ -49,7 +49,7 @@ def main():
     print(f"[agentB] done in {time.time() - t0:.0f}s — process exits (no resident memory)")
 
 
-def calendar_seeds(cal, max_seeds=6, max_lead_days=45):
+def calendar_seeds(cal, max_seeds=6, min_lead_days=21, max_lead_days=75):
     """Inject buyer-window keywords into Agent A's auto-managed seeds.
 
     The calendar knows WHAT buyers will need in 2-8 weeks; the seeds tell
@@ -60,7 +60,10 @@ def calendar_seeds(cal, max_seeds=6, max_lead_days=45):
     """
     keywords = []
     for w in cal.get("need_windows", []):
-        if w.get("days_until", 99) > max_lead_days:
+        d = w.get("days_until", 99)
+        # commercial horizon: buyers license 21-75 days out; <21d is a dead
+        # window (render+upload+moderation+indexing eats the remaining time)
+        if d > max_lead_days or d < min_lead_days:
             continue
         for kw in (w.get("keywords") or w.get("need_title") or "").split(","):
             kw = kw.strip()

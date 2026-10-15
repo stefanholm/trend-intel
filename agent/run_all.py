@@ -45,27 +45,32 @@ def main():
     py = sys.executable
     ok = True
 
-    ok &= run_step("1/3 failure-learning (bans from render reports)",
+    ok &= run_step("1/3 failure-learning + sales dropzone",
                    [py, "-c",
                     "import sys; sys.path.insert(0, '.'); "
                     "from trend_intel.db import DB; "
                     "from trend_intel import failure_learning as fl; "
                     "ctx = fl.run(db=DB('data/intel.db')); "
+                    "from trend_intel import style_genome as sg; "
+                    "boosted = sg.process_sales_dropzone(); "
+                    "print('sales boosted:', boosted); "
                     f"print('rows:', ctx['n_rows'], "
                     f"'bans:', len(ctx['hard_ban_titles']) + "
                     f"len(ctx['permanent_ban_titles']))"],
                    300)
 
-    ok &= run_step("2/3 agent B (demand context + buyer calendar)",
-                   [py, str(BASE / "agentb" / "night_runner.py")],
-                   1200)
-
-    ok &= run_step("3/3 agent A full cycle (collect -> verify -> report)",
+    # A BEFORE B: the fresh shortlist gets probed immediately instead of
+    # the stale cached one (fixes the 0-phrases gap on manual runall runs)
+    ok &= run_step("2/3 agent A full cycle (collect -> verify -> report)",
                    [py, "-c",
                     "import sys; sys.path.insert(0, '.'); "
                     "import agent.agent as a; "
                     "a.run_cycle()"],
                    2700)
+
+    ok &= run_step("3/3 agent B (demand context + genome + calendar)",
+                   [py, str(BASE / "agentb" / "night_runner.py")],
+                   1200)
 
     print("\n================ SUMMARY ================")
     for f in ("intel_report.json", "manifest_shortlist.json",
