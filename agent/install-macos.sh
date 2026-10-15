@@ -26,14 +26,14 @@ if [[ ! -w "$(dirname "$TARGET")" ]]; then
 else
   SUDO=""
 fi
-$SUDO rm -rf "$TARGET"
+# NO rm -rf: live data in $TARGET/data must survive reinstalls.
+# rsync --delete refreshes code but the 'data' exclude protects it on both
+# sides (never deleted, never overwritten).
 $SUDO mkdir -p "$TARGET"
 if [[ -n "$SUDO" ]]; then
   # make it user-owned so the agent can write its data
   $SUDO chown "$USER" "$TARGET"
 fi
-mkdir -p "$TARGET"
-# preserve live data across reinstalls: rsync everything except data/
 rsync -a --delete \
       --exclude 'data' --exclude '__pycache__' --exclude '.git' \
       "$SRC/" "$TARGET/"
