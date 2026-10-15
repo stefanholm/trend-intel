@@ -60,14 +60,27 @@ BOLD_RE = re.compile(
     r"\b(sheer|strappy|cage|harness|cut.?out|plunge|deep v|open back|"
     r"backless|garter|thigh.?high|bodystocking|seductive|sensual|"
     r"provocative|daring|skimpy|barely there)\b", re.I)
-# explicit wall: hard-rejected at discovery (not restageable — Adobe ban)
+# explicit wall: hard-rejected at discovery (not renderable still-life
+# subjects; NSFW sources contribute pose/wardrobe/light language only)
 EXPLICIT_RE = re.compile(
     r"\b(porn|xxx|nude|naked|nsfw|hardcore|explicit sex|"
     r"topless|bottomless|crotchless|nipple|erotic)\b", re.I)
+# stripper: usernames, handles, creator-promo and celebrity headlines are
+# not trend language — strip before anything reaches the manifest
+STRIP_RE = re.compile(
+    r"\b(onlyfans|only fans|f\([^)]*\)|patreon|fansly|premium snap\w*|"
+    r"dm me|message me|custom request|tip me|sub to|subscribe|"
+    r"red carpet|premiere|award show|celebrit\w*|girlfriend|boyfriend|"
+    r"username|profile|account|link in bio|verification|karma)\b"
+    r"|[\w.-]*@[\w.-]+\.[a-z]{2,}"              # user@host handles
+    r"|\bru/\w+\b|\bu/\w+\b", re.I)
 
 BRAND_RE = re.compile(
     r"\b(loop|huda|rhode|rare beauty|fenty|skims|by mario|dedendorff|"
-    r"hailey|bieber|kylie|jenner|victoria.?s secret|zara|h&m)\b", re.I)
+    r"hailey|bieber|kylie|jenner|victoria.?s secret|zara|h&m|"
+    r"hunkem\w*|intimissimi|lindex|agent provocateur|"
+    r"coco de mer|lounge underwear|change lingerie|sephora|ulta|lyko|"
+    r"kicks|vogue|allure|byrdie|into the gloss)\b", re.I)
 # medical/aesthetic PROCEDURES are not licensable makeup-still-life subjects
 PROCEDURE_RE = re.compile(
     r"\b(botox|filler|laser|microneedling|peel|surgery|surgical|"
@@ -96,6 +109,29 @@ VERBS = {
     "adult": ["fastening", "tying", "adjusting", "smoothing", "stepping into",
               "draping", "clipping"],
 }
+# pose/lighting vocabulary — NSFW sources are useful for HOW IT LOOKS:
+# pose, fabric drape, light. Visual reference language, not explicit.
+POSES = {
+    "beauty": [
+        "three-quarter vanity lean, chin slightly lowered",
+        "straight-on mirror glance, shoulders squared",
+        "profile turn with rim light on cheekbone",
+    ],
+    "adult": [
+        "seated bed-edge lean, silk pooling at hip, gaze to camera",
+        "standing arched back-hip pose against window light",
+        "reclined side-lying pose, head toward camera, sheet drape",
+        "over-shoulder glance, hands framing collarbone",
+    ],
+}
+LIGHTS = {
+    "beauty": ["soft window beauty light", "backlit halo glow",
+               "golden-hour vanity warmth"],
+    "adult": ["boudoir lighting: single soft key, deep falloff",
+              "window-sheer diffusion, warm haze",
+              "candle-warm intimate glow, low contrast"],
+}
+
 SETTINGS = {
     "beauty": [
         "honed travertine vanity counter with pivoting brass mirror",
@@ -127,6 +163,9 @@ SEEDS = {
         "sheer bodystocking", "strappy lingerie", "plunge bodysuit",
         "garter set", "cage bra", "open back lingerie", "chemise",
         "seductive lingerie", "bridal corset", "boudoir lace",
+        # social/TikTok/Pinterest-style visual phrases
+        "lace body", "sheer robe", "boudoir lighting", "silk slip dress",
+        "mesh bodysuit", "lace balconette", "strapless bodysuit",
     ],
 }
 
@@ -151,7 +190,8 @@ def gate(which, title):
     return (bool(lex.search(title))
             and not BRAND_RE.search(title)
             and not PROCEDURE_RE.search(title)
-            and not EXPLICIT_RE.search(title))
+            and not EXPLICIT_RE.search(title)
+            and not STRIP_RE.search(title))
 
 
 def _root(t):
@@ -160,11 +200,69 @@ def _root(t):
     return " ".join(words[:2])
 
 
+JUNK_RE = re.compile(
+    r"\b(today|yesterday|tomorrow|show|offers?|sales?|deals?|shop|shopping|"
+    r"best|worst|top|new|my|me|you|your|i|we|the|a|to|of|in|on|for|"
+    r"review|reviews|guide|tips?|how|why|what|when|is|are|this|that|"
+    r"week|month|year|fall|winter|spring|summer)\b", re.I)
+
+
+def _phrases(text):
+    """Extract short trend phrases from social/editorial headlines.
+    A Reddit title like 'Finally nailed the glazed donut look' becomes
+    candidate phrases; long journalistic sentences are not trends, the
+    lexicon-ngrams inside them are. Junk-bearing ngrams (shop/best/
+    today/reviews) are commerce or filler, not trends."""
+    text = text.lower()
+    text = re.sub(r"[^a-z\s]", " ", text)
+    words = [w for w in text.split() if len(w) > 1]
+    phrases = []
+    for n in (3, 2, 4):
+        for i in range(len(words) - n + 1):
+            p = " ".join(words[i:i + n])
+            if 5 <= len(p) <= 42 and not JUNK_RE.search(p):
+                phrases.append(p)
+    return phrases
+
+
+def _social_discover(which, seen_roots, seen, max_total):
+    """Social-media + magazine harvesting through the same gate/root
+    clustering. Social titles carry community trend language; editorial
+    headlines carry magazine trend language. Both arrive as long titles,
+    so we mine lexicon-bearing phrases instead of using raw titles."""
+    found = []
+    try:
+        from agentb import social_discovery
+        raw_titles = social_discovery.harvest(which, max_items=25)
+    except Exception:  # noqa: BLE001
+        raw_titles = []
+    try:
+        from agentb import editorial_discovery
+        raw_titles += editorial_discovery.harvest(which, max_items=25)
+    except Exception:  # noqa: BLE001
+        pass
+    for title in raw_titles:
+        for s in _phrases(title):
+            root = _root(s)
+            if (not s or s.lower() in seen or not gate(which, s)
+                    or root in seen_roots):
+                continue
+            seen.add(s.lower())
+            seen_roots.add(root)
+            found.append({"trend": s, "via": "social/editorial"})
+            break
+        if len(found) >= max_total:
+            break
+    return found
+
+
 def discover(which, max_seeds=6, max_total=60, per_seed=2, per_root=1):
     """Fan out per seed; cluster variants by 2-word root so one concept
     (silk slip dress / silk slip mini / silk slip nightgown) consumes ONE
-    discovery slot, leaving room for bold/other concepts."""
+    discovery slot, leaving room for bold/other concepts. Social media
+    and magazine headlines join the same candidate pool."""
     found, seen_roots, seen = [], set(), set()
+    found += _social_discover(which, seen_roots, seen, max_total // 3)
     for seed in SEEDS[which][:max_seeds]:
         got = 0
         for sug in _ac(seed) + _ac(seed, ds="sh"):
@@ -224,6 +322,8 @@ def profile(which, trend, expansions):
                          "frame for inpaint density" if kind == "beauty"
                          else "waist-up minimum, full head + 8% headroom, "
                               "crop at torso never at joints"),
+        "pose_hint": POSES[kind][hash(trend) % len(POSES[kind])],
+        "light_hint": LIGHTS[kind][hash(trend) % len(LIGHTS[kind])],
         "expansion_evidence": expansions[:5],
         "micro_detail_hint": (
             "razor-sharp vermilion lip border, individually separated "
@@ -232,6 +332,34 @@ def profile(which, trend, expansions):
             "floral lace cordonnet thread relief, silk charmeuse slub "
             "weave, scalloped eyelash trim, 3D skin pore topography"),
     }
+
+
+def write_deep_seeds(out, max_seeds=10, min_velocity=40):
+    """Write verified deep trends into config/deep_seeds.txt so Agent A's
+    refresh_seeds merges them like anchors and expands them into related-
+    query collection next cycle. Own protected file — same pattern as
+    calendar_seeds.txt (writing into seeds.txt directly would get wiped
+    on the next rebuild)."""
+    keywords, seen = [], set()
+    for which in ("beauty", "adult"):
+        for p in out.get(which, []):
+            if p.get("velocity", 0) < min_velocity:
+                continue
+            t = p["trend"].strip().lower()
+            if (not t or t in seen or len(t.split()) > 4
+                    or len(t) < 5 or JUNK_RE.search(t)):
+                continue
+            seen.add(t)
+            keywords.append(t)
+    keywords = keywords[:max_seeds]
+    path = BASE / "config" / "deep_seeds.txt"
+    if not keywords:
+        return []
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        "# AUTO-MANAGED by agentb/beauty_intel_agent.py \u2014 deep-intel trends\n"
+        + "\n".join(keywords) + "\n")
+    return keywords
 
 
 def run(db=None, max_trends=12):
@@ -248,6 +376,7 @@ def run(db=None, max_trends=12):
                     continue
                 p = profile(which, f["trend"], expansions)
                 p["velocity"] = velocity
+                p["discovered_via"] = f.get("via", "seed")
                 # store as nugget so the normal pipeline also sees it
                 db.upsert_raw(source=f"deep_{which}",
                               title=f["trend"][:80],
@@ -264,6 +393,12 @@ def run(db=None, max_trends=12):
     except Exception:  # noqa: BLE001
         log.exception("beauty-intel failed (isolated)")
     OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False))
+    try:
+        seeds = write_deep_seeds(out)
+        log.info("deep seeds: %d keywords injected into Agent A seeds",
+                 len(seeds))
+    except Exception:  # noqa: BLE001
+        log.exception("deep-seeds write failed (isolated)")
     return out
 
 
