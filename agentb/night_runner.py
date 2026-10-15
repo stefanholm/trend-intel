@@ -34,6 +34,7 @@ def main():
         print(f"[agentB] gap run failed (isolated): {e}")
     try:
         from trend_intel import style_genome
+        style_genome.ensure_dropzone()   # operator channel always present
         pruned = style_genome.prune_genome()
         bred = style_genome.breed_genome()
         print(f"[agentB] genome: pruned {len(pruned)} weak style genes, "

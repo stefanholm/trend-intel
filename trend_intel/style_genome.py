@@ -372,11 +372,27 @@ def breed_genome(champion_alpha=4.5, max_per_bucket=10):
 SALES_DROPZONE = DATA / "sales_dropzone.txt"
 
 
+DROPZONE_HEADER = (
+    "# Paste sold Adobe Stock image titles below (one per line).\n"
+    "# Each line boosts matched genes +5 alpha, or seeds a sales_proven\n"
+    "# gene from its distinctive vocabulary. Lines clear after processing.\n")
+
+
+def ensure_dropzone():
+    """The dropzone must ALWAYS exist — it's the operator's input channel.
+    Create with instructions if missing (first run, wiped install, etc.)."""
+    if not SALES_DROPZONE.exists():
+        SALES_DROPZONE.parent.mkdir(parents=True, exist_ok=True)
+        SALES_DROPZONE.write_text(DROPZONE_HEADER)
+    return SALES_DROPZONE
+
+
 def process_sales_dropzone(boost=5.0):
     """Zero-OAuth sales reflex: paste sold Adobe Stock titles (one per line)
     into data/sales_dropzone.txt. Each line matches genes via the same
     inference used on QC rows and gives a commercial-sale super-boost.
     Returns boosted gene list; file is consumed (cleared) after processing."""
+    ensure_dropzone()
     if not SALES_DROPZONE.exists():
         return []
     lines = [ln.strip() for ln in SALES_DROPZONE.read_text().splitlines()
@@ -432,9 +448,7 @@ def process_sales_dropzone(boost=5.0):
                 "seeded_from_sale": line[:80]}
         seeded.append(f"{bucket}/{key}")
     save_genome(genome)
-    SALES_DROPZONE.write_text(
-        "# Paste sold Adobe Stock image titles below (one per line) "
-        "for +5.0 alpha boost:\n")
+    SALES_DROPZONE.write_text(DROPZONE_HEADER)
     return {"boosted": boosted, "consumed": len(lines),
             "unmatched": unmatched, "seeded_from_sales": seeded}
 
