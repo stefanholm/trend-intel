@@ -76,6 +76,7 @@ def fetch_trend_intel_block():
     shortlist = _ti_load("manifest_shortlist.json", {})
     demand = _ti_load("demand_context.json", {})
     calendar = _ti_load("buyer_calendar.json", {})
+    bi = _ti_load("beauty_intel.json", {})
     fl = _ti_load("failure_learning.json", {}) or intel.get("failure_learning") or {}
     sl_entries = shortlist.get("shortlist") or []
     if not intel and not sl_entries:
@@ -178,6 +179,25 @@ def fetch_trend_intel_block():
             banned_count, len(ban_titles), len(ban_roots)))
     for d in (fl.get("fix_directives") or [])[:4]:
         lines.append("INTEL FIX: " + d)
+    # deep vertical intel: render-ready recipes from the beauty/adult agent
+    for vert in ("beauty", "adult"):
+        for prof in (bi.get(vert) or [])[:5]:
+            tags = []
+            if prof.get("boldness") == "high":
+                tags.append("BOLD-RESTAGE-SFW")
+            if prof.get("velocity", 0) >= 80:
+                tags.append("high-demand")
+            tag = (" [" + "; ".join(tags) + "]") if tags else ""
+            lines.append("DEEP %s: %s | %s %s | shade %s | %s | %s%s" % (
+                vert.upper(), prof.get("trend"),
+                prof.get("image_need"), prof.get("action_verb"),
+                prof.get("shade_or_colorway"),
+                ", ".join(prof.get("texture_tokens") or [])[:60],
+                prof.get("setting_architecture", "")[:80], tag))
+            if prof.get("boldness") == "high" and prof.get("restage_note"):
+                lines.append("    RESTAGE: " + prof["restage_note"][:120])
+            if prof.get("micro_detail_hint"):
+                lines.append("    micro: " + prof["micro_detail_hint"][:120])
     for a, st in (fl.get("area_health") or {}).items():
         if st.get("shots", 0) >= 5:
             lines.append("VERTICAL HEALTH: %s — %d/%d rejects (rate %.0f%%), avg AES %.1f — gate slots capped accordingly" % (
