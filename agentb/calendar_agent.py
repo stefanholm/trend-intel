@@ -53,8 +53,12 @@ def _need_windows(now=None, horizon=60):
             target = datetime.datetime(now.year + 1, m, d)
         days_until = (target - now).days
         if days_until <= horizon and days_until >= -5:
-            status = ("license NOW (peak buyer window)"
-                      if days_until <= lead else "upcoming — prepare")
+            if days_until < 21:
+                status = "sunset — too late to render (buyers licensed already)"
+            elif days_until <= lead:
+                status = "license NOW (peak buyer window)"
+            else:
+                status = "upcoming — prepare"
             out.append({
                 "need_title": title,
                 "vertical": vert,
