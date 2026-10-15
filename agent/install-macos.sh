@@ -59,6 +59,18 @@ else
   PY="$(command -v python3)"
 fi
 export PYTHONPATH="$DIR"
+
+# stale-install guard: warn when the repo is newer than this install
+REPO="$HOME/trend-intel"
+if [[ -d "$REPO/.git" && -x "$REPO/agent/agent.py" ]]; then
+  NEWER=$(find "$REPO/agent" "$REPO/trend_intel" "$REPO/agentb" \
+            -name '*.py' -newer "$DIR/agent/agent.py" 2>/dev/null | head -1)
+  if [[ -n "$NEWER" ]]; then
+    echo "WARNING: $DIR is STALE — the repo at $REPO has newer code."
+    echo "         Run: cd $REPO && ./agent/install-macos.sh"
+  fi
+fi
+
 case "${1:-run}" in
   run)     exec "$PY" "$DIR/agent/agent.py" ;;
   status)  exec "$PY" "$DIR/agent/status.py" "${@:2}" ;;
