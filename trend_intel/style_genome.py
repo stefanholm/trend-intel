@@ -394,11 +394,13 @@ def process_sales_dropzone(boost=5.0):
     Returns boosted gene list; file is consumed (cleared) after processing."""
     ensure_dropzone()
     if not SALES_DROPZONE.exists():
-        return []
+        return {"boosted": [], "consumed": 0, "unmatched": [],
+                "seeded_from_sales": []}
     lines = [ln.strip() for ln in SALES_DROPZONE.read_text().splitlines()
              if ln.strip() and not ln.startswith("#")]
     if not lines:
-        return []
+        return {"boosted": [], "consumed": 0, "unmatched": [],
+                "seeded_from_sales": []}
     genome = load_genome()
     boosted, unmatched = [], []
     for line in lines:
