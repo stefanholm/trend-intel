@@ -161,7 +161,8 @@ def rank(db, limit=20, area_quota=None):
     if gene_candidates:
         style_genome.seed_from_harvest(gene_candidates,
                                        gene_candidates[0].get("area"))
-    genes = style_genome.sample_genes(style_genome.load_genome())
+    genome = style_genome.load_genome()
+    genes = style_genome.sample_genes(genome)  # top-level (backward compat)
     from .style_genome import shot_ladder
     gene_block = {"selected_genes": genes,
                   "shot_ladder": shot_ladder(genes),
