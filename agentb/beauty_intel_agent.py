@@ -240,7 +240,7 @@ def run(db=None, max_trends=12):
     out = {"updated_at": int(time.time()), "beauty": [], "adult": []}
     try:
         for which in ("beauty", "adult"):
-        found = discover(which, max_seeds=10)
+            found = discover(which, max_seeds=10)
             verified = []
             for f in found:
                 ok, velocity, expansions = verify(f["trend"])
