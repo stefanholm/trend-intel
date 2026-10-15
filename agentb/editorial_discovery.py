@@ -1,10 +1,15 @@
-"""Editorial/magazine discovery \u2014 Google News RSS site-filtered feeds.
+"""Editorial/magazine/retail discovery — Google News RSS site-filtered feeds.
 
- Vogue, Allure, Harper's Bazaar, Elle, Cosmopolitan, GQ, Byrdie,
- Refinery29 and the mainstream adult-intimates press release their
- trend coverage via RSS. Headlines carry shade/texture/style language
- ('cherry red lips', 'sheer lace slip') long before search demand shows
- it \u2014 editorial leads, autocomplete follows.
+Beauty: Allure, Byrdie, Into The Gloss + retailers Sephora, Ulta, Lyko,
+Kicks. Lingerie/intimates: Vogue, Harper's Bazaar, Elle, Cosmopolitan,
+trade press (Lingerie Insight) + retailers Hunkemöller, Intimissimi,
+Lindex, Change, H&M, Skims, Victoria's Secret, Agent Provocateur,
+Coco de Mer, Lounge Underwear.
+
+Retail campaign headlines carry the newest product vocabulary (sheer
+lace balconette, mesh bodysuit) before search demand shows it. The
+brand filter in beauty_intel_agent strips the retailer name itself —
+only the visual language survives to the manifest.
 
 Never raises; each feed is isolated. Titles only.
 """
@@ -16,20 +21,30 @@ import xml.etree.ElementTree as ET
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0"}
 
-MAGAZINES = {
+FEEDS = {
     "beauty": [
-        ("vogue", "site:vogue.com beauty trend"),
         ("allure", "site:allure.com makeup OR skincare"),
-        ("harpersbazaar", "site:harpersbazaar.com beauty"),
         ("byrdie", "site:byrdie.com makeup OR nails"),
-        ("refinery29", "site:refinery29.com beauty trends"),
-        ("elle", "site:elle.com beauty"),
+        ("intothegloss", "site:intothegloss.com beauty"),
+        ("sephora", "site:sephora.com new beauty"),
+        ("ulta", "site:ulta.com beauty trend"),
+        ("vogue", "site:vogue.com beauty trend"),
+        ("pinterest", "site:pinterest.com beauty OR makeup ideas"),
     ],
     "adult": [
+        ("lingerieinsight", "site:lingerieinsight.com"),
+        ("hunkemoller", "site:hunkemoller.com lingerie"),
+        ("intimissimi", "site:intimissimi.com collection"),
+        ("lindex", "site:lindex.com lingerie"),
+        ("vs", "site:victoriassecret.com lingerie"),
+        ("agentprovocateur", "site:agentprovocateur.com"),
+        ("cocodemer", "site:cocodem.com"),
+        ("loungeunderwear", "site:loungeunderwear.com"),
         ("vogue", "site:vogue.com lingerie OR boudoir trend"),
         ("harpersbazaar", "site:harpersbazaar.com lingerie"),
         ("elle", "site:elle.com lingerie OR sleepwear"),
         ("cosmopolitan", "site:cosmopolitan.com lingerie"),
+        ("pinterest", "site:pinterest.com lingerie OR boudoir ideas"),
     ],
 }
 
@@ -50,10 +65,10 @@ def _headlines(query, limit=15, timeout=10):
     return out[:limit]
 
 
-def harvest(which, max_items=30, run_all=False):
-    """Yield trend phrases from magazine coverage. Never raises."""
+def harvest(which, max_items=40, run_all=False):
+    """Yield trend phrases from magazine/retail coverage. Never raises."""
     titles = []
-    for _name, query in MAGAZINES.get(which, [])[:5]:
+    for _name, query in FEEDS.get(which, []):
         try:
             titles.extend(_headlines(query))
         except Exception:  # noqa: BLE001

@@ -1,9 +1,14 @@
-"""Social-media discovery \u2014 Reddit community signal, exception-safe.
+"""Social-media discovery — Reddit community signal, exception-safe.
 
 Reddit's JSON API blocks bots, but the RSS feeds work. Top weekly posts
 from high-signal beauty/intimates communities carry real trend language
 ('glazed donut nails', 'silk slip dress') weeks before autocomplete
 catches up.
+
+NSFW-friendly subs contribute pose/wardrobe/lighting vocabulary — the
+discovery gate + stripper in beauty_intel_agent keep only visual nouns
+and reject usernames/handles/onlyfans/celebrity content, so what
+survives is render language, not profile promotion.
 
 Never raises; each subreddit is isolated. Titles only, low volume.
 """
@@ -17,11 +22,12 @@ UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
 
 SUBREDDITS = {
     "beauty": [
-        "MakeupAddiction", "beauty", "SkincareAddiction",
-        "Nails", "MakeupRehab", "HolyMolyBeauty",
+        "MakeupAddiction", "SkincareAddiction", "AsianBeauty",
+        "RedditLaqueristas", "beauty", "HolyMolyBeauty",
     ],
     "adult": [
-        "lingerie", "LingerieFashion", "loungewear",
+        "lingerie", "LingerieFashion", "bralette", "stockings",
+        "bodysuit", "loungewear", "gonewildcurvy",
     ],
 }
 
@@ -44,7 +50,7 @@ def _titles(sub, timeframe="week", limit=15, timeout=8):
 def harvest(which, max_items=30, run_all=False):
     """Yield trend phrases from top community posts. Never raises."""
     titles = []
-    for sub in SUBREDDITS.get(which, [])[:4]:
+    for sub in SUBREDDITS.get(which, [])[:6]:
         try:
             titles.extend(_titles(sub))
         except Exception:  # noqa: BLE001

@@ -60,14 +60,27 @@ BOLD_RE = re.compile(
     r"\b(sheer|strappy|cage|harness|cut.?out|plunge|deep v|open back|"
     r"backless|garter|thigh.?high|bodystocking|seductive|sensual|"
     r"provocative|daring|skimpy|barely there)\b", re.I)
-# explicit wall: hard-rejected at discovery (not restageable — Adobe ban)
+# explicit wall: hard-rejected at discovery (not renderable still-life
+# subjects; NSFW sources contribute pose/wardrobe/light language only)
 EXPLICIT_RE = re.compile(
     r"\b(porn|xxx|nude|naked|nsfw|hardcore|explicit sex|"
     r"topless|bottomless|crotchless|nipple|erotic)\b", re.I)
+# stripper: usernames, handles, creator-promo and celebrity headlines are
+# not trend language — strip before anything reaches the manifest
+STRIP_RE = re.compile(
+    r"\b(onlyfans|only fans|f\([^)]*\)|patreon|fansly|premium snap\w*|"
+    r"dm me|message me|custom request|tip me|sub to|subscribe|"
+    r"red carpet|premiere|award show|celebrit\w*|girlfriend|boyfriend|"
+    r"username|profile|account|link in bio|verification|karma)\b"
+    r"|[\w.-]*@[\w.-]+\.[a-z]{2,}"              # user@host handles
+    r"|\bru/\w+\b|\bu/\w+\b", re.I)
 
 BRAND_RE = re.compile(
     r"\b(loop|huda|rhode|rare beauty|fenty|skims|by mario|dedendorff|"
-    r"hailey|bieber|kylie|jenner|victoria.?s secret|zara|h&m)\b", re.I)
+    r"hailey|bieber|kylie|jenner|victoria.?s secret|zara|h&m|"
+    r"hunkem\u00f6ller\w*|hunkem\w+|intimissimi|lindex|agent provocateur|"
+    r"coco de mer|lounge underwear|change lingerie|sephora|ulta|lyko|"
+    r"kicks|vogue|allure|byrdie|into the gloss)\b", re.I)
 # medical/aesthetic PROCEDURES are not licensable makeup-still-life subjects
 PROCEDURE_RE = re.compile(
     r"\b(botox|filler|laser|microneedling|peel|surgery|surgical|"
@@ -96,6 +109,29 @@ VERBS = {
     "adult": ["fastening", "tying", "adjusting", "smoothing", "stepping into",
               "draping", "clipping"],
 }
+# pose/lighting vocabulary — NSFW sources are useful for HOW IT LOOKS:
+# pose, fabric drape, light. Visual reference language, not explicit.
+POSES = {
+    "beauty": [
+        "three-quarter vanity lean, chin slightly lowered",
+        "straight-on mirror glance, shoulders squared",
+        "profile turn with rim light on cheekbone",
+    ],
+    "adult": [
+        "seated bed-edge lean, silk pooling at hip, gaze to camera",
+        "standing arched back-hip pose against window light",
+        "reclined side-lying pose, head toward camera, sheet drape",
+        "over-shoulder glance, hands framing collarbone",
+    ],
+}
+LIGHTS = {
+    "beauty": ["soft window beauty light", "backlit halo glow",
+               "golden-hour vanity warmth"],
+    "adult": ["boudoir lighting: single soft key, deep falloff",
+              "window-sheer diffusion, warm haze",
+              "candle-warm intimate glow, low contrast"],
+}
+
 SETTINGS = {
     "beauty": [
         "honed travertine vanity counter with pivoting brass mirror",
@@ -127,6 +163,9 @@ SEEDS = {
         "sheer bodystocking", "strappy lingerie", "plunge bodysuit",
         "garter set", "cage bra", "open back lingerie", "chemise",
         "seductive lingerie", "bridal corset", "boudoir lace",
+        # social/TikTok/Pinterest-style visual phrases
+        "lace body", "sheer robe", "boudoir lighting", "silk slip dress",
+        "mesh bodysuit", "lace balconette", "strapless bodysuit",
     ],
 }
 
@@ -151,7 +190,8 @@ def gate(which, title):
     return (bool(lex.search(title))
             and not BRAND_RE.search(title)
             and not PROCEDURE_RE.search(title)
-            and not EXPLICIT_RE.search(title))
+            and not EXPLICIT_RE.search(title)
+            and not STRIP_RE.search(title))
 
 
 def _root(t):
@@ -282,6 +322,8 @@ def profile(which, trend, expansions):
                          "frame for inpaint density" if kind == "beauty"
                          else "waist-up minimum, full head + 8% headroom, "
                               "crop at torso never at joints"),
+        "pose_hint": POSES[kind][hash(trend) % len(POSES[kind])],
+        "light_hint": LIGHTS[kind][hash(trend) % len(LIGHTS[kind])],
         "expansion_evidence": expansions[:5],
         "micro_detail_hint": (
             "razor-sharp vermilion lip border, individually separated "
